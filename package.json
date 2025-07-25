@@ -11,7 +11,13 @@
     "dev": "nodemon app.js",
     "build": "npx tailwindcss -i ./views/input.css -o ./public/output.css --minify"
   },
-  "keywords": ["agriculture", "animal-husbandry", "farming", "investment", "nodejs"],
+  "keywords": [
+    "agriculture",
+    "animal-husbandry",
+    "farming",
+    "investment",
+    "nodejs"
+  ],
   "author": "Krushiyuga",
   "license": "ISC",
   "description": "Revolutionary Multi-Layer Animal Husbandry Platform - Node.js web application for sustainable farming",
