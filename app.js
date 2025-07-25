@@ -17,14 +17,14 @@ app.use(express.json()); // Add JSON parsing middleware for AJAX requests
 
 app.use(userRouter);
 
-const port= 3000;
-const mongodbURL =  'mongodb+srv://abhishekv1808:'+encodeURIComponent('Grow@$@2025') + '@aribnb.xvmlcnz.mongodb.net/krushiyuga?retryWrites=true&w=majority&appName=aribnb'
+const PORT = process.env.PORT || 3000;
+const mongodbURL = process.env.MONGODB_URI || 'mongodb+srv://abhishekv1808:'+encodeURIComponent('Grow@$@2025') + '@aribnb.xvmlcnz.mongodb.net/krushiyuga?retryWrites=true&w=majority&appName=aribnb';
 
 
 mongoose.connect(mongodbURL).then(()=>{
     console.log('Connected to MongoDB');
-    app.listen(port, () => {
-        console.log(`Server is running on http://localhost:${port}`);
+    app.listen(PORT, '0.0.0.0', () => {
+        console.log(`Server is running on port ${PORT}`);
     });
 }).catch(err => {
     console.error('Error connecting to MongoDB:', err);
