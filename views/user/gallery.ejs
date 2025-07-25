@@ -1,0 +1,399 @@
+<%- include('../partials/head.ejs') %>
+
+    <body>
+        <%- include('../partials/navbar.ejs') %>
+
+            <main>
+
+                <!-- Gallery Hero Section -->
+                <section class="bg-emerald-600 text-white py-20">
+                    <div class="container mx-auto px-6">
+                        <div class="grid lg:grid-cols-2 gap-12 items-center">
+                            <!-- Left Content -->
+                            <div class="space-y-6">
+                                <h1 class="text-4xl lg:text-5xl font-bold">
+                                    Our Journey Gallery
+                                </h1>
+
+                                <p class="text-lg text-emerald-100">
+                                    Explore our journey through training programs, achievements, and agricultural
+                                    excellence
+                                </p>
+
+                                <div class="grid grid-cols-3 gap-4 py-4">
+                                    <div class="text-center">
+                                        <div class="text-2xl font-bold">200+</div>
+                                        <div class="text-sm text-emerald-200">Photos</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-2xl font-bold">50+</div>
+                                        <div class="text-sm text-emerald-200">Events</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-2xl font-bold">15+</div>
+                                        <div class="text-sm text-emerald-200">Awards</div>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col sm:flex-row gap-4">
+                                    <a href="#gallery-grid"
+                                        class="bg-white text-emerald-600 px-6 py-3 rounded-lg font-semibold hover:bg-emerald-50 transition flex items-center justify-center space-x-2">
+                                        <i class="fas fa-images"></i>
+                                        <span>Explore Gallery</span>
+                                    </a>
+                                    <a href="#achievements"
+                                        class="border border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-emerald-600 transition flex items-center justify-center space-x-2">
+                                        <i class="fas fa-trophy"></i>
+                                        <span>View Achievements</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Right Image -->
+                            <div>
+                                <img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                    alt="Gallery Preview" class="w-full h-80 object-cover rounded-lg shadow-lg">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Filter Section -->
+                <section class="gallery-filter-section">
+                    <div class="container mx-auto px-4">
+                        <div class="gallery-filter-container">
+                            <button
+                                class="gallery-filter-btn gallery-active px-6 py-3 rounded-full border-2 border-green-600 text-green-600 font-semibold"
+                                data-filter="all">
+                                <i class="fas fa-th mr-2"></i>All
+                            </button>
+                            <button
+                                class="cursor-pointer gallery-filter-btn px-6 py-3 rounded-full border-2 border-green-600 text-green-600 font-semibold"
+                                data-filter="training">
+                                <i class="fas fa-graduation-cap mr-2"></i>Training Programs
+                            </button>
+                            <button
+                                class="cursor-pointer gallery-filter-btn px-6 py-3 rounded-full border-2 border-green-600 text-green-600 font-semibold"
+                                data-filter="events">
+                                <i class="fas fa-calendar-alt mr-2"></i>Events
+                            </button>
+                            <button
+                                class="cursor-pointer gallery-filter-btn px-6 py-3 rounded-full border-2 border-green-600 text-green-600 font-semibold"
+                                data-filter="farm">
+                                <i class="fas fa-seedling mr-2"></i>Farm Life
+                            </button>
+                            <button
+                                class="cursor-pointer gallery-filter-btn px-6 py-3 rounded-full border-2 border-green-600 text-green-600 font-semibold"
+                                data-filter="awards">
+                                <i class="fas fa-trophy mr-2"></i>Awards
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Gallery Section -->
+                <section class="gallery-section">
+                    <div class="container mx-auto px-4">
+                        <div class="gallery-masonry-grid" id="gallery-grid">
+
+                            <!-- Training Images -->
+                            <div class="gallery-item gallery-masonry-item training gallery-fade-in">
+                                <img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                    alt="Goat Training Workshop" class="w-full h-64 object-cover">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-search-plus text-4xl text-white mb-2"></i>
+                                    <h3 class="text-xl font-bold text-white">Goat Training Workshop</h3>
+                                    <p class="text-white text-center px-4">Professional training on goat farming
+                                        techniques</p>
+                                </div>
+                            </div>
+
+                            <div class="gallery-item gallery-masonry-item training gallery-fade-in"
+                                style="animation-delay: 0.1s;">
+                                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                    alt="Veterinary Training" class="w-full h-80 object-cover">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-search-plus text-4xl text-white mb-2"></i>
+                                    <h3 class="text-xl font-bold text-white">Veterinary Training</h3>
+                                    <p class="text-white text-center px-4">Health management and veterinary care
+                                        training</p>
+                                </div>
+                            </div>
+
+                            <div class="gallery-item gallery-masonry-item training gallery-fade-in"
+                                style="animation-delay: 0.2s;">
+                                <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                    alt="Breeding Techniques" class="w-full h-72 object-cover">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-search-plus text-4xl text-white mb-2"></i>
+                                    <h3 class="text-xl font-bold text-white">Breeding Techniques</h3>
+                                    <p class="text-white text-center px-4">Advanced breeding and genetics workshop</p>
+                                </div>
+                            </div>
+
+                            <!-- Events Images -->
+                            <div class="gallery-item gallery-masonry-item events gallery-fade-in"
+                                style="animation-delay: 0.3s;">
+                                <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                    alt="Agricultural Fair" class="w-full h-64 object-cover">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-search-plus text-4xl text-white mb-2"></i>
+                                    <h3 class="text-xl font-bold text-white">Agricultural Fair</h3>
+                                    <p class="text-white text-center px-4">Participating in state agricultural
+                                        exhibition</p>
+                                </div>
+                            </div>
+
+                            <div class="gallery-item gallery-masonry-item events gallery-fade-in"
+                                style="animation-delay: 0.4s;">
+                                <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                    alt="Farmers Conference" class="w-full h-76 object-cover">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-search-plus text-4xl text-white mb-2"></i>
+                                    <h3 class="text-xl font-bold text-white">Farmers Conference</h3>
+                                    <p class="text-white text-center px-4">Annual farmers meet and knowledge sharing</p>
+                                </div>
+                            </div>
+
+                            <div class="gallery-item gallery-masonry-item events gallery-fade-in"
+                                style="animation-delay: 0.5s;">
+                                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                    alt="Community Event" class="w-full h-64 object-cover">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-search-plus text-4xl text-white mb-2"></i>
+                                    <h3 class="text-xl font-bold text-white">Community Event</h3>
+                                    <p class="text-white text-center px-4">Rural community development program</p>
+                                </div>
+                            </div>
+
+                            <!-- Farm Life Images -->
+                            <div class="gallery-item gallery-masonry-item farm gallery-fade-in"
+                                style="animation-delay: 0.6s;">
+                                <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                    alt="Osmanabadi Goats" class="w-full h-80 object-cover">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-search-plus text-4xl text-white mb-2"></i>
+                                    <h3 class="text-xl font-bold text-white">Osmanabadi Goats</h3>
+                                    <p class="text-white text-center px-4">Our premium Osmanabadi goat herd</p>
+                                </div>
+                            </div>
+
+                            <div class="gallery-item gallery-masonry-item farm gallery-fade-in"
+                                style="animation-delay: 0.7s;">
+                                <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                    alt="Farm Infrastructure" class="w-full h-64 object-cover">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-search-plus text-4xl text-white mb-2"></i>
+                                    <h3 class="text-xl font-bold text-white">Farm Infrastructure</h3>
+                                    <p class="text-white text-center px-4">Modern farm facilities and equipment</p>
+                                </div>
+                            </div>
+
+                            <div class="gallery-item gallery-masonry-item farm gallery-fade-in"
+                                style="animation-delay: 0.8s;">
+                                <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                    alt="Feeding Time" class="w-full h-72 object-cover">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-search-plus text-4xl text-white mb-2"></i>
+                                    <h3 class="text-xl font-bold text-white">Feeding Time</h3>
+                                    <p class="text-white text-center px-4">Daily care and feeding routine</p>
+                                </div>
+                            </div>
+
+                            <!-- Awards Images -->
+                            <div class="gallery-item gallery-masonry-item awards gallery-fade-in"
+                                style="animation-delay: 0.9s;">
+                                <img src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                    alt="Excellence Award" class="w-full h-64 object-cover">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-search-plus text-4xl text-white mb-2"></i>
+                                    <h3 class="text-xl font-bold text-white">Excellence Award</h3>
+                                    <p class="text-white text-center px-4">Recognition for outstanding livestock
+                                        management</p>
+                                </div>
+                            </div>
+
+                            <div class="gallery-item gallery-masonry-item awards gallery-fade-in"
+                                style="animation-delay: 1.0s;">
+                                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                    alt="Best Farmer Award" class="w-full h-76 object-cover">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-search-plus text-4xl text-white mb-2"></i>
+                                    <h3 class="text-xl font-bold text-white">Best Farmer Award</h3>
+                                    <p class="text-white text-center px-4">State government recognition for agricultural
+                                        excellence</p>
+                                </div>
+                            </div>
+
+                            <div class="gallery-item gallery-masonry-item training gallery-fade-in"
+                                style="animation-delay: 1.1s;">
+                                <img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                    alt="Youth Training" class="w-full h-64 object-cover">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-search-plus text-4xl text-white mb-2"></i>
+                                    <h3 class="text-xl font-bold text-white">Youth Training Program</h3>
+                                    <p class="text-white text-center px-4">Empowering young farmers with modern
+                                        techniques</p>
+                                </div>
+                            </div>
+
+                            <div class="gallery-item gallery-masonry-item farm gallery-fade-in"
+                                style="animation-delay: 1.2s;">
+                                <img src="https://images.unsplash.com/photo-1551218372-a8789b81b253?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                    alt="Goat Kids" class="w-full h-72 object-cover">
+                                <div class="gallery-overlay">
+                                    <i class="fas fa-search-plus text-4xl text-white mb-2"></i>
+                                    <h3 class="text-xl font-bold text-white">Healthy Goat Kids</h3>
+                                    <p class="text-white text-center px-4">New generation of Osmanabadi goats</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Stats Section -->
+                <section class="gallery-stats-section">
+                    <div class="container mx-auto px-4">
+                        <div class="gallery-stats-grid">
+                            <div class="gallery-stat-item gallery-fade-in">
+                                <div class="gallery-stat-number">200+</div>
+                                <p class="gallery-stat-label">Training Sessions</p>
+                            </div>
+                            <div class="gallery-stat-item gallery-fade-in" style="animation-delay: 0.1s;">
+                                <div class="gallery-stat-number">50+</div>
+                                <p class="gallery-stat-label">Events Participated</p>
+                            </div>
+                            <div class="gallery-stat-item gallery-fade-in" style="animation-delay: 0.2s;">
+                                <div class="gallery-stat-number">15+</div>
+                                <p class="gallery-stat-label">Awards Won</p>
+                            </div>
+                            <div class="gallery-stat-item gallery-fade-in" style="animation-delay: 0.3s;">
+                                <div class="gallery-stat-number">1000+</div>
+                                <p class="gallery-stat-label">Farmers Trained</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Call to Action -->
+                <section class="gallery-cta-section gallery-gradient-bg">
+                    <div class="container mx-auto px-4 text-center">
+                        <h3 class="gallery-cta-title">Join Our Training Programs</h3>
+                        <p class="gallery-cta-subtitle">
+                            Learn modern goat farming techniques and become part of our success story
+                        </p>
+                        <div class="gallery-cta-buttons">
+                            <button class="gallery-btn-primary">
+                                <i class="fas fa-graduation-cap mr-2"></i>Join Training
+                            </button>
+                            <button class="gallery-btn-secondary">
+                                <i class="fas fa-calendar mr-2"></i>View Events
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Modal -->
+                <div id="imageModal" class="gallery-modal">
+                    <span class="gallery-close">&times;</span>
+                    <img class="gallery-modal-content" id="modalImage">
+                    <div class="gallery-modal-caption" id="modalCaption"></div>
+                </div>
+
+
+            </main>
+
+            <%- include('../partials/footer.ejs') %>
+
+                <script>
+                    // Gallery filtering
+                    const galleryFilterButtons = document.querySelectorAll('.gallery-filter-btn');
+                    const galleryItems = document.querySelectorAll('.gallery-item');
+
+                    galleryFilterButtons.forEach(button => {
+                        button.addEventListener('click', () => {
+                            // Remove active class from all buttons
+                            galleryFilterButtons.forEach(btn => btn.classList.remove('gallery-active'));
+                            // Add active class to clicked button
+                            button.classList.add('gallery-active');
+
+                            const filter = button.getAttribute('data-filter');
+
+                            galleryItems.forEach(item => {
+                                if (filter === 'all' || item.classList.contains(filter)) {
+                                    item.style.display = 'block';
+                                    setTimeout(() => {
+                                        item.style.opacity = '1';
+                                        item.style.transform = 'translateY(0)';
+                                    }, 100);
+                                } else {
+                                    item.style.opacity = '0';
+                                    item.style.transform = 'translateY(30px)';
+                                    setTimeout(() => {
+                                        item.style.display = 'none';
+                                    }, 300);
+                                }
+                            });
+                        });
+                    });
+
+                    // Modal functionality
+                    const galleryModal = document.getElementById('imageModal');
+                    const galleryModalImage = document.getElementById('modalImage');
+                    const galleryModalCaption = document.getElementById('modalCaption');
+                    const galleryCloseModal = document.querySelector('.gallery-close');
+
+                    galleryItems.forEach(item => {
+                        item.addEventListener('click', () => {
+                            const img = item.querySelector('img');
+                            const overlay = item.querySelector('.gallery-overlay');
+                            const title = overlay.querySelector('h3').textContent;
+                            const description = overlay.querySelector('p').textContent;
+
+                            galleryModal.style.display = 'block';
+                            galleryModalImage.src = img.src;
+                            galleryModalCaption.innerHTML = `<h3 class="text-xl font-bold mb-2">${title}</h3><p>${description}</p>`;
+                        });
+                    });
+
+                    galleryCloseModal.addEventListener('click', () => {
+                        galleryModal.style.display = 'none';
+                    });
+
+                    window.addEventListener('click', (e) => {
+                        if (e.target === galleryModal) {
+                            galleryModal.style.display = 'none';
+                        }
+                    });
+
+                    // Intersection Observer for fade-in animation
+                    const galleryObserverOptions = {
+                        threshold: 0.1,
+                        rootMargin: '0px 0px -50px 0px'
+                    };
+
+                    const galleryObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.style.opacity = '1';
+                                entry.target.style.transform = 'translateY(0)';
+                            }
+                        });
+                    }, galleryObserverOptions);
+
+                    document.querySelectorAll('.gallery-fade-in').forEach(el => {
+                        galleryObserver.observe(el);
+                    });
+
+                    // Keyboard navigation for modal
+                    document.addEventListener('keydown', (e) => {
+                        if (e.key === 'Escape' && galleryModal.style.display === 'block') {
+                            galleryModal.style.display = 'none';
+                        }
+                    });
+                </script>
+
+    </body>
+
+    </html>
