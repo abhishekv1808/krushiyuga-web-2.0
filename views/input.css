@@ -1184,3 +1184,209 @@ bg-brand-gradient {
         width: 95%;
     }
 }
+
+/* About Page Specific Styles */
+
+/* About gradient background */
+.about-gradient-bg {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+/* About background pattern */
+.about-bg-pattern {
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+}
+
+/* About fade-in animation */
+.about-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.about-fade-in.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* About floating animation */
+.about-floating-animation {
+    animation: aboutFloat 6s ease-in-out infinite;
+}
+
+@keyframes aboutFloat {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-15px) rotate(2deg); }
+    66% { transform: translateY(-10px) rotate(-2deg); }
+}
+
+/* About section titles */
+.about-section-title {
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.about-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #10b981, #059669);
+    border-radius: 2px;
+}
+
+/* About counter items */
+.about-counter-item {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 12px;
+    background: rgba(16, 185, 129, 0.05);
+    border: 1px solid rgba(16, 185, 129, 0.1);
+    transition: all 0.3s ease;
+}
+
+.about-counter-item:hover {
+    background: rgba(16, 185, 129, 0.1);
+    transform: translateY(-2px);
+}
+
+/* About card hover effects */
+.about-card-hover {
+    transition: all 0.3s ease;
+}
+
+.about-card-hover:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* About value cards */
+.about-value-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.about-value-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: rgba(16, 185, 129, 0.2);
+}
+
+/* About milestone cards */
+.about-milestone-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #10b981;
+    transition: all 0.3s ease;
+}
+
+.about-milestone-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    border-left-color: #059669;
+}
+
+/* About team cards */
+.about-team-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.about-team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.about-team-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    padding: 1.5rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.about-team-card:hover .about-team-overlay {
+    transform: translateY(0);
+}
+
+/* About testimonial cards */
+.about-testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.about-testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 4rem;
+    color: #10b981;
+    font-family: serif;
+    line-height: 1;
+}
+
+.about-testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    border-color: rgba(16, 185, 129, 0.2);
+}
+
+/* About responsive adjustments */
+@media (max-width: 768px) {
+    .about-section-title {
+        font-size: 2rem;
+    }
+    
+    .about-value-card,
+    .about-testimonial-card {
+        padding: 1.5rem;
+    }
+    
+    .about-milestone-card {
+        padding: 1rem;
+    }
+    
+    .about-floating-animation {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-section-title {
+        font-size: 1.75rem;
+    }
+    
+    .about-value-card,
+    .about-testimonial-card {
+        padding: 1rem;
+    }
+    
+    .about-counter-item {
+        padding: 0.75rem;
+    }
+}

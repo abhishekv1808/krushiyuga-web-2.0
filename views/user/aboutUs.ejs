@@ -6,7 +6,7 @@
 
             <main>
 
-                <section class="relative about-gradient-bg about-bg-pattern py-35 overflow-hidden">
+                <section class="relative about-gradient-bg about-bg-pattern py-20 overflow-hidden">
                     <div class="absolute inset-0 bg-black opacity-10"></div>
                     <div class="container mx-auto px-4 relative z-10">
                         <div class="text-center text-white">
@@ -243,10 +243,10 @@
                                 Our Leadership Team
                             </h2>
                         </div>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            <div class="about-team-card about-fade-in">
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
-                                    alt="Founder" class="w-full h-64 object-cover">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8  ">
+                            <div class="about-team-card about-fade-in ">
+                                <img src="https://res.cloudinary.com/dobvyt9yw/image/upload/v1753441540/Madhu_sir_image_yqlk1i.png"
+                                    alt="Founder" class="w-full h-125 object-cover">
                                 <div class="p-6">
                                     <h3 class="text-xl font-bold text-gray-800 mb-2">Madhu Huliyar</h3>
                                     <p class="text-green-600 font-medium mb-3">Founder & CEO</p>
@@ -265,8 +265,8 @@
                                 </div>
                             </div>
                             <div class="about-team-card about-fade-in" style="animation-delay: 0.1s;">
-                                <img src="https://images.unsplash.com/photo-1494790108755-2616c3d4d6b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
-                                    alt="Veterinarian" class="w-full h-64 object-cover">
+                                <img src="https://res.cloudinary.com/dobvyt9yw/image/upload/v1753441816/anoop_image_c3xr5g.png"
+                                    alt="Veterinarian" class="w-full h-125 object-cover">
                                 <div class="p-6">
                                     <h3 class="text-xl font-bold text-gray-800 mb-2">Anoop C N</h3>
                                     <p class="text-green-600 font-medium mb-3">Co-founder</p>
@@ -280,25 +280,6 @@
                                         "Healthy animals are the foundation of successful farming. Prevention is always
                                         better than
                                         cure."
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="about-team-card about-fade-in" style="animation-delay: 0.2s;">
-                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
-                                    alt="Training Director" class="w-full h-64 object-cover">
-                                <div class="p-6">
-                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Data should be inserted</h3>
-                                    <p class="text-green-600 font-medium mb-3">Training </p>
-                                    <p class="text-gray-600 text-sm">
-                                        Education specialist with expertise in adult learning and rural development
-                                        programs.
-                                    </p>
-                                </div>
-                                <div class="about-team-overlay text-white">
-                                    <p class="text-sm">
-                                        "Education is the most powerful tool for empowering farmers and building
-                                        sustainable
-                                        communities."
                                     </p>
                                 </div>
                             </div>
@@ -404,8 +385,7 @@
                     const aboutObserver = new IntersectionObserver((entries) => {
                         entries.forEach(entry => {
                             if (entry.isIntersecting) {
-                                entry.target.style.opacity = '1';
-                                entry.target.style.transform = 'translateY(0)';
+                                entry.target.classList.add('animate');
                             }
                         });
                     }, aboutObserverOptions);

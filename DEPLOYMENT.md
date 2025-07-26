@@ -136,8 +136,8 @@ MONGODB_URI=your_mongodb_connection_string
 
 ### **Render Plans:**
 - **Free**: 750 hours/month, sleeps after inactivity
-- **Starter**: $7/month, always-on
-- **Standard**: $25/month, enhanced performance
+- **Starter**: ₹580/month, always-on
+- **Standard**: ₹2070/month, enhanced performance
 
 ### **Database Scaling:**
 - **MongoDB Atlas Free**: 512MB storage
