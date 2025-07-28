@@ -1,0 +1,610 @@
+<%- include('../partials/head.ejs')%>
+
+    <body>
+
+        <%- include('../partials/navbar.ejs')%>
+
+            <main>
+
+                <section class="relative contact-gradient-bg pt-20 sm:pt-24 lg:pt-30 pb-12 sm:pb-15 overflow-hidden">
+                    <div class="absolute inset-0 bg-black opacity-10"></div>
+                    <div class="container mx-auto px-4 sm:px-6 relative z-10">
+                        <div class="text-center text-white">
+                            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 fade-in">
+                                Contact <span class="text-yellow-300">Krushiyuga</span>
+                            </h1>
+                            <p class="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 fade-in max-w-3xl mx-auto px-4"
+                                style="animation-delay: 0.2s;">
+                                Get in touch with our livestock experts. We're here to help you build a successful goat
+                                farming
+                                business.
+                            </p>
+                            <div class="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-4 fade-in px-4"
+                                style="animation-delay: 0.4s;">
+                                <div
+                                    class="flex items-center space-x-2 bg-white bg-opacity-20 px-4 sm:px-6 py-2 sm:py-3 rounded-full w-full sm:w-auto justify-center">
+                                    <i class="fas fa-phone text-green-600 text-sm sm:text-base"></i>
+                                    <span class="text-green-600 text-sm sm:text-base">+91 99000 77948</span>
+                                </div>
+                                <div
+                                    class="flex items-center space-x-2 bg-white bg-opacity-20 px-4 sm:px-6 py-2 sm:py-3 rounded-full w-full sm:w-auto justify-center">
+                                    <i class="fas fa-envelope text-green-600 text-sm sm:text-base"></i>
+                                    <span class="text-green-600 text-sm sm:text-base">nammakrushiyuga@gmail.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Elements - Hidden on mobile -->
+                    <div class="hidden lg:block absolute top-20 right-20 text-white opacity-20 floating-animation">
+                        <i class="fas fa-comments text-6xl"></i>
+                    </div>
+                    <div class="hidden lg:block absolute bottom-20 left-20 text-white opacity-20 floating-animation"
+                        style="animation-delay: 1s;">
+                        <i class="fas fa-handshake text-5xl"></i>
+                    </div>
+                </section>
+
+                <!-- Contact Information Cards -->
+                <section class="py-12 sm:py-16 bg-white">
+                    <div class="container mx-auto px-4 sm:px-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+
+                            <!-- Phone -->
+                            <div class="text-center bg-gray-50 p-8 rounded-xl card-hover fade-in">
+                                <div
+                                    class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 pulse-animation">
+                                    <i class="fas fa-phone text-green-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Call Us</h3>
+                                <p class="text-gray-600 mb-4">Speak directly with our experts</p>
+                                <a href="tel:+919876543210"
+                                    class="text-green-600 font-semibold hover:text-green-700 transition duration-300">
+                                    +91 99000 77948
+                                </a>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="text-center bg-gray-50 p-8 rounded-xl card-hover fade-in"
+                                style="animation-delay: 0.1s;">
+                                <div
+                                    class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 pulse-animation">
+                                    <i class="fas fa-envelope text-blue-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Email Us</h3>
+                                <p class="text-gray-600 mb-4">Send us your queries anytime</p>
+                                <a href="mailto:info@krushiyuga.com"
+                                    class="text-green-600 font-semibold hover:text-green-700 transition duration-300">
+                                    info@krushiyuga.com
+                                </a>
+                            </div>
+
+                            <!-- Location -->
+                            <div class="text-center bg-gray-50 p-8 rounded-xl card-hover fade-in"
+                                style="animation-delay: 0.2s;">
+                                <div
+                                    class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4 pulse-animation">
+                                    <i class="fas fa-map-marker-alt text-yellow-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Visit Us</h3>
+                                <p class="text-gray-600 mb-4">Office</p>
+                                <p class="text-green-600 font-semibold">
+                                    DRLS Plaza Union Bank Building, No. 39 & 1479, Tumkur Rd, Vidya Nagar, <br>
+                                    T. Dasarahalli, Bengaluru 560057
+                                </p>
+                            </div>
+
+                            <!-- WhatsApp -->
+                            <div class="text-center bg-gray-50 p-8 rounded-xl card-hover fade-in"
+                                style="animation-delay: 0.3s;">
+                                <div
+                                    class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4 pulse-animation">
+                                    <i class="fab fa-whatsapp text-purple-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">WhatsApp</h3>
+                                <p class="text-gray-600 mb-4">Quick chat support</p>
+                                <a href="https://wa.me/919876543210"
+                                    class="text-green-600 font-semibold hover:text-green-700 transition duration-300">
+                                    +91 99000 77948
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Main Contact Section -->
+                <section class="py-20 bg-gray-50">
+                    <div class="container mx-auto px-4">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+                            <!-- Contact Form -->
+                            <div class="fade-in">
+                                <div class="contact-form rounded-2xl shadow-2xl p-8 md:p-12">
+                                    <h2 class="text-3xl font-bold text-gray-800 mb-8">
+                                        <i class="fas fa-paper-plane text-green-600 mr-3"></i>
+                                        Send us a Message
+                                    </h2>
+
+                                    <form class="space-y-6" id="contactForm" method="POST" action="/contact-us">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                                    <i class="fas fa-user mr-2"></i>First Name *
+                                                </label>
+                                                <input type="text" name="firstName" id="firstName" required
+                                                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
+                                                    placeholder="Enter your first name">
+                                            </div>
+
+
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                                    <i class="fas fa-user mr-2"></i>Last Name *
+                                                </label>
+                                                <input type="text" name="lastName" id="lastName" required
+                                                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
+                                                    placeholder="Enter your last name">
+                                            </div>
+
+                                        </div>
+
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                                <i class="fas fa-envelope mr-2"></i>Email Address *
+                                            </label>
+                                            <input type="email" name="email" id="email" required
+                                                class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
+                                                placeholder="Enter your email address">
+                                        </div>
+
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                                <i class="fas fa-phone mr-2"></i>Mobile Number *
+                                            </label>
+                                            <input type="tel" name="mobile" id="mobile" required
+                                                class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
+                                                placeholder="Enter your phone number">
+                                        </div>
+
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                                <i class="fas fa-tag mr-2"></i>Inquiry Type *
+                                            </label>
+                                            <select name="inquiryType" id="inquiryType" required
+                                                class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none">
+                                                <option value="">Select inquiry type</option>
+                                                <option value="breeding-stock">Breeding Stock</option>
+                                                <option value="young-stock">Young Stock</option>
+                                                <option value="meat-goats">Meat Goats</option>
+                                                <option value="farm-consultation">Farm Consultation</option>
+                                                <option value="general-inquiry">General Inquiry</option>
+                                            </select>
+                                        </div>
+
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                                <i class="fas fa-map-marker-alt mr-2"></i>Your Location
+                                            </label>
+                                            <input type="text" name="location" id="location"
+                                                class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
+                                                placeholder="City, State">
+                                        </div>
+
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                                <i class="fas fa-comment mr-2"></i>Message *
+                                            </label>
+                                            <textarea name="message" id="message" rows="5" required
+                                                class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none resize-none"
+                                                placeholder="Tell us about your requirements..."></textarea>
+                                        </div>
+
+                                        <div class="flex items-center">
+                                            <input type="checkbox" id="agree" name="agree" required
+                                                class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                            <label for="agree" class="ml-2 block text-sm text-gray-700">
+                                                I agree to the <a href="#"
+                                                    class="text-green-600 hover:text-green-700">Terms &
+                                                    Conditions</a> and <a href="#"
+                                                    class="text-green-600 hover:text-green-700">Privacy
+                                                    Policy</a>
+                                            </label>
+                                        </div>
+
+                                        <button type="submit"
+                                            class="w-full bg-green-600 text-white font-semibold py-4 px-6 rounded-lg hover:bg-green-700 transition duration-300 shadow-lg transform hover:scale-105">
+                                            <i class="fas fa-paper-plane mr-2"></i>
+                                            Send Message
+                                        </button>
+                                    </form>
+
+
+                                </div>
+                            </div>
+
+                            <!-- Contact Information & Map -->
+                            <div class="fade-in" style="animation-delay: 0.2s;">
+
+                                <!-- Business Hours -->
+                                <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+                                    <h3 class="text-2xl font-bold text-gray-800 mb-6">
+                                        <i class="fas fa-clock text-green-600 mr-3"></i>
+                                        Business Hours
+                                    </h3>
+                                    <div class="space-y-4">
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-gray-600">Monday - Friday</span>
+                                            <span class="font-semibold text-green-600">10:00 AM - 8:00 PM</span>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-gray-600">Saturday</span>
+                                            <span class="font-semibold text-green-600">10:00 AM - 5:00 PM</span>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-gray-600">Sunday</span>
+                                            <span class="font-semibold text-green-600">-</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Farm Visit -->
+                                <!-- <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+                                    <h3 class="text-2xl font-bold text-gray-800 mb-6">
+                                        <i class="fas fa-seedling text-green-600 mr-3"></i>
+                                        Farm Visit
+                                    </h3>
+                                    <p class="text-gray-600 mb-4">
+                                        We welcome visitors to our farm! See our healthy Osmanabadi goats and learn
+                                        about our breeding
+                                        practices.
+                                    </p>
+                                    <div class="space-y-3">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-3"></i>
+                                            <span class="text-gray-700">Free farm tours available</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-3"></i>
+                                            <span class="text-gray-700">Meet our livestock experts</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <i class="fas fa-check text-green-500 mr-3"></i>
+                                            <span class="text-gray-700">Prior appointment recommended</span>
+                                        </div>
+                                    </div>
+                                    <button
+                                        class="mt-6 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition duration-300 w-full">
+                                        <i class="fas fa-calendar-plus mr-2"></i>
+                                        Schedule Visit
+                                    </button>
+                                </div> -->
+
+                                <!-- Map -->
+                                <!-- <div class="bg-white rounded-2xl shadow-lg p-8">
+                                    <h3 class="text-2xl font-bold text-gray-800 mb-6">
+                                        <i class="fas fa-map text-green-600 mr-3"></i>
+                                        Find Us
+                                    </h3>
+                                    <div class="map-container h-64 bg-gray-200 rounded-lg relative">
+                                        <div class="map-overlay"></div>
+                                        <div class="absolute inset-0 flex items-center justify-center">
+                                            <div class="text-center">
+                                                <i class="fas fa-map-marker-alt text-green-600 text-4xl mb-4"></i>
+                                                <p class="text-gray-700 font-semibold">Krushiyuga Farm</p>
+                                                <p class="text-gray-600">Osmanabad, Karnataka</p>
+                                                <button
+                                                    class="mt-4 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition duration-300">
+                                                    <i class="fas fa-directions mr-2"></i>
+                                                    Get Directions
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAQ Section -->
+                <section class="py-16 bg-white">
+                    <div class="container mx-auto px-4">
+                        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12 fade-in">
+                            Frequently Asked Questions
+                        </h2>
+                        <div class="max-w-4xl mx-auto">
+                            <div class="space-y-6">
+
+                                <!-- FAQ Item 1 -->
+                                <div class="bg-gray-50 rounded-xl p-6 fade-in">
+                                    <div class="flex items-center justify-between cursor-pointer"
+                                        onclick="toggleFAQ(1)">
+                                        <h3 class="text-lg font-semibold text-gray-800">
+                                            <i class="fas fa-question-circle text-green-600 mr-3"></i>
+                                            What makes Osmanabadi goats special?
+                                        </h3>
+                                        <i class="fas fa-chevron-down text-green-600 transition-transform duration-300"
+                                            id="faq-icon-1"></i>
+                                    </div>
+                                    <div class="mt-4 text-gray-600 hidden" id="faq-content-1">
+                                        <p>Osmanabadi goats are known for their excellent meat quality, high disease
+                                            resistance, drought
+                                            tolerance, and ability to thrive in semi-arid conditions. They have a fast
+                                            growth rate and
+                                            excellent mothering ability.</p>
+                                    </div>
+                                </div>
+
+                                <!-- FAQ Item 2 -->
+                                <div class="bg-gray-50 rounded-xl p-6 fade-in" style="animation-delay: 0.1s;">
+                                    <div class="flex items-center justify-between cursor-pointer"
+                                        onclick="toggleFAQ(2)">
+                                        <h3 class="text-lg font-semibold text-gray-800">
+                                            <i class="fas fa-question-circle text-green-600 mr-3"></i>
+                                            Do you provide delivery services?
+                                        </h3>
+                                        <i class="fas fa-chevron-down text-green-600 transition-transform duration-300"
+                                            id="faq-icon-2"></i>
+                                    </div>
+                                    <div class="mt-4 text-gray-600 hidden" id="faq-content-2">
+                                        <p>Yes, we provide safe and specialized transportation for our goats. Our
+                                            delivery vehicles are
+                                            designed for animal welfare and we ensure proper care during transit.</p>
+                                    </div>
+                                </div>
+
+                                <!-- FAQ Item 3 -->
+                                <div class="bg-gray-50 rounded-xl p-6 fade-in" style="animation-delay: 0.2s;">
+                                    <div class="flex items-center justify-between cursor-pointer"
+                                        onclick="toggleFAQ(3)">
+                                        <h3 class="text-lg font-semibold text-gray-800">
+                                            <i class="fas fa-question-circle text-green-600 mr-3"></i>
+                                            What support do you provide after purchase?
+                                        </h3>
+                                        <i class="fas fa-chevron-down text-green-600 transition-transform duration-300"
+                                            id="faq-icon-3"></i>
+                                    </div>
+                                    <div class="mt-4 text-gray-600 hidden" id="faq-content-3">
+                                        <p>We provide comprehensive after-sales support including feeding guidelines,
+                                            health management
+                                            advice, breeding consultation, and 24/7 expert assistance for any queries.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- FAQ Item 4 -->
+                                <div class="bg-gray-50 rounded-xl p-6 fade-in" style="animation-delay: 0.3s;">
+                                    <div class="flex items-center justify-between cursor-pointer"
+                                        onclick="toggleFAQ(4)">
+                                        <h3 class="text-lg font-semibold text-gray-800">
+                                            <i class="fas fa-question-circle text-green-600 mr-3"></i>
+                                            Are your goats health certified?
+                                        </h3>
+                                        <i class="fas fa-chevron-down text-green-600 transition-transform duration-300"
+                                            id="faq-icon-4"></i>
+                                    </div>
+                                    <div class="mt-4 text-gray-600 hidden" id="faq-content-4">
+                                        <p>Absolutely! All our goats are health certified, vaccinated, and undergo
+                                            regular health
+                                            checkups. We provide complete health documentation with each purchase.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Call to Action -->
+                <section class="contact-gradient-bg py-16">
+                    <div class="container mx-auto px-4 text-center">
+                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Get Started?</h3>
+                        <p class="text-xl text-white mb-8 max-w-2xl mx-auto">
+                            Contact us today and let our experts help you choose the perfect goats for your farm
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="tel:+919876543210"
+                                class="bg-white text-green-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300 shadow-lg">
+                                <i class="fas fa-phone mr-2"></i>Call: +91 99000 77948
+                            </a>
+                            <a href="https://wa.me/919876543210"
+                                class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-green-600 transition duration-300">
+                                <i class="fab fa-whatsapp mr-2"></i>WhatsApp Now
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+
+            </main>
+
+            <!-- Success Modal -->
+            <div id="successModal"
+                class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+                <div class="bg-white rounded-2xl p-8 max-w-md mx-4 relative">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-check-circle text-green-500 text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Success!</h3>
+                        <p class="text-gray-600 mb-6">Thank you for your inquiry! We will contact you soon.</p>
+                        <button onclick="closeSuccessModal()"
+                            class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition duration-300">
+                            <i class="fas fa-times mr-2"></i>Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <%- include('../partials/footer.ejs') %>
+
+
+                <script>
+
+                    // FAQ toggle function
+                    function toggleFAQ(index) {
+                        const content = document.getElementById(`faq-content-${index}`);
+                        const icon = document.getElementById(`faq-icon-${index}`);
+
+                        if (content.classList.contains('hidden')) {
+                            content.classList.remove('hidden');
+                            icon.classList.add('rotate-180');
+                        } else {
+                            content.classList.add('hidden');
+                            icon.classList.remove('rotate-180');
+                        }
+                    }
+
+                    // Intersection Observer for fade-in animation
+                    const observerOptions = {
+                        threshold: 0.1,
+                        rootMargin: '0px 0px -50px 0px'
+                    };
+
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.style.opacity = '1';
+                                entry.target.style.transform = 'translateY(0)';
+                            }
+                        });
+                    }, observerOptions);
+
+                    document.querySelectorAll('.fade-in').forEach(el => {
+                        observer.observe(el);
+                    });
+
+                    // Smooth scrolling for internal links
+                    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                        anchor.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            const target = document.querySelector(this.getAttribute('href'));
+                            if (target) {
+                                target.scrollIntoView({
+                                    behavior: 'smooth'
+                                });
+                            }
+                        });
+                    });
+
+                    // Mobile number validation (fixed selector)
+                    document.querySelector('input[name="mobile"]').addEventListener('input', function (e) {
+                        let value = e.target.value.replace(/\D/g, '');
+                        if (value.length > 10) {
+                            value = value.substring(0, 10);
+                        }
+                        e.target.value = value;
+                    });
+
+                    document.getElementById('contactForm').addEventListener('submit', async function (e) {
+                        e.preventDefault();
+                        console.log('Form submission intercepted - AJAX will be used');
+
+                        const formData = {
+                            firstName: document.getElementById('firstName').value,
+                            lastName: document.getElementById('lastName').value,
+                            email: document.getElementById('email').value,
+                            mobile: document.getElementById('mobile').value,
+                            inquiryType: document.getElementById('inquiryType').value,
+                            location: document.getElementById('location').value,
+                            message: document.getElementById('message').value,
+                            source: 'contact-us-page' // Add source field for controller
+                        };
+
+                        console.log('📝 Form data prepared:', formData);
+
+                        // Validate required fields
+                        if (!formData.firstName || !formData.lastName || !formData.email || !formData.mobile || !formData.message) {
+                            alert('Please fill in all required fields.');
+                            return;
+                        }
+
+                        // Show loading state
+                        const submitButton = document.querySelector('button[type="submit"]');
+                        const originalText = submitButton.innerHTML;
+                        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+                        submitButton.disabled = true;
+
+                        try {
+                            console.log('🚀 Sending AJAX request...');
+                            const response = await fetch('/contact-us', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify(formData)
+                            });
+
+                            console.log('📡 Response received:', response.status, response.ok);
+
+                            let data;
+                            try {
+                                data = await response.json();
+                            } catch (parseError) {
+                                console.error('❌ JSON parse error:', parseError);
+                                throw new Error('Invalid server response');
+                            }
+
+                            console.log('📄 Response data:', data);
+
+                            if (response.ok && data.success) {
+                                console.log('✅ Success! Showing modal...');
+                                // Show success modal
+                                showSuccessModal();
+                                // Reset form
+                                document.getElementById('contactForm').reset();
+                            } else {
+                                console.error('❌ Server returned error:', data);
+                                // Handle error
+                                alert(data.message || 'Something went wrong. Please try again.');
+                            }
+                        } catch (error) {
+                            console.error('❌ AJAX Error:', error);
+                            alert('Something went wrong. Please try again later.');
+                        } finally {
+                            // Restore button state
+                            submitButton.innerHTML = originalText;
+                            submitButton.disabled = false;
+                        }
+                    });
+
+                    // Modal functions
+                    function showSuccessModal() {
+                        console.log('🎯 showSuccessModal() called');
+                        const modal = document.getElementById('successModal');
+                        console.log('🔍 Modal element found:', modal);
+
+                        if (modal) {
+                            console.log('👀 Current modal classes:', modal.className);
+                            console.log('👀 Current modal style.display:', modal.style.display);
+
+                            // Remove hidden class and add flex display
+                            modal.classList.remove('hidden');
+                            modal.classList.add('flex');
+                            modal.style.display = 'flex'; // Force display
+
+                            console.log('✅ Modal classes after show:', modal.className);
+                            console.log('✅ Modal style.display after show:', modal.style.display);
+                            console.log('🎉 Modal should now be visible!');
+                        } else {
+                            console.error('❌ Modal element not found!');
+                        }
+                    }
+
+                    function closeSuccessModal() {
+                        console.log('❌ closeSuccessModal() called');
+                        const modal = document.getElementById('successModal');
+                        if (modal) {
+                            modal.classList.add('hidden');
+                            modal.classList.remove('flex');
+                            modal.style.display = 'none';
+                            console.log('✅ Modal hidden');
+                        }
+                    }
+                </script>
+
+
+
+    </body>
+
+    </html>

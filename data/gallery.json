@@ -1,0 +1,84 @@
+{
+    "galleryImages": [
+        {
+            "id": 1,
+            "category": "training",
+            "title": "Goat Training Workshop",
+            "description": "Professional training on goat farming techniques",
+            "cloudinaryId": "goats_image_kiyg5q",
+            "featured": true
+        },
+        {
+            "id": 2,
+            "category": "training",
+            "title": "Veterinary Training",
+            "description": "Health management and veterinary care training",
+            "cloudinaryId": "hen_image_gwilrb",
+            "featured": false
+        },
+        {
+            "id": 3,
+            "category": "training",
+            "title": "Breeding Techniques",
+            "description": "Advanced breeding and genetics workshop",
+            "cloudinaryId": "pig_image_bpdhyf",
+            "featured": false
+        },
+        {
+            "id": 4,
+            "category": "events",
+            "title": "Agricultural Fair",
+            "description": "Participating in state agricultural exhibition",
+            "cloudinaryId": "goats_image_kiyg5q",
+            "featured": true
+        },
+        {
+            "id": 5,
+            "category": "events",
+            "title": "Farmers Conference",
+            "description": "Annual farmers meet and knowledge sharing",
+            "cloudinaryId": "hen_image_gwilrb",
+            "featured": false
+        },
+        {
+            "id": 6,
+            "category": "farm",
+            "title": "Osmanabadi Goats",
+            "description": "Our premium Osmanabadi goat herd",
+            "cloudinaryId": "goats_image_kiyg5q",
+            "featured": true
+        },
+        {
+            "id": 7,
+            "category": "farm",
+            "title": "Farm Infrastructure",
+            "description": "Modern farm facilities and equipment",
+            "cloudinaryId": "pig_image_bpdhyf",
+            "featured": false
+        },
+        {
+            "id": 8,
+            "category": "farm",
+            "title": "Feeding Time",
+            "description": "Daily care and feeding routine",
+            "cloudinaryId": "hen_image_gwilrb",
+            "featured": false
+        },
+        {
+            "id": 9,
+            "category": "awards",
+            "title": "Excellence Award",
+            "description": "Recognition for outstanding livestock management",
+            "cloudinaryId": "goats_image_kiyg5q",
+            "featured": true
+        },
+        {
+            "id": 10,
+            "category": "awards",
+            "title": "Best Farmer Award",
+            "description": "State government recognition for agricultural excellence",
+            "cloudinaryId": "pig_image_bpdhyf",
+            "featured": false
+        }
+    ]
+}

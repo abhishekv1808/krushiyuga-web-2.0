@@ -1,0 +1,964 @@
+<%- include('../partials/head.ejs') %>
+
+    <body class="scroll-smooth">
+        <%- include('../partials/navbar.ejs') %>
+
+            <main>
+
+                <!-- Hero Section -->
+                <section id="home" class="hero-bg flex items-center relative overflow-hidden py-8 sm:py-12 lg:py-26">
+                    <div class="container mx-auto px-4 sm:px-6">
+                        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center pt-16 sm:pt-20 lg:pt-10">
+                            <div class="space-y-6 lg:space-y-8 text-center lg:text-left">
+                                <div class="inline-block">
+                                    <span
+                                        class="bg-emerald-100 text-emerald-800 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium">
+                                        🐄 Premium Livestock Solutions
+                                    </span>
+                                </div>
+
+                                <h1
+                                    class="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight text-shadow">
+                                    Modern
+                                    <span class="text-emerald-400">Animal</span>
+                                    <br>Husbandry
+                                </h1>
+
+                                <p
+                                    class="text-sm sm:text-base lg:text-lg text-gray-200 max-w-lg mx-auto lg:mx-0 text-shadow">
+                                    Experience the future of livestock management with our revolutionary multi-layer
+                                    farming,
+                                    premium breeding stock, and sustainable integrated farming practices.
+                                </p>
+
+                                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+                                    <a href="/products"
+                                        class="cursor-pointer bg-emerald-600 text-white px-4 sm:px-5 py-2 sm:py-3 rounded-lg sm:rounded-xl font-medium text-sm sm:text-base hover:bg-emerald-700 transition-colors pulse-glow">
+                                        Explore Products
+                                    </a>
+                                    <a href="/multi-layer-husbandry"
+                                        class="cursor-pointer border-2 border-white text-white px-4 sm:px-5 py-2 sm:py-3 rounded-lg sm:rounded-xl font-medium text-sm sm:text-base hover:bg-white hover:text-emerald-600 transition-colors">
+                                        Learn More
+                                    </a>
+                                </div>
+
+                                <div class="flex items-center justify-center lg:justify-start gap-4 sm:gap-6 pt-4">
+                                    <div class="text-center">
+                                        <div class="text-lg sm:text-xl lg:text-2xl font-bold text-white text-shadow">
+                                            800+</div>
+                                        <div class="text-xs text-gray-300 text-shadow">Happy Farmers</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-lg sm:text-xl lg:text-2xl font-bold text-white text-shadow">5+
+                                        </div>
+                                        <div class="text-xs text-gray-300 text-shadow">Species Integrated</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-lg sm:text-xl lg:text-2xl font-bold text-white text-shadow">15
+                                        </div>
+                                        <div class="text-xs text-gray-300 text-shadow">Years Experience</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="relative max-w-md mx-auto lg:max-w-lg">
+
+                                <div class="floating-animation relative -top-4 -left-65">
+                                    <div
+                                        class="lg:w-64 lg:h-64 sm:w-32 sm:h-32 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl transform rotate-12 opacity-100">
+                                        <img src="https://res.cloudinary.com/dobvyt9yw/image/upload/v1753427326/hen_image_gwilrb.png"
+                                            alt="" class="w-full h-full object-cover rounded-2xl">
+                                    </div>
+                                </div>
+
+                                <div class="floating-animation absolute -top-4 -right-65">
+                                    <div
+                                        class=" lg:w-64 lg:h-64 sm:w-32 sm:h-32 bg-gradient-to-br from-emerald-300 to-emerald-500 rounded-2xl transform -rotate-12 opacity-100">
+                                        <img src="https://res.cloudinary.com/dobvyt9yw/image/upload/v1753427325/pig_image_bpdhyf.png"
+                                            alt="" class="w-full h-full object-cover rounded-2xl">
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="floating-animation absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                                    <div
+                                        class="glass-effect lg:w-80 lg:h-80 sm:w-48 sm:h-48 rounded-2xl flex items-center justify-center">
+                                        <div class="text-center">
+                                            <img src="https://res.cloudinary.com/dobvyt9yw/image/upload/v1753427326/goats_image_kiyg5q.png"
+                                                alt="" class="w-full h-full object-cover rounded-2xl">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- About Section -->
+                <section id="about" class="py-12 sm:py-16 lg:py-20 bg-white">
+                    <div class="container mx-auto px-4 sm:px-6">
+                        <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                            <div class="space-y-4 lg:space-y-6 ">
+                                <div class="inline-block">
+                                    <span
+                                        class="bg-emerald-100 text-emerald-800 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium">
+                                        About Krushiyuga
+                                    </span>
+                                </div>
+
+                                <h2
+                                    class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
+                                    We Create the Best
+                                    <span class="gradient-text">Livestock</span>
+                                    Solutions
+                                </h2>
+
+                                <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
+                                    With over 15 years of experience in animal husbandry, Krushiyuga has become a
+                                    trusted name in
+                                    providing premium livestock, advanced breeding techniques, and sustainable farming
+                                    solutions.
+                                </p>
+
+                                <div class="space-y-6 lg:space-y-10">
+                                    <div class="flex items-start space-x-3 sm:space-x-4">
+                                        <div
+                                            class="w-7 h-7 sm:w-8 sm:h-8 bg-emerald-100 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+                                            <svg class="w-5 h-5 text-emerald-600" fill="currentColor"
+                                                viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="text-xl font-semibold text-gray-900">Pedigree Livestock</h3>
+                                            <p class="text-gray-600">Premium quality animals with verified pedigree and
+                                                health
+                                                certificates</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start space-x-4">
+                                        <div
+                                            class="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center mt-1">
+                                            <svg class="w-5 h-5 text-emerald-600" fill="currentColor"
+                                                viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="text-xl font-semibold text-gray-900">Modern Equipment</h3>
+                                            <p class="text-gray-600">State-of-the-art farming equipment for efficient
+                                                livestock
+                                                management</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start space-x-4">
+                                        <div
+                                            class="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center mt-1">
+                                            <svg class="w-5 h-5 text-emerald-600" fill="currentColor"
+                                                viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="text-xl font-semibold text-gray-900">Expert Consultation</h3>
+                                            <p class="text-gray-600">Professional guidance from experienced
+                                                veterinarians and livestock
+                                                specialists</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="relative">
+                                <div class="grid grid-cols-2 gap-4 lg:order-1">
+                                    <div class="space-y-4">
+                                        <div class="glass-effect rounded-2xl p-6 card-hover">
+                                            <div class="text-4xl mb-4">🐄</div>
+                                            <h3 class="font-semibold text-gray-900">Premium Cattle</h3>
+                                            <p class="text-sm text-gray-600">High-quality dairy and beef cattle</p>
+                                        </div>
+                                        <div class="glass-effect rounded-2xl p-6 card-hover">
+                                            <div class="text-4xl mb-4">🐐</div>
+                                            <h3 class="font-semibold text-gray-900">Goat Breeding</h3>
+                                            <p class="text-sm text-gray-600">Healthy goats for dairy and meat</p>
+                                        </div>
+                                    </div>
+                                    <div class="space-y-4 mt-8">
+                                        <div class="glass-effect rounded-2xl p-6 card-hover">
+                                            <div class="text-4xl mb-4">🐔</div>
+                                            <h3 class="font-semibold text-gray-900">Poultry Farm</h3>
+                                            <p class="text-sm text-gray-600">Fresh eggs and premium chicken</p>
+                                        </div>
+                                        <div class="glass-effect rounded-2xl p-6 card-hover">
+                                            <div class="text-4xl mb-4">🐑</div>
+                                            <h3 class="font-semibold text-gray-900">Sheep Farming</h3>
+                                            <p class="text-sm text-gray-600">Wool and mutton production</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Services Section -->
+                <section id="services" class="py-20 bg-gray-50">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center mb-16">
+                            <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Comprehensive Services</h2>
+                            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                                From livestock management to veterinary care, we provide end-to-end solutions
+                                for modern animal husbandry in India
+                            </p>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <!-- Service Card 1 -->
+                            <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                                    <i class="fas fa-cow text-brand-green text-2xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-4">Dairy Management</h3>
+                                <p class="text-gray-600 mb-6">
+                                    Complete dairy farm solutions including milking systems, cow comfort, and milk
+                                    quality
+                                    optimization.
+                                </p>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-center"><i
+                                            class="fas fa-check text-brand-green mr-2"></i>Automated Milking
+                                        Systems</li>
+                                    <li class="flex items-center"><i class="fas fa-check text-brand-green mr-2"></i>Milk
+                                        Quality Testing
+                                    </li>
+                                    <li class="flex items-center"><i class="fas fa-check text-brand-green mr-2"></i>Cow
+                                        Health
+                                        Monitoring</li>
+                                </ul>
+                            </div>
+
+                            <!-- Service Card 2 -->
+                            <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                                    <i class="fas fa-seedling text-blue-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-4">Feed & Nutrition</h3>
+                                <p class="text-gray-600 mb-6">
+                                    Scientific feed formulation and nutrition planning for optimal animal health and
+                                    productivity.
+                                </p>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-center"><i
+                                            class="fas fa-check text-brand-green mr-2"></i>Custom
+                                        Feed
+                                        Formulation</li>
+                                    <li class="flex items-center"><i
+                                            class="fas fa-check text-brand-green mr-2"></i>Nutritional Analysis
+                                    </li>
+                                    <li class="flex items-center"><i class="fas fa-check text-brand-green mr-2"></i>Feed
+                                        Quality Control
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Service Card 3 -->
+                            <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6">
+                                    <i class="fas fa-heartbeat text-red-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-4">Veterinary Care</h3>
+                                <p class="text-gray-600 mb-6">
+                                    Professional veterinary services with preventive care and emergency treatment
+                                    solutions.
+                                </p>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-center"><i
+                                            class="fas fa-check text-brand-green mr-2"></i>Regular
+                                        Health
+                                        Checkups</li>
+                                    <li class="flex items-center"><i
+                                            class="fas fa-check text-brand-green mr-2"></i>Vaccination Programs
+                                    </li>
+                                    <li class="flex items-center"><i
+                                            class="fas fa-check text-brand-green mr-2"></i>Emergency Treatment
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Service Card 4 -->
+                            <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                                    <i class="fas fa-mobile-alt text-purple-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-4">Smart Monitoring</h3>
+                                <p class="text-gray-600 mb-6">
+                                    IoT-based monitoring systems for real-time tracking of animal health and farm
+                                    conditions.
+                                </p>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-center"><i
+                                            class="fas fa-check text-brand-green mr-2"></i>Real-time Monitoring
+                                    </li>
+                                    <li class="flex items-center"><i class="fas fa-check text-brand-green mr-2"></i>Data
+                                        Analytics</li>
+                                    <li class="flex items-center"><i
+                                            class="fas fa-check text-brand-green mr-2"></i>Mobile
+                                        App Control
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Service Card 5 -->
+                            <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                                <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6">
+                                    <i class="fas fa-graduation-cap text-brand-yellow text-2xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-4">Training & Support</h3>
+                                <p class="text-gray-600 mb-6">
+                                    Comprehensive training programs for farmers to adopt modern livestock management
+                                    practices.
+                                </p>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-center"><i
+                                            class="fas fa-check text-brand-green mr-2"></i>On-site
+                                        Training
+                                    </li>
+                                    <li class="flex items-center"><i
+                                            class="fas fa-check text-brand-green mr-2"></i>Digital
+                                        Resources
+                                    </li>
+                                    <li class="flex items-center"><i class="fas fa-check text-brand-green mr-2"></i>24/7
+                                        Support</li>
+                                </ul>
+                            </div>
+
+                            <!-- Service Card 6 -->
+                            <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                                <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
+                                    <i class="fas fa-chart-bar text-indigo-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-4">Farm Analytics</h3>
+                                <p class="text-gray-600 mb-6">
+                                    Advanced analytics and reporting tools to optimize farm operations and maximize
+                                    profitability.
+                                </p>
+                                <ul class="space-y-2 text-sm text-gray-600">
+                                    <li class="flex items-center"><i
+                                            class="fas fa-check text-brand-green mr-2"></i>Performance Reports
+                                    </li>
+                                    <li class="flex items-center"><i class="fas fa-check text-brand-green mr-2"></i>Cost
+                                        Analysis</li>
+                                    <li class="flex items-center"><i class="fas fa-check text-brand-green mr-2"></i>ROI
+                                        Tracking</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Products Section -->
+
+                <!-- Statistics Section -->
+                <section class="py-20 bg-gradient-to-br from-emerald-600 to-emerald-800 text-white">
+                    <div class="container mx-auto px-6">
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                            <div class="text-center">
+                                <div class="text-5xl font-bold mb-2">500+</div>
+                                <div class="text-emerald-100">Happy Customers</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-5xl font-bold mb-2">10+</div>
+                                <div class="text-emerald-100">Livestock Breeds</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-5xl font-bold mb-2">15+</div>
+                                <div class="text-emerald-100">Years Experience</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-5xl font-bold mb-2">24/7</div>
+                                <div class="text-emerald-100">Support Available</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Testimonials Section -->
+                <section class="py-20 bg-gray-50">
+                    <div class="container mx-auto px-6">
+                        <div class="text-center mb-16">
+                            <span class="bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-sm font-medium">
+                                Testimonials
+                            </span>
+                            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-4">
+                                What Our <span class="gradient-text">Customers</span> Say
+                            </h2>
+                            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                                Hear from farmers and livestock owners who trust Krushiyuga for their needs
+                            </p>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <div class="bg-white rounded-3xl p-8 card-hover">
+                                <div class="flex items-center mb-6">
+                                    <div
+                                        class="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                                        S
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="font-semibold text-gray-900">Suresh Gowda</div>
+                                        <div class="text-sm text-gray-600">Dairy Farmer, Mysuru</div>
+                                    </div>
+                                </div>
+                                <div class="flex mb-4">
+                                    <span class="text-yellow-400">★★★★★</span>
+                                </div>
+                                <p class="text-gray-600">
+                                    "Krushiyuga alli namma Osmanabadi goats tagondaga, thumba chennagide. Their
+                                    multi-layer farming system really works! Very professional team and excellent
+                                    after-sales support."
+                                </p>
+                            </div>
+
+                            <div class="bg-white rounded-3xl p-8 card-hover">
+                                <div class="flex items-center mb-6">
+                                    <div
+                                        class="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                                        M
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="font-semibold text-gray-900">Manjunath Reddy</div>
+                                        <div class="text-sm text-gray-600">Integrated Farmer, Mandya</div>
+                                    </div>
+                                </div>
+                                <div class="flex mb-4">
+                                    <span class="text-yellow-400">★★★★★</span>
+                                </div>
+                                <p class="text-gray-600">
+                                    "Multi-layer farming concept superb! Fish pond, goat shed, hen house - everything
+                                    integrated. Water recycling, organic manure production - complete sustainable
+                                    system. Very satisfied with results!"
+                                </p>
+                            </div>
+
+                            <div class="bg-white rounded-3xl p-8 card-hover">
+                                <div class="flex items-center mb-6">
+                                    <div
+                                        class="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                                        R
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="font-semibold text-gray-900">Radhika Shetty</div>
+                                        <div class="text-sm text-gray-600">Poultry & Goat Owner, Udupi</div>
+                                    </div>
+                                </div>
+                                <div class="flex mb-4">
+                                    <span class="text-yellow-400">★★★★★</span>
+                                </div>
+                                <p class="text-gray-600">
+                                    "Started with 50 goats from Krushiyuga. Quality thumba chennagide - healthy animals,
+                                    good breeding rate. Their training program helped me understand modern farming
+                                    techniques. Highly recommend!"
+                                </p>
+                            </div>
+
+                            <div class="bg-white rounded-3xl p-8 card-hover">
+                                <div class="flex items-center mb-6">
+                                    <div
+                                        class="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                                        V
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="font-semibold text-gray-900">Venkatesh Naik</div>
+                                        <div class="text-sm text-gray-600">Fish & Goat Farmer, Shimoga</div>
+                                    </div>
+                                </div>
+                                <div class="flex mb-4">
+                                    <span class="text-yellow-400">★★★★★</span>
+                                </div>
+                                <p class="text-gray-600">
+                                    "Multi-layer farming concept superb! Fish pond, goat shed, hen house - everything
+                                    integrated. Water recycling, organic manure production - complete sustainable
+                                    system. Farm management became much easier!"
+                                </p>
+                            </div>
+
+                            <div class="bg-white rounded-3xl p-8 card-hover">
+                                <div class="flex items-center mb-6">
+                                    <div
+                                        class="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                                        L
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="font-semibold text-gray-900">Lakshmi Devi</div>
+                                        <div class="text-sm text-gray-600">Women Farmer, Chikmagalur</div>
+                                    </div>
+                                </div>
+                                <div class="flex mb-4">
+                                    <span class="text-yellow-400">★★★★★</span>
+                                </div>
+                                <p class="text-gray-600">
+                                    "As a woman entrepreneur, Krushiyuga gave me confidence to start goat farming. Their
+                                    support team visits regularly, provides technical guidance. My farm is now
+                                    well-established and running smoothly!"
+                                </p>
+                            </div>
+
+                            <div class="bg-white rounded-3xl p-8 card-hover">
+                                <div class="flex items-center mb-6">
+                                    <div
+                                        class="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                                        A
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="font-semibold text-gray-900">Ashok Kumar</div>
+                                        <div class="text-sm text-gray-600">Progressive Farmer, Hubli</div>
+                                    </div>
+                                </div>
+                                <div class="flex mb-4">
+                                    <span class="text-yellow-400">★★★★★</span>
+                                </div>
+                                <p class="text-gray-600">
+                                    "Technology integration with traditional farming - that's Krushiyuga's strength. IoT
+                                    monitoring, health tracking, feed optimization - everything scientific. My farm
+                                    operations have become much more efficient!"
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Features Section -->
+                <section class="py-20 bg-white">
+                    <div class="container mx-auto px-6">
+                        <div class="grid lg:grid-cols-2 gap-16 items-center">
+                            <div class="space-y-6">
+                                <div class="inline-block">
+                                    <span
+                                        class="bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-sm font-medium">
+                                        Why Choose Us
+                                    </span>
+                                </div>
+
+                                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                                    Advanced <span class="gradient-text">Technology</span>
+                                    <br>Meets Traditional Farming
+                                </h2>
+
+                                <p class="text-lg text-gray-600">
+                                    We combine time-tested farming practices with cutting-edge technology to deliver
+                                    exceptional results
+                                    for modern livestock operations.
+                                </p>
+
+                                <div class="space-y-6">
+                                    <div class="flex items-start space-x-6">
+                                        <div
+                                            class="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center">
+                                            <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Quality Assurance</h3>
+                                            <p class="text-gray-600">Every animal undergoes rigorous health checks and
+                                                quality
+                                                assessments before delivery</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start space-x-6">
+                                        <div
+                                            class="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center">
+                                            <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Fast Delivery</h3>
+                                            <p class="text-gray-600">Quick and safe transportation of livestock with
+                                                specialized
+                                                vehicles and trained handlers</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start space-x-6">
+                                        <div
+                                            class="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center">
+                                            <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 109.75 9.75c0-1.856-.513-3.596-1.407-5.096" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="text-xl font-semibold text-gray-900 mb-2">24/7 Support</h3>
+                                            <p class="text-gray-600">Round-the-clock customer support and emergency
+                                                veterinary
+                                                assistance</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="relative">
+                                <div
+                                    class="bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-3xl p-8 text-white">
+                                    <h3 class="text-2xl font-bold mb-6">Modern Farm Management</h3>
+                                    <div class="space-y-4">
+                                        <div class="flex items-center justify-between glass-effect rounded-xl p-4">
+                                            <span>Milk Production</span>
+                                            <span class="font-bold">+40%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between glass-effect rounded-xl p-4">
+                                            <span>Feed Efficiency</span>
+                                            <span class="font-bold">+25%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between glass-effect rounded-xl p-4">
+                                            <span>Health Score</span>
+                                            <span class="font-bold">98%</span>
+                                        </div>
+                                        <div class="flex items-center justify-between glass-effect rounded-xl p-4">
+                                            <span>Breeding Success</span>
+                                            <span class="font-bold">95%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Multi-Layer Farming Innovation Section -->
+                <section class="py-20 bg-gradient-to-br from-emerald-50 to-blue-50  ">
+                    <div class="container max-w-8xl mx-auto px-6">
+                        <div class="grid lg:grid-cols-2 gap-16 items-center">
+                            <div class="space-y-6">
+                                <div class="inline-block">
+                                    <span
+                                        class="bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-sm font-medium">
+                                        🚀 Innovation
+                                    </span>
+                                </div>
+
+                                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                                    Revolutionary
+                                    <span class="gradient-text">Multi-Layer</span>
+                                    Farming Model
+                                </h2>
+
+                                <p class="text-lg text-gray-600">
+                                    Experience our groundbreaking integrated farming system that maximizes returns by
+                                    rearing
+                                    goats, hens, pigs, fish, and pearl oysters in one ecosystem.
+                                </p>
+
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-white rounded-xl p-4 shadow-lg">
+                                        <div class="text-2xl font-bold text-emerald-600 mb-1">₹6L</div>
+                                        <div class="text-sm text-gray-600">Monthly Income Potential</div>
+                                    </div>
+                                    <div class="bg-white rounded-xl p-4 shadow-lg">
+                                        <div class="text-2xl font-bold text-emerald-600 mb-1">28.8%</div>
+                                        <div class="text-sm text-gray-600">Maximum ROI</div>
+                                    </div>
+                                    <div class="bg-white rounded-xl p-4 shadow-lg">
+                                        <div class="text-2xl font-bold text-emerald-600 mb-1">5+</div>
+                                        <div class="text-sm text-gray-600">Animal Species</div>
+                                    </div>
+                                    <div class="bg-white rounded-xl p-4 shadow-lg">
+                                        <div class="text-2xl font-bold text-emerald-600 mb-1">2</div>
+                                        <div class="text-sm text-gray-600">Investment Models</div>
+                                    </div>
+                                </div>
+
+                                <div class="pt-4">
+                                    <a href="/multi-layer-husbandry"
+                                        class="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center space-x-2">
+                                        <span>Explore Multi-Layer Farming</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="relative">
+                                <!-- Simplified and enhanced grid layout for better visibility -->
+                                <div class="space-y-6">
+                                    <!-- First row: Goats as hero image -->
+                                    <div class="w-full">
+                                        <div
+                                            class="rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
+                                            <div class="relative group">
+                                                <img src="https://res.cloudinary.com/dobvyt9yw/image/upload/v1753427326/goats_image_kiyg5q.png"
+                                                    alt="Goats" class="w-full h-48 lg:h-56 object-cover" loading="lazy" ">
+                                            <div
+                                                class=" absolute bottom-4 left-4 text-white font-semibold text-lg
+                                                    bg-black bg-opacity-70 px-4 py-2 rounded-lg">
+                                                🐐 Goats - Primary Livestock
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Second row: Hens and Pigs -->
+                                <div class="grid grid-cols-2 gap-6">
+
+                                    <div
+                                        class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                                        <div class="relative group">
+                                            <img src="https://res.cloudinary.com/dobvyt9yw/image/upload/v1753427326/hen_image_gwilrb.png"
+                                                alt="Hens" class="w-full h-26 lg:h-30 object-cover" loading="lazy"
+                                                onerror="this.src='https://via.placeholder.com/600x300/10b981/ffffff?text=Hens'; this.style.backgroundColor='#10b981';">
+
+                                            <div
+                                                class="absolute bottom-3 left-3 text-white font-medium text-sm bg-black bg-opacity-70 px-3 py-1 rounded">
+                                                🐔 Hens
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                                        <div class="relative group">
+                                            <img src="https://res.cloudinary.com/dobvyt9yw/image/upload/v1753427325/pig_image_bpdhyf.png"
+                                                alt="Pigs" class="w-full h-26 lg:h-30 object-cover" loading="lazy"
+                                                onerror="this.src='https://via.placeholder.com/600x300/10b981/ffffff?text=Pigs'; this.style.backgroundColor='#10b981';">
+                                            <div
+                                                class="absolute bottom-3 left-3 text-white font-medium text-sm bg-black bg-opacity-70 px-3 py-1 rounded">
+                                                🐷 Pigs
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Third row: Fish and Pearl Oysters -->
+                                <div class="grid grid-cols-2 gap-6">
+                                    <div
+                                        class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                                        <div class="relative group">
+                                            <img src="https://res.cloudinary.com/dobvyt9yw/image/upload/v1753528106/Fish_Farming_weu4rw.png"
+                                                alt="Fish" class="w-full h-36 lg:h-40 object-cover" loading="lazy"
+                                                onerror="this.src='https://via.placeholder.com/600x300/10b981/ffffff?text=Fish'; this.style.backgroundColor='#10b981';">
+
+                                            <div
+                                                class="absolute bottom-3 left-3 text-white font-medium text-sm bg-black bg-opacity-70 px-3 py-1 rounded">
+                                                🐟 Fish Farming
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                                        <div class="relative group">
+                                            <img src="https://res.cloudinary.com/dobvyt9yw/image/upload/v1753528081/Pearl_Farming_vupoc6.png"
+                                                alt="Pearl Oysters" class="w-full h-36 lg:h-40 object-cover"
+                                                loading="lazy"
+                                                onerror="this.src='https://via.placeholder.com/600x300/10b981/ffffff?text=Oysters'; this.style.backgroundColor='#10b981';">
+
+                                            <div
+                                                class="absolute bottom-3 left-3 text-white font-medium text-sm bg-black bg-opacity-70 px-3 py-1 rounded">
+                                                🦪 Pearl Oysters
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- Enhanced Floating Info Card -->
+                            <div
+                                class="absolute -top-4 -right-4 bg-gradient-to-br from-white to-emerald-50 rounded-xl p-4 shadow-xl border border-emerald-100 z-10">
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-emerald-600 mb-1">100%</div>
+                                    <div class="text-xs font-medium text-emerald-700">Sustainable</div>
+                                    <div class="text-xs text-gray-500 mt-1">Ecosystem</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+
+                <section id="about" class="py-20 bg-white">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="grid lg:grid-cols-2 gap-16 items-center">
+                            <div>
+                                <h2 class="text-4xl font-bold text-gray-900 mb-6">
+                                    Leading the Future of
+                                    <span class="text-brand-green">Animal Husbandry</span> in India
+                                </h2>
+                                <p class="text-lg text-gray-600 mb-8">
+                                    Based in Bangalore, Krushiyuga is at the forefront of modernizing India's livestock
+                                    industry.
+                                    We combine traditional knowledge with cutting-edge technology to help farmers
+                                    achieve
+                                    sustainable and profitable animal husbandry operations.
+                                </p>
+
+                                <div class="grid grid-cols-2 gap-8 mb-8">
+                                    <div class="text-center">
+                                        <div class="text-3xl font-bold text-brand-green mb-2">5000+</div>
+                                        <div class="text-gray-600">Farmers Served</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-3xl font-bold text-brand-green mb-2">98%</div>
+                                        <div class="text-gray-600">Success Rate</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-3xl font-bold text-brand-green mb-2">50+</div>
+                                        <div class="text-gray-600">Expert Team</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-3xl font-bold text-brand-green mb-2">24/7</div>
+                                        <div class="text-gray-600">Support</div>
+                                    </div>
+                                </div>
+
+                                <button
+                                    class="bg-brand-gradient text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-opacity">
+                                    Learn More About Us
+                                </button>
+                            </div>
+
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                    alt="Modern Livestock Farm" class="rounded-2xl shadow-xl w-full h-96 object-cover">
+
+                                <div class="absolute inset-0 bg-brand-gradient opacity-20 rounded-2xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Section -->
+                <section id="contact" class="py-20 bg-gray-50">
+                    <div class="container mx-auto px-6">
+                        <div class="text-center mb-16">
+                            <span class="bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-sm font-medium">
+                                Get in Touch
+                            </span>
+                            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-4">
+                                Ready to Transform Your <span class="gradient-text">Farm</span>?
+                            </h2>
+                            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                                Contact us today to discuss your livestock needs and discover how we can help you
+                                succeed
+                            </p>
+                        </div>
+
+                        <div class="grid lg:grid-cols-2 gap-16">
+                            <div class="space-y-8">
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Visit Our Office</h3>
+                                        <p class="text-gray-600">
+                                            DRLS Plaza Union Bank Building, No. 39 & 1479, Tumkur Rd, Vidya Nagar,<br>
+                                            T. Dasarahalli, Bengaluru 560057
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Call Us</h3>
+                                        <p class="text-gray-600">
+                                            +91 99000 77949, +91 99000 77948<br>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3 8l7.89 7.89a2 2 0 002.83 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Email Us</h3>
+                                        <p class="text-gray-600">
+                                            nammakrushiyuga@gmail.com<br>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white rounded-3xl p-8">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
+                                <form action="/contact-us" method="POST" class="space-y-6">
+                                    <div class="grid md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">First
+                                                Name</label>
+                                            <input type="text" name="firstName" required
+                                                class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-transparent">
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Last
+                                                Name</label>
+                                            <input type="text" name="lastName" required
+                                                class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-transparent">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                        <input type="email" name="email" required
+                                            class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-transparent">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                                        <input type="tel" name="phone" required
+                                            class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-transparent">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                                        <textarea rows="4" name="message" required
+                                            class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-transparent"></textarea>
+                                    </div>
+                                    <button type="submit"
+                                        class="w-full bg-emerald-600 text-white py-3 rounded-xl font-semibold hover:bg-emerald-700 transition-colors">
+                                        Send Message
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- Footer -->
+            <%- include('../partials/footer.ejs')%>
+
+    </body>
+
+    </html>

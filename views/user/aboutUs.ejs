@@ -1,0 +1,454 @@
+<%- include('../partials/head.ejs')%>
+
+    <body class="scroll-smooth">
+
+        <%- include('../partials/navbar.ejs')%>
+
+            <main>
+
+                <section class="relative about-gradient-bg about-bg-pattern py-30 overflow-hidden">
+                    <div class="absolute inset-0 bg-black opacity-10"></div>
+                    <div class="container mx-auto px-4 relative z-10">
+                        <div class="text-center text-white">
+                            <h1 class="text-4xl md:text-5xl font-bold mb-6 about-fade-in">
+                                About <span class="text-yellow-300">Krushiyuga</span>
+                            </h1>
+                            <p class="text-xl md:text-2xl mb-8 about-fade-in max-w-3xl mx-auto"
+                                style="animation-delay: 0.2s;">
+                                Pioneering Excellence in Goat Farming & Agricultural Education
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center about-fade-in"
+                                style="animation-delay: 0.4s;">
+                                <button
+                                    class="bg-white text-green-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300 shadow-lg">
+                                    <i class="fas fa-play mr-2"></i>Watch Our Story
+                                </button>
+                                <button
+                                    class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-green-600 transition duration-300">
+                                    <i class="fas fa-download mr-2"></i>Download Brochure
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Elements -->
+                    <div class="absolute top-10 right-10 text-white opacity-20 about-floating-animation">
+                        <i class="fas fa-leaf text-4xl"></i>
+                    </div>
+                    <div class="absolute bottom-10 left-10 text-white opacity-20 about-floating-animation"
+                        style="animation-delay: 1s;">
+                        <i class="fas fa-seedling text-4xl"></i>
+                    </div>
+                </section>
+
+                <!-- About Story Section -->
+                <section class="py-16 bg-white">
+                    <div class="container mx-auto px-4">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            <div class="about-fade-in">
+                                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 about-section-title">
+                                    Our Story
+                                </h2>
+                                <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                                    Founded with a vision to revolutionize goat farming in India, Krushiyuga has been at
+                                    the forefront
+                                    of agricultural excellence for over two decades. Our journey began with a simple
+                                    belief: that
+                                    quality breeding and proper education can transform rural livelihoods.
+                                </p>
+                                <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                                    Starting from a small farm in Karnataka, we have grown into a leading institution
+                                    that combines
+                                    traditional wisdom with modern scientific approaches. Our commitment to excellence
+                                    has earned us
+                                    recognition from government bodies and agricultural institutions across the country.
+                                </p>
+                                <div class="grid grid-cols-2 gap-6 mt-8">
+                                    <div class="about-counter-item">
+                                        <div class="text-3xl font-bold text-green-600 mb-2">25+</div>
+                                        <p class="text-gray-600 font-medium">Years of Experience</p>
+                                    </div>
+                                    <div class="about-counter-item">
+                                        <div class="text-3xl font-bold text-green-600 mb-2">10K+</div>
+                                        <p class="text-gray-600 font-medium">Farmers Trained</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="about-fade-in" style="animation-delay: 0.2s;">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <img src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                                        alt="Dairy Farming" class="rounded-lg shadow-lg about-card-hover"
+                                        onerror="this.src='https://via.placeholder.com/400x300/10b981/ffffff?text=Dairy+Farm'">
+                                    <img src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                                        alt="Poultry Farming" class="rounded-lg shadow-lg about-card-hover mt-8"
+                                        onerror="this.src='https://via.placeholder.com/400x300/10b981/ffffff?text=Poultry+Farm'">
+                                    <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                                        alt="Agricultural Training" class="rounded-lg shadow-lg about-card-hover -mt-8"
+                                        onerror="this.src='https://via.placeholder.com/400x300/10b981/ffffff?text=Farm+Training'">
+                                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                                        alt="Livestock Care" class="rounded-lg shadow-lg about-card-hover"
+                                        onerror="this.src='https://via.placeholder.com/400x300/10b981/ffffff?text=Livestock+Care'">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Mission Vision Section -->
+                <section class="py-16 bg-gray-50">
+                    <div class="container mx-auto px-4">
+                        <div class="text-center mb-12">
+                            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 about-section-title">
+                                Mission & Vision
+                            </h2>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="about-value-card about-fade-in">
+                                <div class="text-4xl text-green-600 mb-6">
+                                    <i class="fas fa-bullseye"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Mission</h3>
+                                <p class="text-gray-600 leading-relaxed">
+                                    To empower farmers with knowledge, quality livestock, and sustainable farming
+                                    practices that enhance
+                                    rural livelihoods while preserving indigenous breeds and promoting agricultural
+                                    excellence.
+                                </p>
+                            </div>
+                            <div class="about-value-card about-fade-in" style="animation-delay: 0.2s;">
+                                <div class="text-4xl text-green-600 mb-6">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Vision</h3>
+                                <p class="text-gray-600 leading-relaxed">
+                                    To become India's leading agricultural institution, recognized globally for our
+                                    contributions to
+                                    sustainable farming, breed development, and rural transformation through innovation
+                                    and education.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Core Values Section -->
+                <section class="py-16 bg-white">
+                    <div class="container mx-auto px-4">
+                        <div class="text-center mb-12">
+                            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 about-section-title">
+                                Our Core Values
+                            </h2>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div class="about-value-card about-fade-in">
+                                <div class="text-4xl text-green-600 mb-6">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-4">Integrity</h3>
+                                <p class="text-gray-600">
+                                    We maintain the highest standards of honesty and transparency in all our dealings
+                                    with farmers and
+                                    partners.
+                                </p>
+                            </div>
+                            <div class="about-value-card about-fade-in" style="animation-delay: 0.1s;">
+                                <div class="text-4xl text-green-600 mb-6">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-4">Innovation</h3>
+                                <p class="text-gray-600">
+                                    We continuously embrace new technologies and methods to improve farming practices
+                                    and outcomes.
+                                </p>
+                            </div>
+                            <div class="about-value-card about-fade-in" style="animation-delay: 0.2s;">
+                                <div class="text-4xl text-green-600 mb-6">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-4">Sustainability</h3>
+                                <p class="text-gray-600">
+                                    We promote eco-friendly practices that protect the environment for future
+                                    generations.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Team Section -->
+                <section class="py-16 bg-white">
+                    <div class="container mx-auto px-4">
+                        <div class="text-center mb-12">
+                            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 about-section-title">
+                                Our Leadership Team
+                            </h2>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8  ">
+                            <div class="about-team-card about-fade-in ">
+                                <img src="https://res.cloudinary.com/dobvyt9yw/image/upload/v1753441540/Madhu_sir_image_yqlk1i.png"
+                                    alt="Founder" class="w-full h-125 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Madhu Huliyar</h3>
+                                    <p class="text-green-600 font-medium mb-3">Founder & CEO</p>
+                                    <p class="text-gray-600 text-sm">
+                                        Pioneer in goat farming with 15+ years of experience in livestock management and
+                                        agricultural
+                                        education.
+                                    </p>
+                                </div>
+                                <div class="about-team-overlay text-white">
+                                    <p class="text-sm">
+                                        "My vision is to transform rural livelihoods through quality education and
+                                        sustainable farming
+                                        practices."
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="about-team-card about-fade-in" style="animation-delay: 0.1s;">
+                                <img src="https://res.cloudinary.com/dobvyt9yw/image/upload/v1753441816/anoop_image_c3xr5g.png"
+                                    alt="Veterinarian" class="w-full h-125 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Anoop C N</h3>
+                                    <p class="text-green-600 font-medium mb-3">Co-founder</p>
+                                    <p class="text-gray-600 text-sm">
+                                        Expert in livestock health management with specialized knowledge in goat
+                                        diseases and breeding.
+                                    </p>
+                                </div>
+                                <div class="about-team-overlay text-white">
+                                    <p class="text-sm">
+                                        "Healthy animals are the foundation of successful farming. Prevention is always
+                                        better than
+                                        cure."
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+
+                <!-- Call to Action -->
+                <section class="about-gradient-bg py-16">
+                    <div class="container mx-auto px-4 text-center">
+                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Transform Your Farming
+                            Journey?</h3>
+                        <p class="text-xl text-white mb-8 max-w-2xl mx-auto">
+                            Join thousands of successful farmers who have revolutionized their livelihoods with
+                            Krushiyuga's expert
+                            guidance and quality livestock.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <button
+                                class="bg-white text-green-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300 shadow-lg">
+                                <i class="fas fa-phone mr-2"></i>Contact Us
+                            </button>
+                            <button
+                                class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-green-600 transition duration-300">
+                                <i class="fas fa-calendar mr-2"></i>Schedule Visit
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- Footer -->
+
+            <%- include('../partials/footer.ejs')%>
+
+
+                <script>
+                    // Intersection Observer for fade-in animation
+                    const aboutObserverOptions = {
+                        threshold: 0.1,
+                        rootMargin: '0px 0px -50px 0px'
+                    };
+
+                    const aboutObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('animate');
+                            }
+                        });
+                    }, aboutObserverOptions);
+
+                    document.querySelectorAll('.about-fade-in').forEach(el => {
+                        aboutObserver.observe(el);
+                    });
+
+                    // Counter Animation
+                    const aboutCounterItems = document.querySelectorAll('.about-counter-item');
+
+                    const aboutAnimateCounter = (element, target) => {
+                        let count = 0;
+                        const increment = target / 100;
+                        const timer = setInterval(() => {
+                            count += increment;
+                            if (count >= target) {
+                                count = target;
+                                clearInterval(timer);
+                            }
+                            element.textContent = Math.floor(count) + '+';
+                        }, 20);
+                    };
+
+                    const aboutCounterObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                const counterElement = entry.target.querySelector('.text-3xl');
+                                const text = counterElement.textContent;
+                                const target = parseInt(text.replace(/\D/g, ''));
+
+                                if (target) {
+                                    aboutAnimateCounter(counterElement, target);
+                                }
+                            }
+                        });
+                    }, aboutObserverOptions);
+
+                    aboutCounterItems.forEach(item => {
+                        aboutCounterObserver.observe(item);
+                    });
+
+                    // Smooth scrolling for anchor links
+                    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                        anchor.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            const target = document.querySelector(this.getAttribute('href'));
+                            if (target) {
+                                target.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }
+                        });
+                    });
+
+                    // Mobile menu toggle
+                    const aboutMobileMenuBtn = document.querySelector('.md\\:hidden button');
+                    const aboutMobileMenu = document.querySelector('.md\\:flex');
+
+                    if (aboutMobileMenuBtn) {
+                        aboutMobileMenuBtn.addEventListener('click', () => {
+                            aboutMobileMenu.classList.toggle('hidden');
+                        });
+                    }
+
+                    // Parallax effect for floating elements
+                    window.addEventListener('scroll', () => {
+                        const scrolled = window.pageYOffset;
+                        const parallaxElements = document.querySelectorAll('.about-floating-animation');
+
+                        parallaxElements.forEach(element => {
+                            const speed = 0.5;
+                            element.style.transform = `translateY(${scrolled * speed}px)`;
+                        });
+                    });
+
+                    // Add loading animation
+                    window.addEventListener('load', () => {
+                        document.body.classList.add('loaded');
+                    });
+
+                    // Progressive image loading
+                    const aboutImages = document.querySelectorAll('img');
+                    const aboutImageObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                const img = entry.target;
+                                img.style.opacity = '1';
+                                img.style.transform = 'scale(1)';
+                                aboutImageObserver.unobserve(img);
+                            }
+                        });
+                    });
+
+                    aboutImages.forEach(img => {
+                        img.style.opacity = '0';
+                        img.style.transform = 'scale(0.8)';
+                        img.style.transition = 'all 0.3s ease';
+                        aboutImageObserver.observe(img);
+                    });
+
+                    // Add hover effects for interactive elements
+                    const aboutInteractiveElements = document.querySelectorAll('.about-card-hover, .about-team-card, .about-value-card');
+
+                    aboutInteractiveElements.forEach(element => {
+                        element.addEventListener('mouseenter', () => {
+                            element.style.transform = 'translateY(-8px)';
+                        });
+
+                        element.addEventListener('mouseleave', () => {
+                            element.style.transform = 'translateY(0)';
+                        });
+                    });
+
+                    // Testimonial rotation (optional enhancement)
+                    const aboutTestimonials = document.querySelectorAll('.about-testimonial-card');
+                    let aboutCurrentTestimonial = 0;
+
+                    const aboutRotateTestimonials = () => {
+                        aboutTestimonials.forEach((testimonial, index) => {
+                            if (index === aboutCurrentTestimonial) {
+                                testimonial.style.transform = 'scale(1.05)';
+                                testimonial.style.zIndex = '10';
+                            } else {
+                                testimonial.style.transform = 'scale(1)';
+                                testimonial.style.zIndex = '1';
+                            }
+                        });
+
+                        aboutCurrentTestimonial = (aboutCurrentTestimonial + 1) % aboutTestimonials.length;
+                    };
+
+                    // Rotate testimonials every 5 seconds
+                    setInterval(aboutRotateTestimonials, 5000);
+
+                    // Add scroll-triggered animations for milestone cards
+                    const aboutMilestoneCards = document.querySelectorAll('.about-milestone-card');
+
+                    const aboutMilestoneObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.style.opacity = '1';
+                                entry.target.style.transform = 'translateX(0)';
+                            }
+                        });
+                    }, aboutObserverOptions);
+
+                    aboutMilestoneCards.forEach((card, index) => {
+                        card.style.opacity = '0';
+                        card.style.transform = index % 2 === 0 ? 'translateX(-50px)' : 'translateX(50px)';
+                        card.style.transition = 'all 0.6s ease';
+                        aboutMilestoneObserver.observe(card);
+                    });
+
+                    // Add dynamic background gradient
+                    const aboutGradientSections = document.querySelectorAll('.about-gradient-bg');
+
+                    aboutGradientSections.forEach(section => {
+                        section.addEventListener('mousemove', (e) => {
+                            const rect = section.getBoundingClientRect();
+                            const x = e.clientX - rect.left;
+                            const y = e.clientY - rect.top;
+
+                            const centerX = rect.width / 2;
+                            const centerY = rect.height / 2;
+
+                            const deltaX = (x - centerX) / centerX;
+                            const deltaY = (y - centerY) / centerY;
+
+                            section.style.background = `linear-gradient(${135 + deltaX * 10}deg, #10b981 ${0 + deltaY * 5}%, #059669 ${100 - deltaY * 5}%)`;
+                        });
+
+                        section.addEventListener('mouseleave', () => {
+                            section.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+                        });
+                    });
+                </script>
+
+    </body>
+
+    </html>

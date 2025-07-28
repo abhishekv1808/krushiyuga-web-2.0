@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png?v=3" data-next-head="">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/output.css?v=<%= Date.now() %>">
+    <link rel="stylesheet" href="/gallery.css?v=<%= Date.now() %>">
+
+
+
+    <% if (process.env.NODE_ENV !=='production' ) { %>
+        <!-- Development mode: Add refresh helper -->
+        <script src="/js/refreshHelper.js"></script>
+        <% } %>
+
+            <style>
+                .backdrop-blur-md {
+                    backdrop-filter: blur(12px);
+                    -webkit-backdrop-filter: blur(12px);
+                }
+
+                /* Mobile Menu Styles */
+                .mobile-menu {
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.3s ease-in-out;
+                }
+
+                .mobile-menu.active {
+                    max-height: 500px;
+                }
+
+                /* Improved mobile responsiveness */
+                @media (max-width: 640px) {
+                    .container {
+                        padding-left: 1rem;
+                        padding-right: 1rem;
+                    }
+
+                    /* Mobile Typography - Proper sizes */
+                    .text-6xl,
+                    .text-7xl {
+                        font-size: 1.875rem !important;
+                        /* 30px */
+                        line-height: 2.25rem !important;
+                    }
+
+                    .text-5xl {
+                        font-size: 1.75rem !important;
+                        /* 28px */
+                        line-height: 2rem !important;
+                    }
+
+                    .text-4xl {
+                        font-size: 1.5rem !important;
+                        /* 24px */
+                        line-height: 2rem !important;
+                    }
+
+                    .text-3xl {
+                        font-size: 1.25rem !important;
+                        /* 20px */
+                        line-height: 1.75rem !important;
+                    }
+
+                    .text-2xl {
+                        font-size: 1.125rem !important;
+                        /* 18px */
+                        line-height: 1.75rem !important;
+                    }
+
+                    .text-xl {
+                        font-size: 1rem !important;
+                        /* 16px */
+                        line-height: 1.5rem !important;
+                    }
+
+                    .text-lg {
+                        font-size: 0.875rem !important;
+                        /* 14px */
+                        line-height: 1.25rem !important;
+                    }
+
+                    /* Better spacing for mobile */
+                    .py-20,
+                    .py-24,
+                    .py-32 {
+                        padding-top: 2.5rem !important;
+                        /* 40px */
+                        padding-bottom: 2.5rem !important;
+                    }
+
+                    .py-16 {
+                        padding-top: 2rem !important;
+                        /* 32px */
+                        padding-bottom: 2rem !important;
+                    }
+
+                    .mb-16,
+                    .mt-16 {
+                        margin-top: 1.5rem !important;
+                        margin-bottom: 1.5rem !important;
+                    }
+
+                    .mb-12,
+                    .mt-12 {
+                        margin-top: 1rem !important;
+                        margin-bottom: 1rem !important;
+                    }
+
+                    .gap-8 {
+                        gap: 1rem !important;
+                    }
+
+                    .gap-6 {
+                        gap: 0.75rem !important;
+                    }
+
+                    .space-y-6>*+* {
+                        margin-top: 1rem !important;
+                    }
+
+                    .space-y-4>*+* {
+                        margin-top: 0.75rem !important;
+                    }
+
+                    /* Card improvements for mobile */
+                    .p-8 {
+                        padding: 1rem !important;
+                    }
+
+                    .p-6 {
+                        padding: 0.75rem !important;
+                    }
+
+                    .rounded-3xl {
+                        border-radius: 1rem !important;
+                    }
+
+                    .rounded-2xl {
+                        border-radius: 0.75rem !important;
+                    }
+
+                    /* Button improvements */
+                    .px-8 {
+                        padding-left: 1.5rem !important;
+                        padding-right: 1.5rem !important;
+                    }
+
+                    .py-4 {
+                        padding-top: 0.75rem !important;
+                        padding-bottom: 0.75rem !important;
+                    }
+
+                    /* Grid improvements */
+                    .grid-cols-3 {
+                        grid-template-columns: 1fr !important;
+                        gap: 0.75rem !important;
+                    }
+
+                    .grid-cols-2 {
+                        grid-template-columns: 1fr !important;
+                        gap: 0.75rem !important;
+                    }
+
+                    /* Hide decorative elements on mobile */
+                    .absolute.w-24,
+                    .absolute.w-28 {
+                        display: none !important;
+                    }
+
+                    /* Better line height */
+                    h1,
+                    h2,
+                    h3 {
+                        line-height: 1.3 !important;
+                        word-break: break-word;
+                    }
+
+                    /* Prevent horizontal scroll */
+                    body {
+                        overflow-x: hidden;
+                    }
+
+                    /* Better image responsiveness */
+                    img {
+                        max-width: 100%;
+                        height: auto;
+                    }
+
+                    /* Mobile navigation improvements */
+                    .hero-mobile-spacing {
+                        padding-top: 5rem;
+                        padding-bottom: 3rem;
+                    }
+                }
+
+                @media (min-width: 641px) and (max-width: 768px) {
+
+                    /* Small tablets */
+                    .text-6xl,
+                    .text-7xl {
+                        font-size: 2.25rem !important;
+                        /* 36px */
+                        line-height: 2.5rem !important;
+                    }
+
+                    .text-5xl {
+                        font-size: 2rem !important;
+                        /* 32px */
+                        line-height: 2.25rem !important;
+                    }
+
+                    .text-4xl {
+                        font-size: 1.75rem !important;
+                        /* 28px */
+                        line-height: 2rem !important;
+                    }
+
+                    .grid-cols-3 {
+                        grid-template-columns: repeat(2, 1fr) !important;
+                    }
+                }
+
+                /* Tablet adjustments */
+                @media (min-width: 641px) and (max-width: 1024px) {
+                    .container {
+                        padding-left: 2rem;
+                        padding-right: 2rem;
+                    }
+                }
+
+                /* Custom animations for mobile */
+                @keyframes mobile-fade-in {
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                .mobile-fade-in {
+                    animation: mobile-fade-in 0.6s ease-out;
+                }
+            </style>
+            <title>
+                <%= pageTitle%>
+            </title>
+
+            <script>
+                function toggleMobileMenu() {
+                    const menu = document.getElementById('mobileMenu');
+                    menu.classList.toggle('active');
+                }
+
+                function toggleMobileDropdown() {
+                    const dropdown = document.getElementById('mobileDropdown');
+                    const icon = document.getElementById('mobileDropdownIcon');
+
+                    if (dropdown.style.maxHeight === '0px' || dropdown.style.maxHeight === '') {
+                        dropdown.style.maxHeight = '100px';
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        dropdown.style.maxHeight = '0px';
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                }
+
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function (event) {
+                    const menu = document.getElementById('mobileMenu');
+                    const button = event.target.closest('button');
+
+                    if (!button && menu.classList.contains('active')) {
+                        menu.classList.remove('active');
+                    }
+                });
+
+                // Add hover effect to desktop dropdown chevron
+                document.querySelector('.dropdown').addEventListener('mouseenter', function () {
+                    this.querySelector('.fa-chevron-down').style.transform = 'rotate(180deg)';
+                });
+
+                document.querySelector('.dropdown').addEventListener('mouseleave', function () {
+                    this.querySelector('.fa-chevron-down').style.transform = 'rotate(0deg)';
+                });
+            </script>
+
+            <style>
+                @keyframes slide-down {
+                    0% {
+                        opacity: 0;
+                        transform: translateY(-10px);
+                    }
+
+                    100% {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                .animate-slide-down {
+                    animation: slide-down 0.3s ease-out;
+                }
+            </style>
+</head>

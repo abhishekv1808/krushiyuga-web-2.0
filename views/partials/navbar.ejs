@@ -1,0 +1,117 @@
+<header>
+
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-lg z-50 transition-all duration-300 ">
+        <div class="container mx-auto px-4 py-3 ">
+            <div class="flex items-center justify-between">
+                <!-- Logo Section -->
+                <div class="flex items-center space-x-2">
+                    <div>
+                        <a href="/" class="flex items-center cursor-pointer">
+                            <img src="https://res.cloudinary.com/dobvyt9yw/image/upload/v1753427328/krushiyuga_logo_nfixui.png"
+                                class="object cover h-12 w-auto" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8 ">
+                    <a href="/" class="text-gray-700 hover:text-primary transition-colors xl:font-medium">Home</a>
+                    <!-- Breed Dropdown -->
+                    <div class="relative dropdown" id="breedDropdown">
+                        <button
+                            class="text-gray-700 hover:text-primary transition-colors xl:font-medium flex items-center space-x-1"
+                            onclick="toggleDropdown(event)">
+                            <span>Breed</span>
+                            <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                        </button>
+
+                        <!-- Dropdown Menu start-->
+                        <div
+                            class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden">
+                            <div class="py-2">
+                                <a href="/osmanabadi-goats"
+                                    class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-emerald-600 hover:text-white transition-all duration-300">
+                                    <i class="fas fa-paw text-emerald-600 mr-3"></i>
+                                    <span class="font-medium">Goat</span>
+                                </a>
+                                <a href="/"
+                                    class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-emerald-600 hover:text-white transition-all duration-300">
+                                    <i class="fas fa-paw text-emerald-600 mr-3"></i>
+                                    <span class="font-medium">Sheep</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Dropdown Menu end-->
+                    </div>
+
+                    <a href="/products"
+                        class="text-gray-700 hover:text-primary transition-colors font-medium">Products</a>
+                    <a href="/gallery"
+                        class="text-gray-700 hover:text-primary transition-colors font-medium">Gallery</a>
+
+                    <a href="/multi-layer-husbandry"
+                        class="text-gray-700 hover:text-primary transition-colors font-medium">Multi Layer Husbandry</a>
+
+                    <a href="/subsidy"
+                        class="text-gray-700 hover:text-primary transition-colors font-medium">Subsidy</a>
+
+                    <a href="/about-us" class="text-gray-700 hover:text-primary transition-colors font-medium">About
+                        Us</a>
+                    <a href="/contact-us" class="text-gray-700 hover:text-primary transition-colors font-medium">Contact
+                        Us</a>
+                </div>
+
+                <!-- Location and Mobile Menu Button -->
+                <div class="flex items-center space-x-4">
+                    <button class="md:hidden text-primary focus:outline-none" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="mobile-menu md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200">
+                <div class="px-4 py-4 space-y-3">
+                    <a href="/"
+                        class="block py-3 text-gray-700 hover:text-primary transition-colors font-medium border-b border-gray-100">Home</a>
+
+                    <!-- Mobile Breed Section -->
+                    <div class="py-2 border-b border-gray-100">
+                        <button onclick="toggleMobileDropdown()"
+                            class="flex items-center justify-between w-full text-gray-700 hover:text-primary transition-colors font-medium py-2">
+                            <span>Breed</span>
+                            <i class="fas fa-chevron-down text-xs transition-transform duration-300"
+                                id="mobileDropdownIcon"></i>
+                        </button>
+                        <div id="mobileDropdown"
+                            class="pl-4 mt-2 space-y-2 max-h-0 overflow-hidden transition-all duration-300">
+                            <a href="/osmanabadi-goats"
+                                class="block py-2 text-gray-600 hover:text-primary transition-colors">
+                                <i class="fas fa-paw text-emerald-600 mr-2"></i>Goat
+                            </a>
+                            <a href="#sheep" class="block py-2 text-gray-600 hover:text-primary transition-colors">
+                                <i class="fas fa-sheep text-emerald-600 mr-2"></i>Sheep
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="/products"
+                        class="block py-3 text-gray-700 hover:text-primary transition-colors font-medium border-b border-gray-100">Products</a>
+                    <a href="/gallery"
+                        class="block py-3 text-gray-700 hover:text-primary transition-colors font-medium border-b border-gray-100">Gallery</a>
+                    <a href="/multi-layer-husbandry"
+                        class="block py-3 text-gray-700 hover:text-primary transition-colors font-medium border-b border-gray-100">Multi
+                        Layer Husbandry</a>
+                    <a href="/subsidy"
+                        class="block py-3 text-gray-700 hover:text-primary transition-colors font-medium border-b border-gray-100">Subsidy</a>
+                    <a href="/about-us"
+                        class="block py-3 text-gray-700 hover:text-primary transition-colors font-medium border-b border-gray-100">About
+                        Us</a>
+                    <a href="/contact-us"
+                        class="block py-3 text-gray-700 hover:text-primary transition-colors font-medium">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+</header>
