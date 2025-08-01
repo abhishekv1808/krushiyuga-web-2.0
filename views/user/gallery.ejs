@@ -1,34 +1,32 @@
-<%
-    // SEO data for gallery page
-    const pageTitle = "Gallery - Krushiyuga Training Programs & Agricultural Achievements";
-    const pageDescription = "Explore Krushiyuga's journey through our photo gallery showcasing training programs, farm life, awards, and successful multi-layer farming implementations across Maharashtra.";
-    const pageKeywords = "krushiyuga gallery, farming photos, training programs, agricultural achievements, goat farming images, livestock farming, farm life Maharashtra";
-    const currentUrl = "https://krushiyuga.com/gallery";
-    const ogImage = "https://krushiyuga.com/favicon.svg";
-%>
-<%- include('../partials/head.ejs') %>
+<% // SEO data for gallery page const pageTitle="Gallery - Krushiyuga Training Programs & Agricultural Achievements" ;
+    const
+    pageDescription="Explore Krushiyuga's journey through our photo gallery showcasing training programs, farm life, awards, and successful multi-layer farming implementations across Maharashtra."
+    ; const
+    pageKeywords="krushiyuga gallery, farming photos, training programs, agricultural achievements, goat farming images, livestock farming, farm life Maharashtra"
+    ; const currentUrl="https://krushiyuga.com/gallery" ; const ogImage="https://krushiyuga.com/favicon.svg" ; %>
+    <%- include('../partials/head.ejs') %>
 
-    <body>
-        <%- include('../partials/navbar.ejs') %>
+        <body>
+            <%- include('../partials/navbar.ejs') %>
 
-            <main>
+                <main>
 
-                <!-- Gallery Hero Section -->
-                <section class="bg-emerald-600 text-white py-12 sm:py-16 lg:py-20">
-                    <div class="container mx-auto px-4 sm:px-6">
-                        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                            <!-- Left Content -->
-                            <div class="space-y-6 text-center lg:text-left">
-                                <h1 class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold">
-                                    Our Journey Gallery
-                                </h1>
+                    <!-- Gallery Hero Section -->
+                    <section class="bg-emerald-600 text-white py-12 sm:py-16 lg:py-20">
+                        <div class="container mx-auto px-4 sm:px-6">
+                            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                                <!-- Left Content -->
+                                <div class="space-y-6 text-center lg:text-left">
+                                    <h1 class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold">
+                                        Our Journey Gallery
+                                    </h1>
 
-                                <p class="text-sm sm:text-base lg:text-lg text-emerald-100">
-                                    Explore our journey through training programs, achievements, and agricultural
-                                    excellence
-                                </p>
+                                    <p class="text-sm sm:text-base lg:text-lg text-emerald-100">
+                                        Explore our journey through training programs, achievements, and agricultural
+                                        excellence
+                                    </p>
 
-                                <!-- <div class="grid grid-cols-3 gap-3 sm:gap-4 py-4">
+                                    <!-- <div class="grid grid-cols-3 gap-3 sm:gap-4 py-4">
                                     <div class="text-center bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
                                         <div class="text-lg sm:text-xl lg:text-2xl font-bold">200+</div>
                                         <div class="text-xs sm:text-sm text-emerald-200">Photos</div>
@@ -43,31 +41,32 @@
                                     </div>
                                 </div> -->
 
-                                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-                                    <a href="#gallery-grid"
-                                        class="bg-white text-emerald-600 px-5 sm:px-6 py-3 rounded-lg font-semibold hover:bg-emerald-50 transition flex items-center justify-center space-x-2 text-sm sm:text-base">
-                                        <i class="fas fa-images"></i>
-                                        <span>Explore Gallery</span>
-                                    </a>
-                                    <a href="#achievements"
-                                        class="border border-white text-white px-5 sm:px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-emerald-600 transition flex items-center justify-center space-x-2 text-sm sm:text-base">
-                                        <i class="fas fa-trophy"></i>
-                                        <span>View Achievements</span>
-                                    </a>
+                                    <div
+                                        class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+                                        <a href="#gallery-grid"
+                                            class="bg-white text-emerald-600 px-5 sm:px-6 py-3 rounded-lg font-semibold hover:bg-emerald-50 transition flex items-center justify-center space-x-2 text-sm sm:text-base">
+                                            <i class="fas fa-images"></i>
+                                            <span>Explore Gallery</span>
+                                        </a>
+                                        <a href="#achievements"
+                                            class="border border-white text-white px-5 sm:px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-emerald-600 transition flex items-center justify-center space-x-2 text-sm sm:text-base">
+                                            <i class="fas fa-trophy"></i>
+                                            <span>View Achievements</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Right Image -->
+                                <div>
+                                    <img src="https://res.cloudinary.com/dobvyt9yw/image/upload/v1753427326/goats_image_kiyg5q.png"
+                                        alt="Gallery Preview" class="w-full h-80 object-cover rounded-lg shadow-lg">
                                 </div>
                             </div>
-
-                            <!-- Right Image -->
-                            <div>
-                                <img src="https://res.cloudinary.com/dobvyt9yw/image/upload/v1753427326/goats_image_kiyg5q.png"
-                                    alt="Gallery Preview" class="w-full h-80 object-cover rounded-lg shadow-lg">
-                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
 
-                <!-- Filter Section -->
-                <!-- <section class="gallery-filter-section">
+                    <!-- Filter Section -->
+                    <!-- <section class="gallery-filter-section">
                     <div class="container mx-auto px-4">
                         <div class="gallery-filter-container">
                             <button
@@ -99,56 +98,57 @@
                     </div>
                 </section> -->
 
-                <!-- Gallery Section -->
-                <section class="gallery-section">
-                    <div class="container mx-auto px-4">
-                        <div class="gallery-masonry-grid" id="gallery-grid">
+                    <!-- Gallery Section -->
+                    <section class="gallery-section">
+                        <div class="container mx-auto px-4">
+                            <div class="gallery-masonry-grid" id="gallery-grid">
 
-                            <% galleryImages.forEach((image, index)=> { %>
-                                <div class="gallery-item gallery-masonry-item <%= image.category %> gallery-fade-in"
-                                    style="animation-delay: <%= (index * 0.1).toFixed(1) %>s" data-index="<%= index %>"
-                                    data-image-url="<%= image.imageUrl %>">
+                                <% galleryImages.forEach((image, index)=> { %>
+                                    <div class="gallery-item gallery-masonry-item <%= image.category %> gallery-fade-in"
+                                        style="animation-delay: <%= (index * 0.1).toFixed(1) %>s"
+                                        data-index="<%= index %>" data-image-url="<%= image.imageUrl %>">
 
-                                    <!-- Image container with better aspect ratio handling -->
-                                    <div class="gallery-image-container">
-                                        <img <% if (index < 6) { %>
-                                        src="<%= image.imageUrl %>"
-                                            <% } else { %>
-                                                data-src="<%= image.imageUrl %>"
-                                                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'
-                                                    viewBox='0 0 400 300'%3E%3Crect width='100%25' height='100%25'
-                                                    fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25'
-                                                    dominant-baseline='middle' text-anchor='middle' fill='%23d1d5db'
-                                                    font-family='Arial'
-                                                    font-size='14'%3ELoading...%3C/text%3E%3C/svg%3E"
-                                                    class="lazy-load"
-                                                    <% } %>
-                                                        class="gallery-image"
-                                                        loading="<%= index < 6 ? 'eager' : 'lazy' %>">
+                                        <!-- Image container with better aspect ratio handling -->
+                                        <div class="gallery-image-container">
+                                            <img <% if (index < 6) { %>
+                                            src="<%= image.imageUrl %>"
+                                                <% } else { %>
+                                                    data-src="<%= image.imageUrl %>"
+                                                        src="data:image/svg+xml,%3Csvg
+                                                        xmlns='http://www.w3.org/2000/svg'
+                                                        viewBox='0 0 400 300'%3E%3Crect width='100%25' height='100%25'
+                                                        fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25'
+                                                        dominant-baseline='middle' text-anchor='middle' fill='%23d1d5db'
+                                                        font-family='Arial'
+                                                        font-size='14'%3ELoading...%3C/text%3E%3C/svg%3E"
+                                                        class="lazy-load"
+                                                        <% } %>
+                                                            class="gallery-image"
+                                                            loading="<%= index < 6 ? 'eager' : 'lazy' %>">
 
-                                                            <!-- Loading spinner for lazy images -->
-                                                            <% if (index>= 6) { %>
-                                                                <div class="loading-spinner">
-                                                                    <div class="spinner"></div>
-                                                                </div>
-                                                                <% } %>
+                                                                <!-- Loading spinner for lazy images -->
+                                                                <% if (index>= 6) { %>
+                                                                    <div class="loading-spinner">
+                                                                        <div class="spinner"></div>
+                                                                    </div>
+                                                                    <% } %>
+                                        </div>
                                     </div>
-                                </div>
-                                <% }); %>
-                        </div>
+                                    <% }); %>
+                            </div>
 
-                        <!-- Loading indicator for more images -->
-                        <div id="loading-indicator" class="text-center py-8 hidden">
-                            <div class="inline-flex items-center space-x-2">
-                                <div class="spinner"></div>
-                                <span class="text-gray-600">Loading more images...</span>
+                            <!-- Loading indicator for more images -->
+                            <div id="loading-indicator" class="text-center py-8 hidden">
+                                <div class="inline-flex items-center space-x-2">
+                                    <div class="spinner"></div>
+                                    <span class="text-gray-600">Loading more images...</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
 
-                <!-- Stats Section -->
-                <!-- <section class="gallery-stats-section">
+                    <!-- Stats Section -->
+                    <!-- <section class="gallery-stats-section">
                     <div class="container mx-auto px-4">
                         <div class="gallery-stats-grid">
                             <div class="gallery-stat-item gallery-fade-in">
@@ -171,403 +171,403 @@
                     </div>
                 </section> -->
 
-                <!-- Call to Action -->
-                <section class="gallery-cta-section gallery-gradient-bg">
-                    <div class="container mx-auto px-4 text-center">
-                        <h3 class="gallery-cta-title">Join Our Training Programs</h3>
-                        <p class="gallery-cta-subtitle">
-                            Learn modern goat farming techniques and become part of our success story
-                        </p>
-                        <div class="gallery-cta-buttons">
-                            <button class="gallery-btn-primary">
-                                <i class="fas fa-graduation-cap mr-2"></i>Join Training
-                            </button>
-                            <button class="gallery-btn-secondary">
-                                <i class="fas fa-calendar mr-2"></i>View Events
-                            </button>
+                    <!-- Call to Action -->
+                    <section class="gallery-cta-section gallery-gradient-bg">
+                        <div class="container mx-auto px-4 text-center">
+                            <h3 class="gallery-cta-title">Join Our Training Programs</h3>
+                            <p class="gallery-cta-subtitle">
+                                Learn modern goat farming techniques and become part of our success story
+                            </p>
+                            <div class="gallery-cta-buttons">
+                                <button class="gallery-btn-primary">
+                                    <i class="fas fa-graduation-cap mr-2"></i>Join Training
+                                </button>
+                                <button class="gallery-btn-secondary">
+                                    <i class="fas fa-calendar mr-2"></i>View Events
+                                </button>
+                            </div>
                         </div>
+                    </section>
+
+                    <!-- Modal -->
+                    <div id="imageModal" class="gallery-modal">
+                        <span class="gallery-close">&times;</span>
+                        <img class="gallery-modal-content" id="modalImage">
+                        <div class="gallery-modal-caption" id="modalCaption"></div>
                     </div>
-                </section>
+                </main>
 
-                <!-- Modal -->
-                <div id="imageModal" class="gallery-modal">
-                    <span class="gallery-close">&times;</span>
-                    <img class="gallery-modal-content" id="modalImage">
-                    <div class="gallery-modal-caption" id="modalCaption"></div>
-                </div>
-            </main>
+                <%- include('../partials/footer.ejs') %>
 
-            <%- include('../partials/footer.ejs') %>
-
-                <style>
-                    /* Enhanced Gallery Styles */
-                    .gallery-image-container {
-                        position: relative;
-                        width: 100%;
-                        background: #f3f4f6;
-                        border-radius: 8px;
-                        overflow: hidden;
-                        min-height: 200px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                    }
-
-                    .gallery-image {
-                        width: 100%;
-                        height: auto;
-                        max-height: 100%;
-                        display: block;
-                        object-fit: cover;
-                        object-position: center;
-                        border-radius: 8px;
-                    }
-
-                    .gallery-image.lazy-load {
-                        opacity: 0;
-                    }
-
-                    .gallery-image.loaded {
-                        opacity: 1;
-                    }
-
-                    .loading-spinner {
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        z-index: 1;
-                    }
-
-                    .spinner {
-                        width: 24px;
-                        height: 24px;
-                        border: 2px solid #e5e7eb;
-                        border-top: 2px solid #10b981;
-                        border-radius: 50%;
-                        animation: spin 1s linear infinite;
-                    }
-
-                    @keyframes spin {
-                        0% {
-                            transform: rotate(0deg);
+                    <style>
+                        /* Enhanced Gallery Styles */
+                        .gallery-image-container {
+                            position: relative;
+                            width: 100%;
+                            background: #f3f4f6;
+                            border-radius: 8px;
+                            overflow: hidden;
+                            min-height: 200px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
                         }
 
-                        100% {
-                            transform: rotate(360deg);
-                        }
-                    }
-
-                    /* Pinterest-style masonry grid */
-                    .gallery-masonry-grid {
-                        columns: 4;
-                        column-gap: 15px;
-                        padding: 20px 0;
-                    }
-
-                    @media (max-width: 1200px) {
-                        .gallery-masonry-grid {
-                            columns: 3;
-                            column-gap: 12px;
-                        }
-                    }
-
-                    @media (max-width: 768px) {
-                        .gallery-masonry-grid {
-                            columns: 2;
-                            column-gap: 10px;
-                        }
-                    }
-
-                    @media (max-width: 480px) {
-                        .gallery-masonry-grid {
-                            columns: 1;
-                            column-gap: 0;
-                        }
-                    }
-
-                    .gallery-item {
-                        display: inline-block;
-                        width: 100%;
-                        margin-bottom: 15px;
-                        break-inside: avoid;
-                        border-radius: 8px;
-                        overflow: hidden;
-                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-                        background: white;
-                        transition: transform 0.3s ease, box-shadow 0.3s ease;
-                    }
-
-                    .gallery-item:hover {
-                        transform: translateY(-2px);
-                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-                    }
-
-                    .gallery-image-container {
-                        position: relative;
-                        width: 100%;
-                        background: #f3f4f6;
-                        border-radius: 8px;
-                        overflow: hidden;
-                    }
-
-                    .gallery-image {
-                        width: 100%;
-                        height: auto;
-                        display: block;
-                        object-fit: cover;
-                        border-radius: 8px;
-                    }
-
-                    .gallery-modal {
-                        display: none;
-                        position: fixed;
-                        z-index: 1000;
-                        left: 0;
-                        top: 0;
-                        width: 100%;
-                        height: 100%;
-                        background-color: rgba(0, 0, 0, 0.9);
-                        backdrop-filter: blur(5px);
-                    }
-
-                    .gallery-modal-content {
-                        display: block;
-                        margin: auto;
-                        max-width: 90%;
-                        max-height: 80%;
-                        object-fit: contain;
-                        border-radius: 8px;
-                        margin-top: 50px;
-                    }
-
-                    .gallery-modal-caption {
-                        text-align: center;
-                        color: white;
-                        padding: 20px;
-                        max-width: 600px;
-                        margin: 0 auto;
-                    }
-
-                    .gallery-close {
-                        position: absolute;
-                        top: 20px;
-                        right: 35px;
-                        color: white;
-                        font-size: 40px;
-                        font-weight: bold;
-                        cursor: pointer;
-                        transition: color 0.3s;
-                    }
-
-                    .gallery-close:hover {
-                        color: #10b981;
-                    }
-                </style>
-
-                <script>
-                    // Lazy Loading Implementation
-                    class LazyImageLoader {
-                        constructor() {
-                            this.imageObserver = null;
-                            this.init();
+                        .gallery-image {
+                            width: 100%;
+                            height: auto;
+                            max-height: 100%;
+                            display: block;
+                            object-fit: cover;
+                            object-position: center;
+                            border-radius: 8px;
                         }
 
-                        init() {
-                            // Check if Intersection Observer is supported
-                            if ('IntersectionObserver' in window) {
-                                this.imageObserver = new IntersectionObserver((entries, observer) => {
-                                    entries.forEach(entry => {
-                                        if (entry.isIntersecting) {
-                                            this.loadImage(entry.target);
-                                            observer.unobserve(entry.target);
-                                        }
-                                    });
-                                }, {
-                                    rootMargin: '50px 0px',
-                                    threshold: 0.1
-                                });
+                        .gallery-image.lazy-load {
+                            opacity: 0;
+                        }
 
-                                this.observeImages();
-                            } else {
-                                // Fallback for older browsers
-                                this.loadAllImages();
+                        .gallery-image.loaded {
+                            opacity: 1;
+                        }
+
+                        .loading-spinner {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            z-index: 1;
+                        }
+
+                        .spinner {
+                            width: 24px;
+                            height: 24px;
+                            border: 2px solid #e5e7eb;
+                            border-top: 2px solid #10b981;
+                            border-radius: 50%;
+                            animation: spin 1s linear infinite;
+                        }
+
+                        @keyframes spin {
+                            0% {
+                                transform: rotate(0deg);
+                            }
+
+                            100% {
+                                transform: rotate(360deg);
                             }
                         }
 
-                        observeImages() {
-                            const lazyImages = document.querySelectorAll('img.lazy-load');
-                            lazyImages.forEach(img => {
-                                this.imageObserver.observe(img);
-                            });
+                        /* Pinterest-style masonry grid */
+                        .gallery-masonry-grid {
+                            columns: 4;
+                            column-gap: 15px;
+                            padding: 20px 0;
                         }
 
-                        loadImage(img) {
-                            const src = img.getAttribute('data-src');
-                            if (!src) return;
-
-                            // Show loading spinner
-                            const spinner = img.parentElement.querySelector('.loading-spinner');
-                            if (spinner) spinner.style.display = 'block';
-
-                            // Create new image to preload
-                            const imageLoader = new Image();
-                            imageLoader.onload = () => {
-                                // Hide spinner
-                                if (spinner) spinner.style.display = 'none';
-
-                                // Set the source and add loaded class
-                                img.src = src;
-                                img.classList.add('loaded');
-                                img.classList.remove('lazy-load');
-                            };
-
-                            imageLoader.onerror = () => {
-                                // Hide spinner and show error state
-                                if (spinner) spinner.style.display = 'none';
-                                img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"%3E%3Crect width="100%25" height="100%25" fill="%23f87171"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="white" font-family="Arial" font-size="14"%3EFailed to load%3C/text%3E%3C/svg%3E';
-                                img.classList.remove('lazy-load');
-                            };
-
-                            imageLoader.src = src;
+                        @media (max-width: 1200px) {
+                            .gallery-masonry-grid {
+                                columns: 3;
+                                column-gap: 12px;
+                            }
                         }
 
-                        loadAllImages() {
-                            const lazyImages = document.querySelectorAll('img.lazy-load');
-                            lazyImages.forEach(img => this.loadImage(img));
+                        @media (max-width: 768px) {
+                            .gallery-masonry-grid {
+                                columns: 2;
+                                column-gap: 10px;
+                            }
                         }
-                    }
 
-                    // Initialize lazy loading when DOM is ready
-                    document.addEventListener('DOMContentLoaded', () => {
-                        new LazyImageLoader();
+                        @media (max-width: 480px) {
+                            .gallery-masonry-grid {
+                                columns: 1;
+                                column-gap: 0;
+                            }
+                        }
 
-                        // Remove title attributes to prevent file name tooltips
-                        const images = document.querySelectorAll('.gallery-image');
-                        images.forEach(img => {
-                            img.removeAttribute('title');
-                            img.removeAttribute('alt');
-                        });
-                    });
+                        .gallery-item {
+                            display: inline-block;
+                            width: 100%;
+                            margin-bottom: 15px;
+                            break-inside: avoid;
+                            border-radius: 8px;
+                            overflow: hidden;
+                            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                            background: white;
+                            transition: transform 0.3s ease, box-shadow 0.3s ease;
+                        }
 
-                    function debounce(func, wait) {
-                        let timeout;
-                        return function executedFunction(...args) {
-                            const later = () => {
-                                clearTimeout(timeout);
-                                func(...args);
-                            };
-                            clearTimeout(timeout);
-                            timeout = setTimeout(later, wait);
-                        };
-                    }
+                        .gallery-item:hover {
+                            transform: translateY(-2px);
+                            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                        }
 
-                    // Enhanced Gallery filtering
-                    const galleryFilterButtons = document.querySelectorAll('.gallery-filter-btn');
-                    const galleryItems = document.querySelectorAll('.gallery-item');
+                        .gallery-image-container {
+                            position: relative;
+                            width: 100%;
+                            background: #f3f4f6;
+                            border-radius: 8px;
+                            overflow: hidden;
+                        }
 
-                    galleryFilterButtons.forEach(button => {
-                        button.addEventListener('click', () => {
-                            // Remove active class from all buttons
-                            galleryFilterButtons.forEach(btn => btn.classList.remove('gallery-active'));
-                            // Add active class to clicked button
-                            button.classList.add('gallery-active');
+                        .gallery-image {
+                            width: 100%;
+                            height: auto;
+                            display: block;
+                            object-fit: cover;
+                            border-radius: 8px;
+                        }
 
-                            const filter = button.getAttribute('data-filter');
+                        .gallery-modal {
+                            display: none;
+                            position: fixed;
+                            z-index: 1000;
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            height: 100%;
+                            background-color: rgba(0, 0, 0, 0.9);
+                            backdrop-filter: blur(5px);
+                        }
 
-                            galleryItems.forEach((item, index) => {
-                                if (filter === 'all' || item.classList.contains(filter)) {
-                                    item.style.display = 'block';
-                                    setTimeout(() => {
-                                        item.style.opacity = '1';
-                                        item.style.transform = 'translateY(0)';
-                                    }, index * 50); // Staggered animation
+                        .gallery-modal-content {
+                            display: block;
+                            margin: auto;
+                            max-width: 90%;
+                            max-height: 80%;
+                            object-fit: contain;
+                            border-radius: 8px;
+                            margin-top: 50px;
+                        }
+
+                        .gallery-modal-caption {
+                            text-align: center;
+                            color: white;
+                            padding: 20px;
+                            max-width: 600px;
+                            margin: 0 auto;
+                        }
+
+                        .gallery-close {
+                            position: absolute;
+                            top: 20px;
+                            right: 35px;
+                            color: white;
+                            font-size: 40px;
+                            font-weight: bold;
+                            cursor: pointer;
+                            transition: color 0.3s;
+                        }
+
+                        .gallery-close:hover {
+                            color: #10b981;
+                        }
+                    </style>
+
+                    <script>
+                        // Lazy Loading Implementation
+                        class LazyImageLoader {
+                            constructor() {
+                                this.imageObserver = null;
+                                this.init();
+                            }
+
+                            init() {
+                                // Check if Intersection Observer is supported
+                                if ('IntersectionObserver' in window) {
+                                    this.imageObserver = new IntersectionObserver((entries, observer) => {
+                                        entries.forEach(entry => {
+                                            if (entry.isIntersecting) {
+                                                this.loadImage(entry.target);
+                                                observer.unobserve(entry.target);
+                                            }
+                                        });
+                                    }, {
+                                        rootMargin: '50px 0px',
+                                        threshold: 0.1
+                                    });
+
+                                    this.observeImages();
                                 } else {
-                                    item.style.opacity = '0';
-                                    item.style.transform = 'translateY(30px)';
-                                    setTimeout(() => {
-                                        item.style.display = 'none';
-                                    }, 300);
+                                    // Fallback for older browsers
+                                    this.loadAllImages();
+                                }
+                            }
+
+                            observeImages() {
+                                const lazyImages = document.querySelectorAll('img.lazy-load');
+                                lazyImages.forEach(img => {
+                                    this.imageObserver.observe(img);
+                                });
+                            }
+
+                            loadImage(img) {
+                                const src = img.getAttribute('data-src');
+                                if (!src) return;
+
+                                // Show loading spinner
+                                const spinner = img.parentElement.querySelector('.loading-spinner');
+                                if (spinner) spinner.style.display = 'block';
+
+                                // Create new image to preload
+                                const imageLoader = new Image();
+                                imageLoader.onload = () => {
+                                    // Hide spinner
+                                    if (spinner) spinner.style.display = 'none';
+
+                                    // Set the source and add loaded class
+                                    img.src = src;
+                                    img.classList.add('loaded');
+                                    img.classList.remove('lazy-load');
+                                };
+
+                                imageLoader.onerror = () => {
+                                    // Hide spinner and show error state
+                                    if (spinner) spinner.style.display = 'none';
+                                    img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"%3E%3Crect width="100%25" height="100%25" fill="%23f87171"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="white" font-family="Arial" font-size="14"%3EFailed to load%3C/text%3E%3C/svg%3E';
+                                    img.classList.remove('lazy-load');
+                                };
+
+                                imageLoader.src = src;
+                            }
+
+                            loadAllImages() {
+                                const lazyImages = document.querySelectorAll('img.lazy-load');
+                                lazyImages.forEach(img => this.loadImage(img));
+                            }
+                        }
+
+                        // Initialize lazy loading when DOM is ready
+                        document.addEventListener('DOMContentLoaded', () => {
+                            new LazyImageLoader();
+
+                            // Remove title attributes to prevent file name tooltips
+                            const images = document.querySelectorAll('.gallery-image');
+                            images.forEach(img => {
+                                img.removeAttribute('title');
+                                img.removeAttribute('alt');
+                            });
+                        });
+
+                        function debounce(func, wait) {
+                            let timeout;
+                            return function executedFunction(...args) {
+                                const later = () => {
+                                    clearTimeout(timeout);
+                                    func(...args);
+                                };
+                                clearTimeout(timeout);
+                                timeout = setTimeout(later, wait);
+                            };
+                        }
+
+                        // Enhanced Gallery filtering
+                        const galleryFilterButtons = document.querySelectorAll('.gallery-filter-btn');
+                        const galleryItems = document.querySelectorAll('.gallery-item');
+
+                        galleryFilterButtons.forEach(button => {
+                            button.addEventListener('click', () => {
+                                // Remove active class from all buttons
+                                galleryFilterButtons.forEach(btn => btn.classList.remove('gallery-active'));
+                                // Add active class to clicked button
+                                button.classList.add('gallery-active');
+
+                                const filter = button.getAttribute('data-filter');
+
+                                galleryItems.forEach((item, index) => {
+                                    if (filter === 'all' || item.classList.contains(filter)) {
+                                        item.style.display = 'block';
+                                        setTimeout(() => {
+                                            item.style.opacity = '1';
+                                            item.style.transform = 'translateY(0)';
+                                        }, index * 50); // Staggered animation
+                                    } else {
+                                        item.style.opacity = '0';
+                                        item.style.transform = 'translateY(30px)';
+                                        setTimeout(() => {
+                                            item.style.display = 'none';
+                                        }, 300);
+                                    }
+                                });
+                            });
+                        });
+
+                        // Enhanced Modal functionality
+                        const galleryModal = document.getElementById('imageModal');
+                        const galleryModalImage = document.getElementById('modalImage');
+                        const galleryModalCaption = document.getElementById('modalCaption');
+                        const galleryCloseModal = document.querySelector('.gallery-close');
+
+                        galleryItems.forEach(item => {
+                            item.addEventListener('click', () => {
+                                // Get the actual image URL from the data attribute
+                                const actualSrc = item.getAttribute('data-image-url');
+
+                                galleryModal.style.display = 'block';
+                                galleryModalImage.src = actualSrc;
+                                galleryModalCaption.innerHTML = ''; // No caption needed
+
+                                // Prevent body scroll when modal is open
+                                document.body.style.overflow = 'hidden';
+                            });
+                        });
+
+                        const closeModal = () => {
+                            galleryModal.style.display = 'none';
+                            document.body.style.overflow = 'auto';
+                        };
+
+                        galleryCloseModal.addEventListener('click', closeModal);
+
+                        window.addEventListener('click', (e) => {
+                            if (e.target === galleryModal) {
+                                closeModal();
+                            }
+                        });
+
+                        // Intersection Observer for fade-in animation
+                        const galleryObserverOptions = {
+                            threshold: 0.1,
+                            rootMargin: '0px 0px -50px 0px'
+                        };
+
+                        const galleryObserver = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    entry.target.style.opacity = '1';
+                                    entry.target.style.transform = 'translateY(0)';
                                 }
                             });
+                        }, galleryObserverOptions);
+
+                        document.querySelectorAll('.gallery-fade-in').forEach(el => {
+                            galleryObserver.observe(el);
                         });
-                    });
 
-                    // Enhanced Modal functionality
-                    const galleryModal = document.getElementById('imageModal');
-                    const galleryModalImage = document.getElementById('modalImage');
-                    const galleryModalCaption = document.getElementById('modalCaption');
-                    const galleryCloseModal = document.querySelector('.gallery-close');
-
-                    galleryItems.forEach(item => {
-                        item.addEventListener('click', () => {
-                            // Get the actual image URL from the data attribute
-                            const actualSrc = item.getAttribute('data-image-url');
-
-                            galleryModal.style.display = 'block';
-                            galleryModalImage.src = actualSrc;
-                            galleryModalCaption.innerHTML = ''; // No caption needed
-
-                            // Prevent body scroll when modal is open
-                            document.body.style.overflow = 'hidden';
-                        });
-                    });
-
-                    const closeModal = () => {
-                        galleryModal.style.display = 'none';
-                        document.body.style.overflow = 'auto';
-                    };
-
-                    galleryCloseModal.addEventListener('click', closeModal);
-
-                    window.addEventListener('click', (e) => {
-                        if (e.target === galleryModal) {
-                            closeModal();
-                        }
-                    });
-
-                    // Intersection Observer for fade-in animation
-                    const galleryObserverOptions = {
-                        threshold: 0.1,
-                        rootMargin: '0px 0px -50px 0px'
-                    };
-
-                    const galleryObserver = new IntersectionObserver((entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                entry.target.style.opacity = '1';
-                                entry.target.style.transform = 'translateY(0)';
+                        // Enhanced keyboard navigation
+                        document.addEventListener('keydown', (e) => {
+                            if (e.key === 'Escape' && galleryModal.style.display === 'block') {
+                                closeModal();
                             }
                         });
-                    }, galleryObserverOptions);
 
-                    document.querySelectorAll('.gallery-fade-in').forEach(el => {
-                        galleryObserver.observe(el);
-                    });
+                        // Performance optimization: Debounced resize handler
+                        let resizeTimeout;
+                        window.addEventListener('resize', () => {
+                            clearTimeout(resizeTimeout);
+                            resizeTimeout = setTimeout(() => {
+                                // Trigger layout recalculation if needed
+                                const grid = document.getElementById('gallery-grid');
+                                if (grid) {
+                                    grid.style.display = 'none';
+                                    grid.offsetHeight; // Trigger reflow
+                                    grid.style.display = 'grid';
+                                }
+                            }, 250);
+                        });
+                    </script>
 
-                    // Enhanced keyboard navigation
-                    document.addEventListener('keydown', (e) => {
-                        if (e.key === 'Escape' && galleryModal.style.display === 'block') {
-                            closeModal();
-                        }
-                    });
+        </body>
 
-                    // Performance optimization: Debounced resize handler
-                    let resizeTimeout;
-                    window.addEventListener('resize', () => {
-                        clearTimeout(resizeTimeout);
-                        resizeTimeout = setTimeout(() => {
-                            // Trigger layout recalculation if needed
-                            const grid = document.getElementById('gallery-grid');
-                            if (grid) {
-                                grid.style.display = 'none';
-                                grid.offsetHeight; // Trigger reflow
-                                grid.style.display = 'grid';
-                            }
-                        }, 250);
-                    });
-                </script>
-
-    </body>
-
-    </html>
+        </html>

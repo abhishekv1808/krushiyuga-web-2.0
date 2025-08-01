@@ -1,467 +1,493 @@
-<%
-    // SEO data for subsidy page
-    const pageTitle = "Government Subsidies for Farming & Livestock - Maharashtra Agricultural Schemes | Krushiyuga";
-    const pageDescription = "Explore government subsidies and schemes for agriculture, livestock farming, and goat farming in Maharashtra. Get expert guidance from Krushiyuga on subsidy applications and eligibility.";
-    const pageKeywords = "government subsidies farming Maharashtra, agricultural schemes, livestock subsidies, goat farming subsidies, farming loans, government support agriculture";
-    const currentUrl = "https://krushiyuga.com/subsidy";
-    const ogImage = "https://krushiyuga.com/favicon.svg";
-%>
-<%- include('../partials/head.ejs') %>
+<% // SEO data for subsidy page const
+    pageTitle="Government Subsidies for Farming & Livestock - Maharashtra Agricultural Schemes | Krushiyuga" ; const
+    pageDescription="Explore government subsidies and schemes for agriculture, livestock farming, and goat farming in Maharashtra. Get expert guidance from Krushiyuga on subsidy applications and eligibility."
+    ; const
+    pageKeywords="government subsidies farming Maharashtra, agricultural schemes, livestock subsidies, goat farming subsidies, farming loans, government support agriculture"
+    ; const currentUrl="https://krushiyuga.com/subsidy" ; const ogImage="https://krushiyuga.com/favicon.svg" ; %>
+    <%- include('../partials/head.ejs') %>
 
-    <body>
-        <%- include('../partials/navbar.ejs') %>
+        <body>
+            <%- include('../partials/navbar.ejs') %>
 
-            <main>
+                <main>
 
-                <section class="relative subsidy-gradient-bg  subsidy-bg-pattern overflow-hidden bg-no-repeat">
-                    <div class="absolute inset-0 bg-black opacity-10 "></div>
-                    <div class="container mx-auto px-4 relative z-10 py-30 ">
-                        <div class="text-center text-white">
-                            <h1 class="text-5xl md:text-6xl font-bold mb-6 subsidy-fade-in">
-                                Government <span class="text-yellow-300">Subsidies</span> for Goat Farming
-                            </h1>
-                            <p class="text-xl md:text-2xl mb-8 subsidy-fade-in max-w-3xl mx-auto"
-                                style="animation-delay: 0.2s;">
-                                Get up to 50% subsidy under National Livestock Mission for establishing your goat
-                                farming business
+                    <section class="relative subsidy-gradient-bg  subsidy-bg-pattern overflow-hidden bg-no-repeat">
+                        <div class="absolute inset-0 bg-black opacity-10 "></div>
+                        <div class="container mx-auto px-4 relative z-10 py-30 ">
+                            <div class="text-center text-white">
+                                <h1 class="text-5xl md:text-6xl font-bold mb-6 subsidy-fade-in">
+                                    Government <span class="text-yellow-300">Subsidies</span> for Goat Farming
+                                </h1>
+                                <p class="text-xl md:text-2xl mb-8 subsidy-fade-in max-w-3xl mx-auto"
+                                    style="animation-delay: 0.2s;">
+                                    Get up to 50% subsidy under National Livestock Mission for establishing your goat
+                                    farming business
+                                </p>
+                                <div class="flex justify-center space-x-4 subsidy-fade-in"
+                                    style="animation-delay: 0.4s;">
+                                    <button
+                                        class="cursor-pointer bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300 shadow-lg">
+                                        <i class="fas fa-file-alt mr-2"></i>Apply Now
+                                    </button>
+                                    <button
+                                        class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition duration-300">
+                                        <i class="fas fa-download mr-2"></i>Download Guidelines
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Elements -->
+                        <div class="absolute top-20 right-20 text-white opacity-20 subsidy-floating-animation">
+                            <i class="fas fa-coins text-6xl"></i>
+                        </div>
+                        <div class="absolute bottom-20 left-20 text-white opacity-20 subsidy-floating-animation"
+                            style="animation-delay: 1s;">
+                            <i class="fas fa-landmark text-5xl"></i>
+                        </div>
+                    </section>
+
+                    <!-- Stats Section -->
+                    <section class="py-16 bg-white">
+                        <div class="container mx-auto px-4">
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                                <div class="text-center subsidy-fade-in">
+                                    <div class="subsidy-stats-counter text-emerald-500 font-bold lg:text-4xl ">50%</div>
+                                    <p class="text-gray-600 font-medium">Maximum Subsidy</p>
+                                </div>
+                                <div class="text-center subsidy-fade-in" style="animation-delay: 0.1s;">
+                                    <div class="subsidy-stats-counter text-emerald-500 font-bold lg:text-4xl ">₹50L
+                                    </div>
+                                    <p class="text-gray-600 font-medium">Maximum Amount</p>
+                                </div>
+                                <div class="text-center subsidy-fade-in" style="animation-delay: 0.2s;">
+                                    <div class="subsidy-stats-counter text-emerald-500 font-bold lg:text-4xl ">100+
+                                    </div>
+                                    <p class="text-gray-600 font-medium">Minimum Goats</p>
+                                </div>
+                                <div class="text-center subsidy-fade-in" style="animation-delay: 0.3s;">
+                                    <div class="subsidy-stats-counter text-emerald-500 font-bold lg:text-4xl ">2021
+                                    </div>
+                                    <p class="text-gray-600 font-medium">Scheme Launch</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Main Content Section -->
+                    <section class="py-20 bg-gray-50">
+                        <div class="container mx-auto px-4">
+
+                            <!-- Section Header -->
+                            <div class="text-center mb-16 subsidy-fade-in">
+                                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                                    National Livestock Mission <span class="subsidy-highlight">(NLM)</span>
+                                </h2>
+                                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                                    The Government of India's flagship scheme for entrepreneurship development and breed
+                                    improvement in
+                                    livestock sector,
+                                    providing substantial financial support to farmers and entrepreneurs.
+                                </p>
+                            </div>
+
+                            <!-- Scheme Overview -->
+                            <div class="mb-20">
+                                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                                    <div class="subsidy-fade-in">
+                                        <img src="https://bizimages.withfloats.com/tile/672cac6da44f4eaf2b6b2587.jpg"
+                                            alt="Government Subsidy"
+                                            class="rounded-2xl shadow-2xl w-full h-96 object-cover">
+                                    </div>
+                                    <div class="subsidy-fade-in" style="animation-delay: 0.2s;">
+                                        <h3 class="text-3xl font-bold text-gray-800 mb-6">About NLM Scheme</h3>
+                                        <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                                            The National Livestock Mission (NLM) is implemented by the Department of
+                                            Animal
+                                            Husbandry &
+                                            Dairying,
+                                            Government of India since 2014-15. The revised scheme aims at employment
+                                            generation,
+                                            entrepreneurship
+                                            development, and increased per animal productivity.
+                                        </p>
+                                        <div class="grid grid-cols-2 gap-4 mb-6">
+                                            <div class="bg-white p-4 rounded-lg shadow-md">
+                                                <h4 class="font-semibold text-blue-600 mb-2">Implementing Agency</h4>
+                                                <p class="text-gray-700">Dept. of Animal Husbandry & Dairying</p>
+                                            </div>
+                                            <div class="bg-white p-4 rounded-lg shadow-md">
+                                                <h4 class="font-semibold text-blue-600 mb-2">Scheme Type</h4>
+                                                <p class="text-gray-700">Central Sector Scheme</p>
+                                            </div>
+                                        </div>
+                                        <a href="https://nlm.udyamimitra.in" target="_blank"
+                                            class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition duration-300 shadow-lg inline-block">
+                                            <i class="fas fa-external-link-alt mr-2"></i>Visit Official Portal
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Subsidy Details -->
+                            <div class="mb-20">
+                                <h3 class="text-3xl font-bold text-center text-gray-800 mb-12 subsidy-fade-in">Subsidy
+                                    Details</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                                    <!-- Subsidy Amount -->
+                                    <div class="bg-white rounded-xl shadow-lg p-8 subsidy-card-hover subsidy-fade-in">
+                                        <div
+                                            class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                                            <i class="fas fa-percentage text-blue-600 text-2xl"></i>
+                                        </div>
+                                        <h4 class="text-xl font-bold text-gray-800 mb-4">Subsidy Amount</h4>
+                                        <ul class="space-y-4 text-gray-600">
+                                            <li><i class="fas fa-check text-green-500 mr-2"></i>Up to 50% of project
+                                                cost
+                                            </li>
+                                            <li><i class="fas fa-check text-green-500 mr-2"></i>Maximum ₹50 lakhs</li>
+                                            <li><i class="fas fa-check text-green-500 mr-2"></i>Back-ended subsidy</li>
+                                            <li><i class="fas fa-check text-green-500 mr-2"></i>Capital cost coverage
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Minimum Requirements -->
+                                    <div class="bg-white rounded-xl shadow-lg p-8 subsidy-card-hover subsidy-fade-in"
+                                        style="animation-delay: 0.1s;">
+                                        <div
+                                            class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                                            <i class="fas fa-list-ol text-green-600 text-2xl"></i>
+                                        </div>
+                                        <h4 class="text-xl font-bold text-gray-800 mb-4">Minimum Requirements</h4>
+                                        <ul class="space-y-4 text-gray-600">
+                                            <li><i class="fas fa-check text-green-500 mr-2"></i>100 female goats minimum
+                                            </li>
+                                            <li><i class="fas fa-check text-green-500 mr-2"></i>5 male goats minimum
+                                            </li>
+                                            <li><i class="fas fa-check text-green-500 mr-2"></i>Proper housing facility
+                                            </li>
+                                            <li><i class="fas fa-check text-green-500 mr-2"></i>Veterinary support</li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Financing Pattern -->
+                                    <div class="bg-white rounded-xl shadow-lg p-8 subsidy-card-hover subsidy-fade-in"
+                                        style="animation-delay: 0.2s;">
+                                        <div
+                                            class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6">
+                                            <i class="fas fa-chart-pie text-yellow-600 text-2xl"></i>
+                                        </div>
+                                        <h4 class="text-xl font-bold text-gray-800 mb-4">Financing Pattern</h4>
+                                        <ul class="space-y-4 text-gray-600">
+                                            <li><i class="fas fa-check text-green-500 mr-2"></i>50% Government subsidy
+                                            </li>
+                                            <li><i class="fas fa-check text-green-500 mr-2"></i>40% Bank loan</li>
+                                            <li><i class="fas fa-check text-green-500 mr-2"></i>10% Own contribution
+                                            </li>
+                                            <li><i class="fas fa-check text-green-500 mr-2"></i>Flexible arrangements
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Eligibility Criteria -->
+                            <div class="mb-20">
+                                <h3 class="text-3xl font-bold text-center text-gray-800 mb-12 subsidy-fade-in">
+                                    Eligibility
+                                    Criteria</h3>
+                                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 subsidy-fade-in">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <div>
+                                            <h4 class="text-xl font-bold text-gray-800 mb-4">Who Can Apply?</h4>
+                                            <ul class="space-y-5 text-gray-600">
+                                                <li><i class="fas fa-user text-blue-500 mr-2"></i>Individual farmers
+                                                </li>
+                                                <li><i class="fas fa-users text-blue-500 mr-2"></i>Farmer Producer
+                                                    Organizations (FPOs)
+                                                </li>
+                                                <li><i class="fas fa-hands-helping text-blue-500 mr-2"></i>Self Help
+                                                    Groups
+                                                    (SHGs)</li>
+                                                <li><i class="fas fa-building text-blue-500 mr-2"></i>Farmer Cooperative
+                                                    Organizations
+                                                </li>
+                                                <li><i class="fas fa-handshake text-blue-500 mr-2"></i>Joint Liability
+                                                    Groups (JLGs)
+                                                </li>
+                                                <li><i class="fas fa-briefcase text-blue-500 mr-2"></i>Section 8
+                                                    Companies
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-xl font-bold text-gray-800 mb-4">Basic Requirements</h4>
+                                            <ul class="space-y-5 text-gray-600">
+                                                <li><i class="fas fa-id-card text-green-500 mr-2"></i>Indian nationality
+                                                </li>
+                                                <li><i class="fas fa-map-marked-alt text-green-500 mr-2"></i>Suitable
+                                                    land
+                                                    (owned/leased)
+                                                </li>
+                                                <li><i class="fas fa-graduation-cap text-green-500 mr-2"></i>Basic
+                                                    livestock
+                                                    knowledge
+                                                </li>
+                                                <li><i class="fas fa-file-alt text-green-500 mr-2"></i>Detailed Project
+                                                    Report (DPR)
+                                                </li>
+                                                <li><i class="fas fa-bank text-green-500 mr-2"></i>Bank account</li>
+                                                <li><i class="fas fa-shield-alt text-green-500 mr-2"></i>Valid
+                                                    identification documents
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Application Process -->
+                            <div class="mb-20">
+                                <h3 class="text-3xl font-bold text-center text-gray-800 mb-12 subsidy-fade-in">
+                                    Application
+                                    Process</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                                    <!-- Step 1 -->
+                                    <div class="text-center subsidy-fade-in">
+                                        <div class="subsidy-step-number mx-auto mb-4">1</div>
+                                        <h4 class="text-lg font-bold text-gray-800 mb-2">Registration</h4>
+                                        <p class="text-gray-600">Visit nlm.udyamimitra.in and register on the portal</p>
+                                    </div>
+
+                                    <!-- Step 2 -->
+                                    <div class="text-center subsidy-fade-in" style="animation-delay: 0.1s;">
+                                        <div class="subsidy-step-number mx-auto mb-4">2</div>
+                                        <h4 class="text-lg font-bold text-gray-800 mb-2">Documentation</h4>
+                                        <p class="text-gray-600">Prepare and upload required documents and DPR</p>
+                                    </div>
+
+                                    <!-- Step 3 -->
+                                    <div class="text-center subsidy-fade-in" style="animation-delay: 0.2s;">
+                                        <div class="subsidy-step-number mx-auto mb-4">3</div>
+                                        <h4 class="text-lg font-bold text-gray-800 mb-2">Verification</h4>
+                                        <p class="text-gray-600">Application review and field verification by officials
+                                        </p>
+                                    </div>
+
+                                    <!-- Step 4 -->
+                                    <div class="text-center subsidy-fade-in" style="animation-delay: 0.3s;">
+                                        <div class="subsidy-step-number mx-auto mb-4">4</div>
+                                        <h4 class="text-lg font-bold text-gray-800 mb-2">Approval</h4>
+                                        <p class="text-gray-600">Receive approval and start project implementation</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Required Documents -->
+                            <div class="mb-20">
+                                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                                    <div class="subsidy-fade-in">
+                                        <h3 class="text-3xl font-bold text-gray-800 mb-6">Required Documents</h3>
+                                        <div class="bg-white rounded-xl shadow-lg p-8">
+                                            <ul class="space-y-5 text-gray-600">
+                                                <li><i class="fas fa-file-alt text-blue-500 mr-3"></i>Detailed Project
+                                                    Report (DPR)</li>
+                                                <li><i class="fas fa-id-card text-blue-500 mr-3"></i>Identity proof
+                                                    (Aadhaar/Voter ID)
+                                                </li>
+                                                <li><i class="fas fa-map-marked-alt text-blue-500 mr-3"></i>Land
+                                                    ownership/lease
+                                                    documents
+                                                </li>
+                                                <li><i class="fas fa-university text-blue-500 mr-3"></i>Bank account
+                                                    details
+                                                </li>
+                                                <li><i class="fas fa-camera text-blue-500 mr-3"></i>Passport size
+                                                    photographs</li>
+                                                <li><i class="fas fa-certificate text-blue-500 mr-3"></i>Category
+                                                    certificate (if
+                                                    applicable)</li>
+                                                <li><i class="fas fa-graduation-cap text-blue-500 mr-3"></i>Educational
+                                                    certificates
+                                                </li>
+                                                <li><i class="fas fa-handshake text-blue-500 mr-3"></i>Partnership deed
+                                                    (if
+                                                    applicable)
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="subsidy-fade-in" style="animation-delay: 0.2s;">
+                                        <h3 class="text-3xl font-bold text-gray-800 mb-6">Key Benefits</h3>
+                                        <div class="bg-white rounded-xl shadow-lg p-8">
+                                            <ul class="space-y-5 text-gray-600">
+                                                <li><i class="fas fa-coins text-green-500 mr-3"></i>Substantial
+                                                    financial
+                                                    support</li>
+                                                <li><i class="fas fa-chart-line text-green-500 mr-3"></i>Employment
+                                                    generation</li>
+                                                <li><i class="fas fa-seedling text-green-500 mr-3"></i>Entrepreneurship
+                                                    development</li>
+                                                <li><i class="fas fa-shield-alt text-green-500 mr-3"></i>Risk mitigation
+                                                </li>
+                                                <li><i class="fas fa-users text-green-500 mr-3"></i>Technical support
+                                                </li>
+                                                <li><i class="fas fa-leaf text-green-500 mr-3"></i>Sustainable farming
+                                                </li>
+                                                <li><i class="fas fa-globe text-green-500 mr-3"></i>Export potential
+                                                </li>
+                                                <li><i class="fas fa-heart text-green-500 mr-3"></i>Rural development
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Contact Information -->
+                            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 subsidy-fade-in">
+                                <h3 class="text-3xl font-bold text-center text-gray-800 mb-8">Need Help with Your
+                                    Application?</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                    <div class="text-center">
+                                        <div
+                                            class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <i class="fas fa-globe text-blue-600 text-2xl"></i>
+                                        </div>
+                                        <h4 class="font-bold text-gray-800 mb-2">Official Portal</h4>
+                                        <p class="text-gray-600">nlm.udyamimitra.in</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <div
+                                            class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <i class="fas fa-phone text-green-600 text-2xl"></i>
+                                        </div>
+                                        <h4 class="font-bold text-gray-800 mb-2">Expert Consultation</h4>
+                                        <p class="text-gray-600">+91 99000 77949</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <div
+                                            class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <i class="fas fa-envelope text-yellow-600 text-2xl"></i>
+                                        </div>
+                                        <h4 class="font-bold text-gray-800 mb-2">Email Support</h4>
+                                        <p class="text-gray-600">info@krushiyuga.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Call to Action -->
+                    <section class="subsidy-gradient-bg py-16">
+                        <div class="container mx-auto px-4 text-center">
+                            <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Apply for NLM Subsidy?
+                            </h3>
+                            <p class="text-xl text-white mb-8 max-w-2xl mx-auto">
+                                Let our experts help you prepare your application and maximize your chances of approval
                             </p>
-                            <div class="flex justify-center space-x-4 subsidy-fade-in" style="animation-delay: 0.4s;">
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
                                 <button
-                                    class="cursor-pointer bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300 shadow-lg">
-                                    <i class="fas fa-file-alt mr-2"></i>Apply Now
+                                    class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300 shadow-lg">
+                                    <i class="fas fa-file-alt mr-2"></i>Get DPR Preparation Help
                                 </button>
                                 <button
                                     class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition duration-300">
-                                    <i class="fas fa-download mr-2"></i>Download Guidelines
+                                    <i class="fas fa-comments mr-2"></i>Free Consultation
                                 </button>
                             </div>
                         </div>
-                    </div>
+                    </section>
 
-                    <!-- Floating Elements -->
-                    <div class="absolute top-20 right-20 text-white opacity-20 subsidy-floating-animation">
-                        <i class="fas fa-coins text-6xl"></i>
-                    </div>
-                    <div class="absolute bottom-20 left-20 text-white opacity-20 subsidy-floating-animation"
-                        style="animation-delay: 1s;">
-                        <i class="fas fa-landmark text-5xl"></i>
-                    </div>
-                </section>
+                </main>
 
-                <!-- Stats Section -->
-                <section class="py-16 bg-white">
-                    <div class="container mx-auto px-4">
-                        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                            <div class="text-center subsidy-fade-in">
-                                <div class="subsidy-stats-counter text-emerald-500 font-bold lg:text-4xl ">50%</div>
-                                <p class="text-gray-600 font-medium">Maximum Subsidy</p>
-                            </div>
-                            <div class="text-center subsidy-fade-in" style="animation-delay: 0.1s;">
-                                <div class="subsidy-stats-counter text-emerald-500 font-bold lg:text-4xl ">₹50L</div>
-                                <p class="text-gray-600 font-medium">Maximum Amount</p>
-                            </div>
-                            <div class="text-center subsidy-fade-in" style="animation-delay: 0.2s;">
-                                <div class="subsidy-stats-counter text-emerald-500 font-bold lg:text-4xl ">100+</div>
-                                <p class="text-gray-600 font-medium">Minimum Goats</p>
-                            </div>
-                            <div class="text-center subsidy-fade-in" style="animation-delay: 0.3s;">
-                                <div class="subsidy-stats-counter text-emerald-500 font-bold lg:text-4xl ">2021</div>
-                                <p class="text-gray-600 font-medium">Scheme Launch</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <%- include('../partials/footer.ejs') %>
 
-                <!-- Main Content Section -->
-                <section class="py-20 bg-gray-50">
-                    <div class="container mx-auto px-4">
-
-                        <!-- Section Header -->
-                        <div class="text-center mb-16 subsidy-fade-in">
-                            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-                                National Livestock Mission <span class="subsidy-highlight">(NLM)</span>
-                            </h2>
-                            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                                The Government of India's flagship scheme for entrepreneurship development and breed
-                                improvement in
-                                livestock sector,
-                                providing substantial financial support to farmers and entrepreneurs.
-                            </p>
-                        </div>
-
-                        <!-- Scheme Overview -->
-                        <div class="mb-20">
-                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                                <div class="subsidy-fade-in">
-                                    <img src="https://bizimages.withfloats.com/tile/672cac6da44f4eaf2b6b2587.jpg"
-                                        alt="Government Subsidy"
-                                        class="rounded-2xl shadow-2xl w-full h-96 object-cover">
-                                </div>
-                                <div class="subsidy-fade-in" style="animation-delay: 0.2s;">
-                                    <h3 class="text-3xl font-bold text-gray-800 mb-6">About NLM Scheme</h3>
-                                    <p class="text-gray-600 mb-6 text-lg leading-relaxed">
-                                        The National Livestock Mission (NLM) is implemented by the Department of Animal
-                                        Husbandry &
-                                        Dairying,
-                                        Government of India since 2014-15. The revised scheme aims at employment
-                                        generation,
-                                        entrepreneurship
-                                        development, and increased per animal productivity.
-                                    </p>
-                                    <div class="grid grid-cols-2 gap-4 mb-6">
-                                        <div class="bg-white p-4 rounded-lg shadow-md">
-                                            <h4 class="font-semibold text-blue-600 mb-2">Implementing Agency</h4>
-                                            <p class="text-gray-700">Dept. of Animal Husbandry & Dairying</p>
-                                        </div>
-                                        <div class="bg-white p-4 rounded-lg shadow-md">
-                                            <h4 class="font-semibold text-blue-600 mb-2">Scheme Type</h4>
-                                            <p class="text-gray-700">Central Sector Scheme</p>
-                                        </div>
-                                    </div>
-                                    <a href="https://nlm.udyamimitra.in" target="_blank"
-                                        class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition duration-300 shadow-lg inline-block">
-                                        <i class="fas fa-external-link-alt mr-2"></i>Visit Official Portal
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Subsidy Details -->
-                        <div class="mb-20">
-                            <h3 class="text-3xl font-bold text-center text-gray-800 mb-12 subsidy-fade-in">Subsidy
-                                Details</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                                <!-- Subsidy Amount -->
-                                <div class="bg-white rounded-xl shadow-lg p-8 subsidy-card-hover subsidy-fade-in">
-                                    <div
-                                        class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                                        <i class="fas fa-percentage text-blue-600 text-2xl"></i>
-                                    </div>
-                                    <h4 class="text-xl font-bold text-gray-800 mb-4">Subsidy Amount</h4>
-                                    <ul class="space-y-4 text-gray-600">
-                                        <li><i class="fas fa-check text-green-500 mr-2"></i>Up to 50% of project cost
-                                        </li>
-                                        <li><i class="fas fa-check text-green-500 mr-2"></i>Maximum ₹50 lakhs</li>
-                                        <li><i class="fas fa-check text-green-500 mr-2"></i>Back-ended subsidy</li>
-                                        <li><i class="fas fa-check text-green-500 mr-2"></i>Capital cost coverage</li>
-                                    </ul>
-                                </div>
-
-                                <!-- Minimum Requirements -->
-                                <div class="bg-white rounded-xl shadow-lg p-8 subsidy-card-hover subsidy-fade-in"
-                                    style="animation-delay: 0.1s;">
-                                    <div
-                                        class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
-                                        <i class="fas fa-list-ol text-green-600 text-2xl"></i>
-                                    </div>
-                                    <h4 class="text-xl font-bold text-gray-800 mb-4">Minimum Requirements</h4>
-                                    <ul class="space-y-4 text-gray-600">
-                                        <li><i class="fas fa-check text-green-500 mr-2"></i>100 female goats minimum
-                                        </li>
-                                        <li><i class="fas fa-check text-green-500 mr-2"></i>5 male goats minimum</li>
-                                        <li><i class="fas fa-check text-green-500 mr-2"></i>Proper housing facility</li>
-                                        <li><i class="fas fa-check text-green-500 mr-2"></i>Veterinary support</li>
-                                    </ul>
-                                </div>
-
-                                <!-- Financing Pattern -->
-                                <div class="bg-white rounded-xl shadow-lg p-8 subsidy-card-hover subsidy-fade-in"
-                                    style="animation-delay: 0.2s;">
-                                    <div
-                                        class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6">
-                                        <i class="fas fa-chart-pie text-yellow-600 text-2xl"></i>
-                                    </div>
-                                    <h4 class="text-xl font-bold text-gray-800 mb-4">Financing Pattern</h4>
-                                    <ul class="space-y-4 text-gray-600">
-                                        <li><i class="fas fa-check text-green-500 mr-2"></i>50% Government subsidy</li>
-                                        <li><i class="fas fa-check text-green-500 mr-2"></i>40% Bank loan</li>
-                                        <li><i class="fas fa-check text-green-500 mr-2"></i>10% Own contribution</li>
-                                        <li><i class="fas fa-check text-green-500 mr-2"></i>Flexible arrangements</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Eligibility Criteria -->
-                        <div class="mb-20">
-                            <h3 class="text-3xl font-bold text-center text-gray-800 mb-12 subsidy-fade-in">Eligibility
-                                Criteria</h3>
-                            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 subsidy-fade-in">
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                    <div>
-                                        <h4 class="text-xl font-bold text-gray-800 mb-4">Who Can Apply?</h4>
-                                        <ul class="space-y-5 text-gray-600">
-                                            <li><i class="fas fa-user text-blue-500 mr-2"></i>Individual farmers</li>
-                                            <li><i class="fas fa-users text-blue-500 mr-2"></i>Farmer Producer
-                                                Organizations (FPOs)
-                                            </li>
-                                            <li><i class="fas fa-hands-helping text-blue-500 mr-2"></i>Self Help Groups
-                                                (SHGs)</li>
-                                            <li><i class="fas fa-building text-blue-500 mr-2"></i>Farmer Cooperative
-                                                Organizations
-                                            </li>
-                                            <li><i class="fas fa-handshake text-blue-500 mr-2"></i>Joint Liability
-                                                Groups (JLGs)
-                                            </li>
-                                            <li><i class="fas fa-briefcase text-blue-500 mr-2"></i>Section 8 Companies
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-xl font-bold text-gray-800 mb-4">Basic Requirements</h4>
-                                        <ul class="space-y-5 text-gray-600">
-                                            <li><i class="fas fa-id-card text-green-500 mr-2"></i>Indian nationality
-                                            </li>
-                                            <li><i class="fas fa-map-marked-alt text-green-500 mr-2"></i>Suitable land
-                                                (owned/leased)
-                                            </li>
-                                            <li><i class="fas fa-graduation-cap text-green-500 mr-2"></i>Basic livestock
-                                                knowledge
-                                            </li>
-                                            <li><i class="fas fa-file-alt text-green-500 mr-2"></i>Detailed Project
-                                                Report (DPR)
-                                            </li>
-                                            <li><i class="fas fa-bank text-green-500 mr-2"></i>Bank account</li>
-                                            <li><i class="fas fa-shield-alt text-green-500 mr-2"></i>Valid
-                                                identification documents
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Application Process -->
-                        <div class="mb-20">
-                            <h3 class="text-3xl font-bold text-center text-gray-800 mb-12 subsidy-fade-in">Application
-                                Process</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-                                <!-- Step 1 -->
-                                <div class="text-center subsidy-fade-in">
-                                    <div class="subsidy-step-number mx-auto mb-4">1</div>
-                                    <h4 class="text-lg font-bold text-gray-800 mb-2">Registration</h4>
-                                    <p class="text-gray-600">Visit nlm.udyamimitra.in and register on the portal</p>
-                                </div>
-
-                                <!-- Step 2 -->
-                                <div class="text-center subsidy-fade-in" style="animation-delay: 0.1s;">
-                                    <div class="subsidy-step-number mx-auto mb-4">2</div>
-                                    <h4 class="text-lg font-bold text-gray-800 mb-2">Documentation</h4>
-                                    <p class="text-gray-600">Prepare and upload required documents and DPR</p>
-                                </div>
-
-                                <!-- Step 3 -->
-                                <div class="text-center subsidy-fade-in" style="animation-delay: 0.2s;">
-                                    <div class="subsidy-step-number mx-auto mb-4">3</div>
-                                    <h4 class="text-lg font-bold text-gray-800 mb-2">Verification</h4>
-                                    <p class="text-gray-600">Application review and field verification by officials</p>
-                                </div>
-
-                                <!-- Step 4 -->
-                                <div class="text-center subsidy-fade-in" style="animation-delay: 0.3s;">
-                                    <div class="subsidy-step-number mx-auto mb-4">4</div>
-                                    <h4 class="text-lg font-bold text-gray-800 mb-2">Approval</h4>
-                                    <p class="text-gray-600">Receive approval and start project implementation</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Required Documents -->
-                        <div class="mb-20">
-                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                                <div class="subsidy-fade-in">
-                                    <h3 class="text-3xl font-bold text-gray-800 mb-6">Required Documents</h3>
-                                    <div class="bg-white rounded-xl shadow-lg p-8">
-                                        <ul class="space-y-5 text-gray-600">
-                                            <li><i class="fas fa-file-alt text-blue-500 mr-3"></i>Detailed Project
-                                                Report (DPR)</li>
-                                            <li><i class="fas fa-id-card text-blue-500 mr-3"></i>Identity proof
-                                                (Aadhaar/Voter ID)
-                                            </li>
-                                            <li><i class="fas fa-map-marked-alt text-blue-500 mr-3"></i>Land
-                                                ownership/lease
-                                                documents
-                                            </li>
-                                            <li><i class="fas fa-university text-blue-500 mr-3"></i>Bank account details
-                                            </li>
-                                            <li><i class="fas fa-camera text-blue-500 mr-3"></i>Passport size
-                                                photographs</li>
-                                            <li><i class="fas fa-certificate text-blue-500 mr-3"></i>Category
-                                                certificate (if
-                                                applicable)</li>
-                                            <li><i class="fas fa-graduation-cap text-blue-500 mr-3"></i>Educational
-                                                certificates
-                                            </li>
-                                            <li><i class="fas fa-handshake text-blue-500 mr-3"></i>Partnership deed (if
-                                                applicable)
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="subsidy-fade-in" style="animation-delay: 0.2s;">
-                                    <h3 class="text-3xl font-bold text-gray-800 mb-6">Key Benefits</h3>
-                                    <div class="bg-white rounded-xl shadow-lg p-8">
-                                        <ul class="space-y-5 text-gray-600">
-                                            <li><i class="fas fa-coins text-green-500 mr-3"></i>Substantial financial
-                                                support</li>
-                                            <li><i class="fas fa-chart-line text-green-500 mr-3"></i>Employment
-                                                generation</li>
-                                            <li><i class="fas fa-seedling text-green-500 mr-3"></i>Entrepreneurship
-                                                development</li>
-                                            <li><i class="fas fa-shield-alt text-green-500 mr-3"></i>Risk mitigation
-                                            </li>
-                                            <li><i class="fas fa-users text-green-500 mr-3"></i>Technical support</li>
-                                            <li><i class="fas fa-leaf text-green-500 mr-3"></i>Sustainable farming</li>
-                                            <li><i class="fas fa-globe text-green-500 mr-3"></i>Export potential</li>
-                                            <li><i class="fas fa-heart text-green-500 mr-3"></i>Rural development</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Contact Information -->
-                        <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 subsidy-fade-in">
-                            <h3 class="text-3xl font-bold text-center text-gray-800 mb-8">Need Help with Your
-                                Application?</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                                <div class="text-center">
-                                    <div
-                                        class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                        <i class="fas fa-globe text-blue-600 text-2xl"></i>
-                                    </div>
-                                    <h4 class="font-bold text-gray-800 mb-2">Official Portal</h4>
-                                    <p class="text-gray-600">nlm.udyamimitra.in</p>
-                                </div>
-                                <div class="text-center">
-                                    <div
-                                        class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                        <i class="fas fa-phone text-green-600 text-2xl"></i>
-                                    </div>
-                                    <h4 class="font-bold text-gray-800 mb-2">Expert Consultation</h4>
-                                    <p class="text-gray-600">+91 99000 77949</p>
-                                </div>
-                                <div class="text-center">
-                                    <div
-                                        class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                        <i class="fas fa-envelope text-yellow-600 text-2xl"></i>
-                                    </div>
-                                    <h4 class="font-bold text-gray-800 mb-2">Email Support</h4>
-                                    <p class="text-gray-600">info@krushiyuga.com</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Call to Action -->
-                <section class="subsidy-gradient-bg py-16">
-                    <div class="container mx-auto px-4 text-center">
-                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Apply for NLM Subsidy?</h3>
-                        <p class="text-xl text-white mb-8 max-w-2xl mx-auto">
-                            Let our experts help you prepare your application and maximize your chances of approval
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button
-                                class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300 shadow-lg">
-                                <i class="fas fa-file-alt mr-2"></i>Get DPR Preparation Help
-                            </button>
-                            <button
-                                class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition duration-300">
-                                <i class="fas fa-comments mr-2"></i>Free Consultation
-                            </button>
-                        </div>
-                    </div>
-                </section>
-
-            </main>
-
-            <%- include('../partials/footer.ejs') %>
-
-                <script>
-                    // Smooth scrolling for internal links
-                    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                        anchor.addEventListener('click', function (e) {
-                            e.preventDefault();
-                            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                                behavior: 'smooth'
+                    <script>
+                        // Smooth scrolling for internal links
+                        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                            anchor.addEventListener('click', function (e) {
+                                e.preventDefault();
+                                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                                    behavior: 'smooth'
+                                });
                             });
                         });
-                    });
 
-                    // Intersection Observer for fade-in animation
-                    const subsidyObserverOptions = {
-                        threshold: 0.1,
-                        rootMargin: '0px 0px -50px 0px'
-                    };
+                        // Intersection Observer for fade-in animation
+                        const subsidyObserverOptions = {
+                            threshold: 0.1,
+                            rootMargin: '0px 0px -50px 0px'
+                        };
 
-                    const subsidyObserver = new IntersectionObserver((entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                entry.target.style.opacity = '1';
-                                entry.target.style.transform = 'translateY(0)';
-                            }
-                        });
-                    }, subsidyObserverOptions);
-
-                    document.querySelectorAll('.subsidy-fade-in').forEach(el => {
-                        subsidyObserver.observe(el);
-                    });
-
-                    // Counter animation for stats
-                    function animateSubsidyCounter(element, target, suffix = '') {
-                        let current = 0;
-                        const increment = target / 100;
-                        const timer = setInterval(() => {
-                            current += increment;
-                            if (suffix === '₹50L') {
-                                element.textContent = '₹' + Math.floor(current) + 'L';
-                            } else if (suffix === '%') {
-                                element.textContent = Math.floor(current) + '%';
-                            } else {
-                                element.textContent = Math.floor(current) + (current >= 100 ? '+' : '');
-                            }
-
-                            if (current >= target) {
-                                if (suffix === '₹50L') {
-                                    element.textContent = '₹50L';
-                                } else if (suffix === '%') {
-                                    element.textContent = '50%';
-                                } else if (target === 2021) {
-                                    element.textContent = '2021';
-                                } else {
-                                    element.textContent = target + '+';
+                        const subsidyObserver = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    entry.target.style.opacity = '1';
+                                    entry.target.style.transform = 'translateY(0)';
                                 }
-                                clearInterval(timer);
-                            }
-                        }, 20);
-                    }
+                            });
+                        }, subsidyObserverOptions);
 
-                    // Trigger counter animation when stats section is visible
-                    const subsidyStatsObserver = new IntersectionObserver((entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                const counters = entry.target.querySelectorAll('.subsidy-stats-counter');
-                                counters.forEach((counter, index) => {
-                                    const targets = [50, 50, 100, 2021];
-                                    const suffixes = ['%', '₹50L', '', ''];
-                                    animateSubsidyCounter(counter, targets[index], suffixes[index]);
-                                });
-                                subsidyStatsObserver.unobserve(entry.target);
-                            }
+                        document.querySelectorAll('.subsidy-fade-in').forEach(el => {
+                            subsidyObserver.observe(el);
                         });
-                    }, { threshold: 0.5 });
 
-                    const subsidyStatsSection = document.querySelector('.subsidy-stats-counter')?.closest('section');
-                    if (subsidyStatsSection) {
-                        subsidyStatsObserver.observe(subsidyStatsSection);
-                    }
-                </script>
+                        // Counter animation for stats
+                        function animateSubsidyCounter(element, target, suffix = '') {
+                            let current = 0;
+                            const increment = target / 100;
+                            const timer = setInterval(() => {
+                                current += increment;
+                                if (suffix === '₹50L') {
+                                    element.textContent = '₹' + Math.floor(current) + 'L';
+                                } else if (suffix === '%') {
+                                    element.textContent = Math.floor(current) + '%';
+                                } else {
+                                    element.textContent = Math.floor(current) + (current >= 100 ? '+' : '');
+                                }
 
-    </body>
+                                if (current >= target) {
+                                    if (suffix === '₹50L') {
+                                        element.textContent = '₹50L';
+                                    } else if (suffix === '%') {
+                                        element.textContent = '50%';
+                                    } else if (target === 2021) {
+                                        element.textContent = '2021';
+                                    } else {
+                                        element.textContent = target + '+';
+                                    }
+                                    clearInterval(timer);
+                                }
+                            }, 20);
+                        }
 
-    </html>
+                        // Trigger counter animation when stats section is visible
+                        const subsidyStatsObserver = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    const counters = entry.target.querySelectorAll('.subsidy-stats-counter');
+                                    counters.forEach((counter, index) => {
+                                        const targets = [50, 50, 100, 2021];
+                                        const suffixes = ['%', '₹50L', '', ''];
+                                        animateSubsidyCounter(counter, targets[index], suffixes[index]);
+                                    });
+                                    subsidyStatsObserver.unobserve(entry.target);
+                                }
+                            });
+                        }, { threshold: 0.5 });
 
-    <!-- Hero Section -->
+                        const subsidyStatsSection = document.querySelector('.subsidy-stats-counter')?.closest('section');
+                        if (subsidyStatsSection) {
+                            subsidyStatsObserver.observe(subsidyStatsSection);
+                        }
+                    </script>
+
+        </body>
+
+        </html>
+
+        <!-- Hero Section -->
