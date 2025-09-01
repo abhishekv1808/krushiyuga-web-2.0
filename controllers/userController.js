@@ -1,6 +1,8 @@
 const Inquiry = require('../models/Inquiry');
+const OTP = require('../models/OTP');
 const { cloudinaryConfig } = require('../config/cloudinary');
 const { sendInquiryNotification } = require('../utils/emailUtils');
+const { createAndSendOTP, verifyOTP } = require('../utils/otpUtils');
 const fs = require('fs');
 const path = require('path');
 
@@ -20,54 +22,57 @@ exports.getContactUs = (req ,res ,next)=>{
 }
 
 exports.postContactUs = async (req, res, next) => {
-    console.log('🔥 Contact form submission received');
-    console.log('Request body:', req.body);
-    
     try {
-        
-        const { firstName, lastName, email, mobile, inquiryType, location, message, source, name, phone, investment_model } = req.body;
-        
-        console.log('📋 Extracted fields:');
-        console.log('  - firstName:', firstName);
-        console.log('  - lastName:', lastName);  
-        console.log('  - name:', name);
-        console.log('  - email:', email);
-        console.log('  - mobile:', mobile);
-        console.log('  - phone:', phone);
-        console.log('  - investment_model:', investment_model);
-        console.log('  - inquiryType:', inquiryType);
-        console.log('  - message:', message?.substring(0, 50) + '...');
+        const { firstName, lastName, email, mobile, inquiryType, location, message, source, name, phone, investment_model, otp, isOtpVerified } = req.body;
+        console.log('  - otp:', otp);
+        console.log('  - isOtpVerified:', isOtpVerified);
         
         // Handle both old and new field formats
         const finalName = name || `${firstName || ''} ${lastName || ''}`.trim();
         const finalPhone = phone || mobile;
         const finalInvestmentModel = investment_model || inquiryType || '';
         
-        console.log('🔧 Processed data:');
-        console.log('  - finalName:', finalName);
-        console.log('  - email:', email);
-        console.log('  - finalPhone:', finalPhone);
-        console.log('  - finalInvestmentModel:', finalInvestmentModel);
-        console.log('  - message length:', message?.length || 0);
-        
         // Validate required fields
-        console.log('🔍 Validating required fields...');
         if (!finalName) {
-            console.log('❌ VALIDATION FAILED: Missing name');
             throw new Error('Missing required field: name');
         }
         if (!email) {
-            console.log('❌ VALIDATION FAILED: Missing email');
             throw new Error('Missing required field: email');
         }
         if (!finalPhone) {
-            console.log('❌ VALIDATION FAILED: Missing phone');
             throw new Error('Missing required field: phone');
         }
-        console.log('✅ All required fields validated successfully');
+        
+        // Check OTP verification for new submissions
+        console.log('🔍 Checking OTP verification...');
+        
+        // Check OTP verification for new submissions
+        if (!isOtpVerified || (isOtpVerified !== 'true' && isOtpVerified !== true)) {
+            if (req.headers['content-type'] && req.headers['content-type'].includes('application/json')) {
+                return res.status(400).json({
+                    success: false,
+                    message: 'Please verify your email address with OTP before submitting the form.',
+                    requireOtpVerification: true
+                });
+            } else {
+                return res.redirect('/contact-us?error=otp_required');
+            }
+        }
+        
+        // Check if OTP is provided
+        if (!otp || otp.length !== 6) {
+            if (req.headers['content-type'] && req.headers['content-type'].includes('application/json')) {
+                return res.status(400).json({
+                    success: false,
+                    message: 'Valid 6-digit OTP is required for form submission.',
+                    requireOtpVerification: true
+                });
+            } else {
+                return res.redirect('/contact-us?error=otp_required');
+            }
+        }
         
         // Create new inquiry document
-        console.log('📋 Creating new inquiry document...');
         const inquiryData = {
             name: finalName,
             email,
@@ -76,28 +81,11 @@ exports.postContactUs = async (req, res, next) => {
             message,
             source: source || 'website'
         };
-        console.log('📋 Inquiry data to save:', JSON.stringify(inquiryData, null, 2));
         
         const newInquiry = new Inquiry(inquiryData);
-        console.log('📋 Inquiry object created successfully');
         
         // Save to MongoDB
-        console.log('� Attempting to save inquiry to MongoDB...');
-        console.log('💾 Pre-save inquiry object:', JSON.stringify(newInquiry.toObject(), null, 2));
-        
         const savedInquiry = await newInquiry.save();
-        
-        console.log('✅✅✅ Successfully saved inquiry to MongoDB!');
-        console.log('✅ Saved inquiry ID:', savedInquiry._id);
-        console.log('✅ Saved inquiry data:', JSON.stringify(savedInquiry.toObject(), null, 2));
-        
-        console.log('New inquiry saved:', {
-            id: savedInquiry._id,
-            name: savedInquiry.name,
-            email: savedInquiry.email,
-            source: savedInquiry.source,
-            timestamp: savedInquiry.createdAt
-        });
         
         // Send email notification (try Gmail first, fallback to HTML file)
         sendInquiryNotification(savedInquiry)
@@ -125,17 +113,13 @@ exports.postContactUs = async (req, res, next) => {
         res.redirect('/contact-us?success=true');
         
     } catch (error) {
-        console.error('=== CONTACT FORM ERROR ===');
-        console.error('Error message:', error.message);
-        console.error('Error stack:', error.stack);
-        console.error('Request body was:', req.body);
+        console.error('Contact form error:', error.message);
         
         // Check if it's an AJAX request
         if (req.headers['content-type'] && req.headers['content-type'].includes('application/json')) {
             return res.status(500).json({
                 success: false,
-                message: 'Sorry, there was an error submitting your inquiry. Please try again.',
-                error: error.message // Include error details for debugging
+                message: 'Sorry, there was an error submitting your inquiry. Please try again.'
             });
         }
         
@@ -226,3 +210,99 @@ exports.getMultiLayerHusbandry = (req ,res ,next)=>{
 exports.getSubsidy = (req ,res ,next)=>{
     res.render('../views/user/subsidy.ejs', { pageTitle: 'Subsidy | Krushiyuga' });
 }
+
+// OTP-related endpoints
+exports.sendOTP = async (req, res, next) => {
+    console.log('🔥 OTP request received');
+    console.log('Request body:', req.body);
+    
+    try {
+        const { email } = req.body;
+        
+        if (!email) {
+            return res.status(400).json({
+                success: false,
+                message: 'Email address is required.'
+            });
+        }
+        
+        // Email format validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            return res.status(400).json({
+                success: false,
+                message: 'Please enter a valid email address.'
+            });
+        }
+        
+        console.log('📧 Sending OTP to email:', email);
+        
+        const result = await createAndSendOTP(email);
+        
+        if (result.success) {
+            console.log('✅ OTP sent successfully to:', email);
+            return res.status(200).json({
+                success: true,
+                message: 'OTP sent successfully to your email address.',
+                otpId: result.otpId
+            });
+        } else {
+            console.log('❌ Failed to send OTP to:', email);
+            return res.status(500).json({
+                success: false,
+                message: result.message || 'Failed to send OTP. Please try again.'
+            });
+        }
+        
+    } catch (error) {
+        console.error('❌ Error in sendOTP:', error);
+        return res.status(500).json({
+            success: false,
+            message: 'Internal server error. Please try again later.'
+        });
+    }
+};
+
+exports.verifyOTP = async (req, res, next) => {
+    console.log('🔥 OTP verification request received');
+    console.log('Request body:', req.body);
+    
+    try {
+        const { email, otp } = req.body;
+        
+        if (!email || !otp) {
+            return res.status(400).json({
+                success: false,
+                message: 'Email and OTP are required.'
+            });
+        }
+        
+        console.log('🔍 Verifying OTP for email:', email);
+        
+        const result = await verifyOTP(email, otp);
+        
+        if (result.success) {
+            console.log('✅ OTP verified successfully for:', email);
+            return res.status(200).json({
+                success: true,
+                message: 'Email verified successfully!',
+                otpId: result.otpId
+            });
+        } else {
+            console.log('❌ OTP verification failed for:', email);
+            return res.status(400).json({
+                success: false,
+                message: result.message,
+                shouldRequestNew: result.shouldRequestNew || false,
+                remainingAttempts: result.remainingAttempts
+            });
+        }
+        
+    } catch (error) {
+        console.error('❌ Error in verifyOTP:', error);
+        return res.status(500).json({
+            success: false,
+            message: 'Internal server error. Please try again later.'
+        });
+    }
+};

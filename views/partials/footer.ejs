@@ -167,6 +167,40 @@
         }
     }
 
+    function toggleProjectsDropdown(event) {
+        event.preventDefault();
+        const dropdown = document.getElementById('projectsDropdown');
+        const menu = dropdown.querySelector('.dropdown-menu');
+
+        // Toggle the dropdown
+        if (menu.style.opacity === '1' || dropdown.classList.contains('dropdown-open')) {
+            menu.style.opacity = '0';
+            menu.style.visibility = 'hidden';
+            menu.style.transform = 'translateY(-10px)';
+            menu.style.pointerEvents = 'none';
+            dropdown.classList.remove('dropdown-open');
+        } else {
+            menu.style.opacity = '1';
+            menu.style.visibility = 'visible';
+            menu.style.transform = 'translateY(0)';
+            menu.style.pointerEvents = 'auto';
+            dropdown.classList.add('dropdown-open');
+        }
+    }
+
+    function toggleMobileProjectsDropdown() {
+        const dropdown = document.getElementById('mobileProjectsDropdown');
+        const icon = document.getElementById('mobileProjectsDropdownIcon');
+
+        if (dropdown.style.maxHeight === '0px' || dropdown.style.maxHeight === '') {
+            dropdown.style.maxHeight = dropdown.scrollHeight + 'px';
+            icon.style.transform = 'rotate(180deg)';
+        } else {
+            dropdown.style.maxHeight = '0px';
+            icon.style.transform = 'rotate(0deg)';
+        }
+    }
+
     // Close mobile menu when clicking outside
     document.addEventListener('click', function (event) {
         const mobileMenu = document.getElementById('mobileMenu');
@@ -176,7 +210,7 @@
             mobileMenu.classList.remove('open');
         }
 
-        // Close dropdown when clicking outside
+        // Close breed dropdown when clicking outside
         const breedDropdown = document.getElementById('breedDropdown');
         if (breedDropdown && !breedDropdown.contains(event.target)) {
             const menu = breedDropdown.querySelector('.dropdown-menu');
@@ -186,6 +220,19 @@
                 menu.style.transform = 'translateY(-10px)';
                 menu.style.pointerEvents = 'none';
                 breedDropdown.classList.remove('dropdown-open');
+            }
+        }
+
+        // Close projects dropdown when clicking outside
+        const projectsDropdown = document.getElementById('projectsDropdown');
+        if (projectsDropdown && !projectsDropdown.contains(event.target)) {
+            const menu = projectsDropdown.querySelector('.dropdown-menu');
+            if (menu) {
+                menu.style.opacity = '0';
+                menu.style.visibility = 'hidden';
+                menu.style.transform = 'translateY(-10px)';
+                menu.style.pointerEvents = 'none';
+                projectsDropdown.classList.remove('dropdown-open');
             }
         }
     });

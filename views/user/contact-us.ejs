@@ -6,6 +6,69 @@
     ; const currentUrl="https://krushiyuga.com/contact-us" ; const ogImage="https://krushiyuga.com/favicon.svg" ; %>
     <%- include('../partials/head.ejs')%>
 
+        <style>
+            /* Custom styles for OTP verification */
+            .otp-verified {
+                background: linear-gradient(90deg, #f0f9ff 0%, #ecfdf5 100%);
+                border-color: #10b981 !important;
+                box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+            }
+
+            .email-verified {
+                background: linear-gradient(90deg, #f0f9ff 0%, #ecfdf5 100%);
+                border-color: #10b981 !important;
+                box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+            }
+
+            .verification-success {
+                animation: fadeInScale 0.5s ease-out;
+            }
+
+            @keyframes fadeInScale {
+                0% {
+                    opacity: 0;
+                    transform: scale(0.95);
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+
+            .pulse-green {
+                animation: pulseGreen 2s infinite;
+            }
+
+            @keyframes pulseGreen {
+
+                0%,
+                100% {
+                    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+                }
+
+                50% {
+                    box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+                }
+            }
+
+            .slide-in {
+                animation: slideIn 0.3s ease-out;
+            }
+
+            @keyframes slideIn {
+                0% {
+                    transform: translateY(-10px);
+                    opacity: 0;
+                }
+
+                100% {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+        </style>
+
         <body>
 
             <%- include('../partials/navbar.ejs')%>
@@ -136,7 +199,6 @@
 
                                         <form class="space-y-6" id="contactForm" method="POST" action="/contact-us">
                                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
                                                 <div>
                                                     <label class="block text-sm font-medium text-gray-700 mb-2">
                                                         <i class="fas fa-user mr-2"></i>First Name *
@@ -146,7 +208,6 @@
                                                         placeholder="Enter your first name">
                                                 </div>
 
-
                                                 <div>
                                                     <label class="block text-sm font-medium text-gray-700 mb-2">
                                                         <i class="fas fa-user mr-2"></i>Last Name *
@@ -155,17 +216,67 @@
                                                         class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
                                                         placeholder="Enter your last name">
                                                 </div>
-
                                             </div>
 
-                                            <div>
+                                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                                <div class="md:col-span-2">
+                                                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                                                        <i class="fas fa-envelope mr-2"></i>Email Address *
+                                                    </label>
+                                                    <div>
+                                                        <input type="email" name="email" id="email" required
+                                                            class="form-input w-full px-4 py-3 pr-28 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
+                                                            placeholder="Enter your email address">
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="w-full flex ">
+                                                    <button type="button" id="sendOtpBtn"
+                                                        class="cursor-pointer w-full bg-green-600 text-white px-4 py-3 rounded-md text-sm font-medium hover:bg-green-700 transition duration-300 disabled:bg-gray-400 disabled:cursor-not-allowed mt-auto">
+                                                        Send OTP
+                                                    </button>
+                                                </div>
+                                                <div id="emailValidationMsg" class="text-sm mt-1 hidden"></div>
+                                            </div>
+
+                                            <!-- OTP Verification Section -->
+                                            <div id="otpSection"
+                                                class="hidden space-y-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
                                                 <label class="block text-sm font-medium text-gray-700 mb-2">
-                                                    <i class="fas fa-envelope mr-2"></i>Email Address *
+                                                    <i class="fas fa-shield-alt mr-2"></i>Email Verification Code *
                                                 </label>
-                                                <input type="email" name="email" id="email" required
-                                                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
-                                                    placeholder="Enter your email address">
+                                                <div class="relative">
+                                                    <input type="text" id="otpInput" maxlength="6" pattern="[0-9]{6}"
+                                                        class="form-input w-full px-4 py-3 pr-32 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none text-center text-2xl font-mono tracking-widest"
+                                                        placeholder="000000">
+                                                    <button type="button" id="verifyOtpBtn"
+                                                        class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition duration-300 disabled:bg-gray-400 disabled:cursor-not-allowed">
+                                                        Verify
+                                                    </button>
+                                                </div>
+                                                <div id="otpValidationMsg" class="text-sm mt-1 hidden"></div>
+
+                                                <div
+                                                    class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                                                    <div id="otpTimer" class="text-sm text-gray-600 hidden">
+                                                        <i class="fas fa-clock mr-1"></i>
+                                                        <span>OTP expires in: <span
+                                                                id="timerDisplay">10:00</span></span>
+                                                    </div>
+                                                    <div class="text-xs text-gray-500">
+                                                        Didn't receive OTP?
+                                                        <button type="button" id="resendOtpBtn"
+                                                            class="text-green-600 hover:text-green-700 font-medium underline disabled:text-gray-400 disabled:no-underline disabled:cursor-not-allowed ml-1">
+                                                            Resend OTP
+                                                        </button>
+                                                    </div>
+                                                </div>
                                             </div>
+
+                                            <!-- Hidden fields for form submission -->
+                                            <input type="hidden" name="otp" id="verifiedOtp">
+                                            <input type="hidden" name="isOtpVerified" id="isOtpVerified" value="false">
 
                                             <div>
                                                 <label class="block text-sm font-medium text-gray-700 mb-2">
@@ -214,21 +325,20 @@
                                                     class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
                                                 <label for="agree" class="ml-2 block text-sm text-gray-700">
                                                     I agree to the <a href="#"
-                                                        class="text-green-600 hover:text-green-700">Terms &
+                                                        class="text-green-600 hover:text-green-700">Terms
+                                                        &
                                                         Conditions</a> and <a href="#"
                                                         class="text-green-600 hover:text-green-700">Privacy
                                                         Policy</a>
                                                 </label>
                                             </div>
 
-                                            <button type="submit"
-                                                class="w-full bg-green-600 text-white font-semibold py-4 px-6 rounded-lg hover:bg-green-700 transition duration-300 shadow-lg transform hover:scale-105">
+                                            <button type="submit" id="submitBtn" disabled
+                                                class="w-full bg-gray-400 text-white font-semibold py-4 px-6 rounded-lg transition duration-300 shadow-lg cursor-not-allowed disabled:bg-gray-400 enabled:bg-green-600 enabled:hover:bg-green-700 enabled:transform enabled:hover:scale-105 enabled:cursor-pointer">
                                                 <i class="fas fa-paper-plane mr-2"></i>
-                                                Send Message
+                                                <span id="submitBtnText">Verify Email to Send Message</span>
                                             </button>
                                         </form>
-
-
                                     </div>
                                 </div>
 
@@ -511,9 +621,298 @@
                             e.target.value = value;
                         });
 
+                        // OTP Variables
+                        let otpTimer;
+                        let otpTimeLeft = 600; // 10 minutes in seconds
+                        let isEmailVerified = false;
+                        let currentOtp = '';
+                        let isOtpSending = false;
+
+                        // DOM Elements
+                        const emailInput = document.getElementById('email');
+                        const sendOtpBtn = document.getElementById('sendOtpBtn');
+                        const otpSection = document.getElementById('otpSection');
+                        const otpInput = document.getElementById('otpInput');
+                        const verifyOtpBtn = document.getElementById('verifyOtpBtn');
+                        const resendOtpBtn = document.getElementById('resendOtpBtn');
+                        const submitBtn = document.getElementById('submitBtn');
+                        const submitBtnText = document.getElementById('submitBtnText');
+                        const timerDisplay = document.getElementById('timerDisplay');
+                        const otpTimer_div = document.getElementById('otpTimer');
+                        const emailValidationMsg = document.getElementById('emailValidationMsg');
+                        const otpValidationMsg = document.getElementById('otpValidationMsg');
+
+                        // Debug functionality (temporary)
+                        // Email validation
+                        function validateEmail(email) {
+                            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                            return emailRegex.test(email);
+                        }
+
+                        // Show message
+                        function showMessage(element, message, type = 'error') {
+                            element.textContent = message;
+                            element.className = `text-sm mt-1 ${type === 'success' ? 'text-green-600' : type === 'warning' ? 'text-yellow-600' : 'text-red-600'}`;
+                            element.classList.remove('hidden');
+                        }
+
+                        // Hide message
+                        function hideMessage(element) {
+                            element.classList.add('hidden');
+                        }
+
+                        // Update timer display
+                        function updateTimerDisplay() {
+                            const minutes = Math.floor(otpTimeLeft / 60);
+                            const seconds = otpTimeLeft % 60;
+                            timerDisplay.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                        }
+
+                        // Start OTP timer
+                        function startOtpTimer() {
+                            otpTimeLeft = 600; // Reset to 10 minutes
+                            otpTimer_div.classList.remove('hidden');
+                            updateTimerDisplay();
+
+                            otpTimer = setInterval(() => {
+                                otpTimeLeft--;
+                                updateTimerDisplay();
+
+                                if (otpTimeLeft <= 0) {
+                                    clearInterval(otpTimer);
+                                    otpTimer_div.classList.add('hidden');
+                                    resendOtpBtn.disabled = false;
+                                    showMessage(otpValidationMsg, 'OTP has expired. Please request a new one.', 'warning');
+                                }
+                            }, 1000);
+                        }
+
+                        // Stop OTP timer
+                        function stopOtpTimer() {
+                            if (otpTimer) {
+                                clearInterval(otpTimer);
+                                otpTimer_div.classList.add('hidden');
+                            }
+                        }
+
+                        // Send OTP
+                        async function sendOTP() {
+                            const email = emailInput.value.trim();
+
+                            if (!email) {
+                                showMessage(emailValidationMsg, 'Please enter your email address.');
+                                emailInput.focus();
+                                return;
+                            }
+
+                            if (!validateEmail(email)) {
+                                showMessage(emailValidationMsg, 'Please enter a valid email address.');
+                                emailInput.focus();
+                                return;
+                            }
+
+                            hideMessage(emailValidationMsg);
+
+                            // Show loading state
+                            isOtpSending = true;
+                            sendOtpBtn.disabled = true;
+                            sendOtpBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-1"></i>Sending...';
+
+                            try {
+                                const response = await fetch('/send-otp', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                    },
+                                    body: JSON.stringify({ email })
+                                });
+
+                                const data = await response.json();
+
+                                if (response.ok && data.success) {
+                                    showMessage(emailValidationMsg, 'OTP sent successfully! Please check your email.', 'success');
+                                    otpSection.classList.remove('hidden');
+                                    sendOtpBtn.textContent = 'Resend OTP';
+                                    emailInput.disabled = true;
+                                    startOtpTimer();
+                                    resendOtpBtn.disabled = true;
+                                    setTimeout(() => {
+                                        resendOtpBtn.disabled = false;
+                                    }, 30000); // Enable resend after 30 seconds
+                                    otpInput.focus();
+                                } else {
+                                    showMessage(emailValidationMsg, data.message || 'Failed to send OTP. Please try again.');
+                                }
+                            } catch (error) {
+                                console.error('Error sending OTP:', error);
+                                showMessage(emailValidationMsg, 'Network error. Please try again.');
+                            } finally {
+                                isOtpSending = false;
+                                sendOtpBtn.disabled = false;
+                                sendOtpBtn.innerHTML = 'Send OTP';
+                            }
+                        }
+
+                        // Verify OTP
+                        async function verifyOTP() {
+                            const email = emailInput.value.trim();
+                            const otp = otpInput.value.trim();
+
+                            if (!otp || otp.length !== 6) {
+                                showMessage(otpValidationMsg, 'Please enter a valid 6-digit OTP.');
+                                otpInput.focus();
+                                return;
+                            }
+
+                            hideMessage(otpValidationMsg);
+
+                            // Show loading state
+                            verifyOtpBtn.disabled = true;
+                            verifyOtpBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-1"></i>Verifying...';
+
+                            try {
+                                const response = await fetch('/verify-otp', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                    },
+                                    body: JSON.stringify({ email, otp })
+                                });
+
+                                const data = await response.json();
+
+                                if (response.ok && data.success) {
+                                    console.log('✅ OTP Verification Success - Setting variables:');
+                                    showMessage(otpValidationMsg, 'Email verified successfully! ✓', 'success');
+                                    isEmailVerified = true;
+                                    currentOtp = otp;
+                                    document.getElementById('verifiedOtp').value = otp;
+                                    document.getElementById('isOtpVerified').value = 'true';
+
+                                    console.log('  - isEmailVerified set to:', isEmailVerified);
+                                    console.log('  - currentOtp set to:', currentOtp);
+                                    console.log('  - verifiedOtp hidden field set to:', document.getElementById('verifiedOtp').value);
+                                    console.log('  - isOtpVerified hidden field set to:', document.getElementById('isOtpVerified').value);
+
+                                    // Enable submit button with animation
+                                    submitBtn.disabled = false;
+                                    submitBtn.className = 'w-full bg-green-600 text-white font-semibold py-4 px-6 rounded-lg hover:bg-green-700 transition duration-300 shadow-lg transform hover:scale-105 cursor-pointer verification-success';
+                                    submitBtnText.textContent = 'Send Message';
+
+                                    // Hide and disable OTP verification elements
+                                    otpInput.disabled = true;
+                                    verifyOtpBtn.style.display = 'none'; // Hide the verify button
+                                    resendOtpBtn.disabled = true;
+                                    stopOtpTimer();
+
+                                    // Show success styling with custom classes
+                                    otpInput.className = 'form-input w-full px-4 py-3 pr-32 border rounded-lg focus:ring-2 focus:ring-green-500 outline-none text-center text-2xl font-mono tracking-widest otp-verified';
+
+                                    // Add verified checkmark icon to OTP input with animation
+                                    if (!document.getElementById('otpVerifiedIcon')) {
+                                        const verifiedIcon = document.createElement('div');
+                                        verifiedIcon.id = 'otpVerifiedIcon';
+                                        verifiedIcon.className = 'absolute right-3 top-1/2 transform -translate-y-1/2 text-green-600 slide-in';
+                                        verifiedIcon.innerHTML = '<i class="fas fa-check-circle text-lg pulse-green"></i>';
+                                        otpInput.parentElement.appendChild(verifiedIcon);
+                                    }
+
+                                    // Update the email input to show verified status with custom classes
+                                    emailInput.className = 'form-input w-full px-4 py-3 pr-28 border rounded-lg focus:ring-2 focus:ring-green-500 outline-none email-verified';
+                                    sendOtpBtn.innerHTML = '<i class="fas fa-check-circle mr-1"></i>Verified';
+                                    sendOtpBtn.disabled = true;
+                                    sendOtpBtn.className = 'absolute right-2 top-1/2 transform -translate-y-1/2 bg-green-500 text-white px-4 py-2 rounded-md text-sm font-medium cursor-not-allowed verification-success';
+
+                                } else {
+                                    showMessage(otpValidationMsg, data.message || 'Invalid OTP. Please try again.');
+                                    if (data.shouldRequestNew) {
+                                        resendOtpBtn.disabled = false;
+                                    }
+                                    // Only restore verify button if verification failed
+                                    verifyOtpBtn.disabled = false;
+                                    verifyOtpBtn.innerHTML = 'Verify';
+                                }
+                            } catch (error) {
+                                console.error('Error verifying OTP:', error);
+                                showMessage(otpValidationMsg, 'Network error. Please try again.');
+                                // Only restore verify button if there was an error
+                                verifyOtpBtn.disabled = false;
+                                verifyOtpBtn.innerHTML = 'Verify';
+                            }
+                            // Removed the finally block that was re-enabling the button
+                        }
+
+                        // Event Listeners
+                        sendOtpBtn.addEventListener('click', sendOTP);
+                        resendOtpBtn.addEventListener('click', sendOTP);
+                        verifyOtpBtn.addEventListener('click', verifyOTP);
+
+                        // Email input change listener
+                        emailInput.addEventListener('input', function () {
+                            if (isEmailVerified) {
+                                // Reset verification if email is changed
+                                resetOtpState();
+                            }
+                        });
+
+                        // OTP input formatting
+                        otpInput.addEventListener('input', function (e) {
+                            let value = e.target.value.replace(/\D/g, '');
+                            if (value.length > 6) {
+                                value = value.substring(0, 6);
+                            }
+                            e.target.value = value;
+
+                            // Auto-verify when 6 digits are entered
+                            if (value.length === 6) {
+                                setTimeout(verifyOTP, 100);
+                            }
+                        });
+
+                        // Enter key handling for OTP
+                        otpInput.addEventListener('keypress', function (e) {
+                            if (e.key === 'Enter') {
+                                e.preventDefault();
+                                verifyOTP();
+                            }
+                        });
+
+                        // Form submission
                         document.getElementById('contactForm').addEventListener('submit', async function (e) {
                             e.preventDefault();
-                            console.log('Form submission intercepted - AJAX will be used');
+
+                            // Check if email is verified using multiple methods
+                            const hiddenOtpVerified = document.getElementById('isOtpVerified').value;
+                            const hiddenOtpValue = document.getElementById('verifiedOtp').value;
+
+                            // More robust verification check - prioritize hidden fields as they're more reliable
+                            const isVerifiedByHiddenField = hiddenOtpVerified === 'true';
+                            const hasValidOtpInHiddenField = hiddenOtpValue && hiddenOtpValue.length === 6;
+
+                            // Check if the success message is visible as an additional verification
+                            const successMessage = document.getElementById('otpValidationMsg');
+                            const hasSuccessMessage = successMessage && !successMessage.classList.contains('hidden') &&
+                                successMessage.textContent.includes('Email verified successfully');
+
+                            // If hidden fields show verification OR success message is visible, proceed
+                            if (!isVerifiedByHiddenField && !hasSuccessMessage) {
+                                alert('Please verify your email address before submitting the form.');
+                                return;
+                            }
+
+                            if (!hasValidOtpInHiddenField && !currentOtp) {
+                                alert('Please verify your email with OTP before submitting the form.');
+                                return;
+                            }
+
+                            // Force set variables if hidden fields are valid but JavaScript variables are not
+                            if (isVerifiedByHiddenField && hasValidOtpInHiddenField) {
+                                isEmailVerified = true;
+                                currentOtp = hiddenOtpValue;
+                            }
+
+                            // Use the most reliable OTP value
+                            const finalOtp = hiddenOtpValue || currentOtp;
 
                             const formData = {
                                 firstName: document.getElementById('firstName').value,
@@ -523,10 +922,10 @@
                                 inquiryType: document.getElementById('inquiryType').value,
                                 location: document.getElementById('location').value,
                                 message: document.getElementById('message').value,
-                                source: 'contact-us-page' // Add source field for controller
+                                otp: finalOtp,
+                                isOtpVerified: 'true',
+                                source: 'contact-us-page'
                             };
-
-                            console.log('📝 Form data prepared:', formData);
 
                             // Validate required fields
                             if (!formData.firstName || !formData.lastName || !formData.email || !formData.mobile || !formData.message) {
@@ -541,7 +940,6 @@
                             submitButton.disabled = true;
 
                             try {
-                                console.log('🚀 Sending AJAX request...');
                                 const response = await fetch('/contact-us', {
                                     method: 'POST',
                                     headers: {
@@ -550,70 +948,104 @@
                                     body: JSON.stringify(formData)
                                 });
 
-                                console.log('📡 Response received:', response.status, response.ok);
-
                                 let data;
                                 try {
                                     data = await response.json();
                                 } catch (parseError) {
-                                    console.error('❌ JSON parse error:', parseError);
                                     throw new Error('Invalid server response');
                                 }
 
-                                console.log('📄 Response data:', data);
-
                                 if (response.ok && data.success) {
-                                    console.log('✅ Success! Showing modal...');
                                     // Show success modal
                                     showSuccessModal();
-                                    // Reset form
+                                    // Reset form and OTP state
                                     document.getElementById('contactForm').reset();
+                                    resetOtpState();
                                 } else {
-                                    console.error('❌ Server returned error:', data);
-                                    // Handle error
-                                    alert(data.message || 'Something went wrong. Please try again.');
+                                    if (data.requireOtpVerification) {
+                                        alert('Email verification required. Please verify your email with OTP.');
+                                    } else {
+                                        alert(data.message || 'Something went wrong. Please try again.');
+                                    }
                                 }
                             } catch (error) {
-                                console.error('❌ AJAX Error:', error);
                                 alert('Something went wrong. Please try again later.');
                             } finally {
                                 // Restore button state
                                 submitButton.innerHTML = originalText;
-                                submitButton.disabled = false;
+                                submitButton.disabled = !isEmailVerified;
                             }
                         });
 
+                        // Reset OTP state function
+                        function resetOtpState() {
+                            isEmailVerified = false;
+                            currentOtp = '';
+                            document.getElementById('verifiedOtp').value = '';
+                            document.getElementById('isOtpVerified').value = 'false';
+
+                            // Reset email input
+                            emailInput.disabled = false;
+                            emailInput.className = 'form-input w-full px-4 py-3 pr-28 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none';
+
+                            // Reset send OTP button
+                            sendOtpBtn.textContent = 'Send OTP';
+                            sendOtpBtn.disabled = false;
+                            sendOtpBtn.className = 'absolute right-2 top-1/2 transform -translate-y-1/2 bg-green-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-green-700 transition duration-300 disabled:bg-gray-400 disabled:cursor-not-allowed';
+
+                            // Hide OTP section
+                            otpSection.classList.add('hidden');
+
+                            // Reset submit button
+                            submitBtn.disabled = true;
+                            submitBtn.className = 'w-full bg-gray-400 text-white font-semibold py-4 px-6 rounded-lg transition duration-300 shadow-lg cursor-not-allowed disabled:bg-gray-400';
+                            submitBtnText.textContent = 'Verify Email to Send Message';
+
+                            // Stop timer
+                            stopOtpTimer();
+
+                            // Hide messages
+                            hideMessage(emailValidationMsg);
+                            hideMessage(otpValidationMsg);
+
+                            // Reset OTP input states
+                            otpInput.disabled = false;
+                            otpInput.value = '';
+                            otpInput.className = 'form-input w-full px-4 py-3 pr-32 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none text-center text-2xl font-mono tracking-widest';
+
+                            // Reset verify button
+                            verifyOtpBtn.disabled = false;
+                            verifyOtpBtn.style.display = 'block'; // Show the verify button again
+                            verifyOtpBtn.innerHTML = 'Verify';
+
+                            // Reset resend button
+                            resendOtpBtn.disabled = false;
+
+                            // Remove verified icon if exists
+                            const verifiedIcon = document.getElementById('otpVerifiedIcon');
+                            if (verifiedIcon) {
+                                verifiedIcon.remove();
+                            }
+                        }
+
                         // Modal functions
                         function showSuccessModal() {
-                            console.log('🎯 showSuccessModal() called');
                             const modal = document.getElementById('successModal');
-                            console.log('🔍 Modal element found:', modal);
 
                             if (modal) {
-                                console.log('👀 Current modal classes:', modal.className);
-                                console.log('👀 Current modal style.display:', modal.style.display);
-
                                 // Remove hidden class and add flex display
                                 modal.classList.remove('hidden');
                                 modal.classList.add('flex');
                                 modal.style.display = 'flex'; // Force display
-
-                                console.log('✅ Modal classes after show:', modal.className);
-                                console.log('✅ Modal style.display after show:', modal.style.display);
-                                console.log('🎉 Modal should now be visible!');
-                            } else {
-                                console.error('❌ Modal element not found!');
                             }
                         }
 
                         function closeSuccessModal() {
-                            console.log('❌ closeSuccessModal() called');
                             const modal = document.getElementById('successModal');
                             if (modal) {
                                 modal.classList.add('hidden');
                                 modal.classList.remove('flex');
                                 modal.style.display = 'none';
-                                console.log('✅ Modal hidden');
                             }
                         }
                     </script>
