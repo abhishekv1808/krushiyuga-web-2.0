@@ -1,84 +1,86 @@
 {
-  "family": "krushiyuga-web-task",
-  "networkMode": "awsvpc",
-  "requiresCompatibilities": ["FARGATE"],
-  "cpu": "256",
-  "memory": "512",
-  "executionRoleArn": "arn:aws:iam::YOUR_ACCOUNT_ID:role/ecsTaskExecutionRole",
-  "taskRoleArn": "arn:aws:iam::YOUR_ACCOUNT_ID:role/ecsTaskRole",
-  "containerDefinitions": [
-    {
-      "name": "krushiyuga-web",
-      "image": "YOUR_ECR_REPOSITORY_URI:latest",
-      "portMappings": [
+    "family": "krushiyuga-web-task",
+    "networkMode": "awsvpc",
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "256",
+    "memory": "512",
+    "executionRoleArn": "arn:aws:iam::YOUR_ACCOUNT_ID:role/ecsTaskExecutionRole",
+    "taskRoleArn": "arn:aws:iam::YOUR_ACCOUNT_ID:role/ecsTaskRole",
+    "containerDefinitions": [
         {
-          "containerPort": 3000,
-          "protocol": "tcp"
+            "name": "krushiyuga-web",
+            "image": "YOUR_ECR_REPOSITORY_URI:latest",
+            "portMappings": [
+                {
+                    "containerPort": 3000,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "environment": [
+                {
+                    "name": "NODE_ENV",
+                    "value": "production"
+                },
+                {
+                    "name": "PORT",
+                    "value": "3000"
+                }
+            ],
+            "secrets": [
+                {
+                    "name": "MONGODB_URI",
+                    "valueFrom": "arn:aws:secretsmanager:REGION:ACCOUNT_ID:secret:krushiyuga/mongodb-uri"
+                },
+                {
+                    "name": "EMAIL_HOST",
+                    "valueFrom": "arn:aws:secretsmanager:REGION:ACCOUNT_ID:secret:krushiyuga/email-host"
+                },
+                {
+                    "name": "EMAIL_PORT",
+                    "valueFrom": "arn:aws:secretsmanager:REGION:ACCOUNT_ID:secret:krushiyuga/email-port"
+                },
+                {
+                    "name": "EMAIL_USER",
+                    "valueFrom": "arn:aws:secretsmanager:REGION:ACCOUNT_ID:secret:krushiyuga/email-user"
+                },
+                {
+                    "name": "EMAIL_PASS",
+                    "valueFrom": "arn:aws:secretsmanager:REGION:ACCOUNT_ID:secret:krushiyuga/email-pass"
+                },
+                {
+                    "name": "CLOUDINARY_CLOUD_NAME",
+                    "valueFrom": "arn:aws:secretsmanager:REGION:ACCOUNT_ID:secret:krushiyuga/cloudinary-cloud-name"
+                },
+                {
+                    "name": "CLOUDINARY_API_KEY",
+                    "valueFrom": "arn:aws:secretsmanager:REGION:ACCOUNT_ID:secret:krushiyuga/cloudinary-api-key"
+                },
+                {
+                    "name": "CLOUDINARY_API_SECRET",
+                    "valueFrom": "arn:aws:secretsmanager:REGION:ACCOUNT_ID:secret:krushiyuga/cloudinary-api-secret"
+                }
+            ],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/krushiyuga-web",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            },
+            "healthCheck": {
+                "command": [
+                    "CMD-SHELL",
+                    "curl -f http://localhost:3000/health || exit 1"
+                ],
+                "interval": 30,
+                "timeout": 5,
+                "retries": 3,
+                "startPeriod": 60
+            }
         }
-      ],
-      "essential": true,
-      "environment": [
-        {
-          "name": "NODE_ENV",
-          "value": "production"
-        },
-        {
-          "name": "PORT",
-          "value": "3000"
-        }
-      ],
-      "secrets": [
-        {
-          "name": "MONGODB_URI",
-          "valueFrom": "arn:aws:secretsmanager:REGION:ACCOUNT_ID:secret:krushiyuga/mongodb-uri"
-        },
-        {
-          "name": "EMAIL_HOST",
-          "valueFrom": "arn:aws:secretsmanager:REGION:ACCOUNT_ID:secret:krushiyuga/email-host"
-        },
-        {
-          "name": "EMAIL_PORT",
-          "valueFrom": "arn:aws:secretsmanager:REGION:ACCOUNT_ID:secret:krushiyuga/email-port"
-        },
-        {
-          "name": "EMAIL_USER",
-          "valueFrom": "arn:aws:secretsmanager:REGION:ACCOUNT_ID:secret:krushiyuga/email-user"
-        },
-        {
-          "name": "EMAIL_PASS",
-          "valueFrom": "arn:aws:secretsmanager:REGION:ACCOUNT_ID:secret:krushiyuga/email-pass"
-        },
-        {
-          "name": "CLOUDINARY_CLOUD_NAME",
-          "valueFrom": "arn:aws:secretsmanager:REGION:ACCOUNT_ID:secret:krushiyuga/cloudinary-cloud-name"
-        },
-        {
-          "name": "CLOUDINARY_API_KEY",
-          "valueFrom": "arn:aws:secretsmanager:REGION:ACCOUNT_ID:secret:krushiyuga/cloudinary-api-key"
-        },
-        {
-          "name": "CLOUDINARY_API_SECRET",
-          "valueFrom": "arn:aws:secretsmanager:REGION:ACCOUNT_ID:secret:krushiyuga/cloudinary-api-secret"
-        }
-      ],
-      "logConfiguration": {
-        "logDriver": "awslogs",
-        "options": {
-          "awslogs-group": "/ecs/krushiyuga-web",
-          "awslogs-region": "us-east-1",
-          "awslogs-stream-prefix": "ecs"
-        }
-      },
-      "healthCheck": {
-        "command": [
-          "CMD-SHELL",
-          "curl -f http://localhost:3000/health || exit 1"
-        ],
-        "interval": 30,
-        "timeout": 5,
-        "retries": 3,
-        "startPeriod": 60
-      }
-    }
-  ]
+    ]
 }

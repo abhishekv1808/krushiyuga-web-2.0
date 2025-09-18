@@ -30,11 +30,28 @@ app.use(userRouter);
 const PORT = process.env.PORT || 3000;
 const mongodbURL = process.env.MONGODB_URI;
 
+// Debug environment variables
+console.log('🔍 Environment Debug Info:');
+console.log('NODE_ENV:', process.env.NODE_ENV);
+console.log('PORT:', PORT);
+console.log('MONGODB_URI defined:', !!mongodbURL);
+console.log('MONGODB_URI length:', mongodbURL ? mongodbURL.length : 0);
+
+// Validate MongoDB URI
+if (!mongodbURL) {
+    console.error('❌ MONGODB_URI is not defined in environment variables');
+    console.error('Please check your .env file and ensure MONGODB_URI is set');
+    process.exit(1);
+}
+
 mongoose.connect(mongodbURL).then(()=>{
-    console.log('Connected to MongoDB');
+    console.log('✅ Connected to MongoDB successfully');
     app.listen(PORT, '0.0.0.0', () => {
-        console.log(`Server is running on port : http://localhost:${PORT}`);
+        console.log(`🚀 Server is running on port: http://localhost:${PORT}`);
+        console.log('🏥 Health check available at: http://localhost:' + PORT + '/health');
     });
 }).catch(err => {
-    console.error('Error connecting to MongoDB:', err);
+    console.error('❌ Error connecting to MongoDB:', err.message);
+    console.error('Full error:', err);
+    process.exit(1);
 });
