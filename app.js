@@ -15,6 +15,16 @@ app.use(express.static(path.join(rootDir, 'public')));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json()); // Add JSON parsing middleware for AJAX requests
 
+// Health check endpoint for AWS
+app.get('/health', (req, res) => {
+    res.status(200).json({ 
+        status: 'healthy', 
+        timestamp: new Date().toISOString(),
+        uptime: process.uptime(),
+        environment: process.env.NODE_ENV || 'development'
+    });
+});
+
 app.use(userRouter);
 
 const PORT = process.env.PORT || 3000;

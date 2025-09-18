@@ -8,7 +8,12 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "build": "npx tailwindcss -i ./views/input.css -o ./public/output.css --minify"
+    "build": "npx tailwindcss -i ./views/input.css -o ./public/output.css --minify",
+    "aws:build": "npm ci --only=production && npm run build",
+    "aws:start": "NODE_ENV=production npm start",
+    "docker:build": "docker build -t krushiyuga-web .",
+    "docker:run": "docker run -p 3000:3000 --env-file .env krushiyuga-web",
+    "test": "echo \"No tests specified\" && exit 0"
   },
   "keywords": [
     "agriculture",

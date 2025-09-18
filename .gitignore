@@ -11,6 +11,11 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
+# AWS
+.aws/
+.elasticbeanstalk/
+# Keep .ebextensions/ for deployment configuration
+
 # Runtime data
 pids
 *.pid
