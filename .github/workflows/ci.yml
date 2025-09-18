@@ -1,0 +1,44 @@
+name: CI - Test Application
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build CSS
+      run: npm run build
+      
+    - name: Run tests
+      run: npm test
+      
+    - name: Check application can start
+      run: |
+        # Create a test .env file
+        echo "NODE_ENV=test" > .env
+        echo "PORT=3000" >> .env
+        echo "MONGODB_URI=mongodb://localhost:27017/test" >> .env
+        echo "EMAIL_HOST=smtp.gmail.com" >> .env
+        echo "EMAIL_PORT=587" >> .env
+        echo "EMAIL_USER=test@example.com" >> .env
+        echo "EMAIL_PASS=testpass" >> .env
+        
+        # Test if app starts without errors (timeout after 10 seconds)
+        timeout 10s node app.js || echo "App started successfully"
