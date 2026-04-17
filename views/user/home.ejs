@@ -226,169 +226,212 @@
                     </section>
 
                     <!-- Services Section -->
-                    <section id="services" class="py-20 bg-gray-50">
+                    <section id="services" class="py-24 bg-white">
+                        <style>
+                            .svc-card {
+                                position: relative;
+                                background: #fff;
+                                border-radius: 1.25rem;
+                                border: 1px solid #f1f5f9;
+                                padding: 2rem;
+                                display: flex;
+                                flex-direction: column;
+                                transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+                                overflow: hidden;
+                            }
+                            .svc-card::before {
+                                content: '';
+                                position: absolute;
+                                top: 0; left: 0; right: 0;
+                                height: 4px;
+                                border-radius: 1.25rem 1.25rem 0 0;
+                                opacity: 0;
+                                transition: opacity 0.28s ease;
+                            }
+                            .svc-card:hover {
+                                transform: translateY(-6px);
+                                box-shadow: 0 20px 40px rgba(0,0,0,0.10);
+                                border-color: transparent;
+                            }
+                            .svc-card:hover::before { opacity: 1; }
+
+                            /* Per-card accent colours */
+                            .svc-card.c-green  .svc-icon-wrap { background: #dcfce7; }
+                            .svc-card.c-green  .svc-icon      { color: #16a34a; }
+                            .svc-card.c-green::before         { background: linear-gradient(90deg,#16a34a,#4ade80); }
+                            .svc-card.c-green  .svc-check     { color: #16a34a; }
+                            .svc-card.c-green  .svc-link      { color: #16a34a; }
+                            .svc-card.c-green:hover .svc-icon-wrap { background: #bbf7d0; }
+
+                            .svc-card.c-blue   .svc-icon-wrap { background: #dbeafe; }
+                            .svc-card.c-blue   .svc-icon      { color: #2563eb; }
+                            .svc-card.c-blue::before          { background: linear-gradient(90deg,#2563eb,#60a5fa); }
+                            .svc-card.c-blue   .svc-check     { color: #2563eb; }
+                            .svc-card.c-blue   .svc-link      { color: #2563eb; }
+                            .svc-card.c-blue:hover .svc-icon-wrap  { background: #bfdbfe; }
+
+                            .svc-card.c-red    .svc-icon-wrap { background: #fee2e2; }
+                            .svc-card.c-red    .svc-icon      { color: #dc2626; }
+                            .svc-card.c-red::before           { background: linear-gradient(90deg,#dc2626,#f87171); }
+                            .svc-card.c-red    .svc-check     { color: #dc2626; }
+                            .svc-card.c-red    .svc-link      { color: #dc2626; }
+                            .svc-card.c-red:hover .svc-icon-wrap   { background: #fecaca; }
+
+                            .svc-card.c-purple .svc-icon-wrap { background: #f3e8ff; }
+                            .svc-card.c-purple .svc-icon      { color: #9333ea; }
+                            .svc-card.c-purple::before        { background: linear-gradient(90deg,#9333ea,#c084fc); }
+                            .svc-card.c-purple .svc-check     { color: #9333ea; }
+                            .svc-card.c-purple .svc-link      { color: #9333ea; }
+                            .svc-card.c-purple:hover .svc-icon-wrap{ background: #e9d5ff; }
+
+                            .svc-card.c-amber  .svc-icon-wrap { background: #fef3c7; }
+                            .svc-card.c-amber  .svc-icon      { color: #d97706; }
+                            .svc-card.c-amber::before         { background: linear-gradient(90deg,#d97706,#fbbf24); }
+                            .svc-card.c-amber  .svc-check     { color: #d97706; }
+                            .svc-card.c-amber  .svc-link      { color: #d97706; }
+                            .svc-card.c-amber:hover .svc-icon-wrap { background: #fde68a; }
+
+                            .svc-card.c-indigo .svc-icon-wrap { background: #e0e7ff; }
+                            .svc-card.c-indigo .svc-icon      { color: #4338ca; }
+                            .svc-card.c-indigo::before        { background: linear-gradient(90deg,#4338ca,#818cf8); }
+                            .svc-card.c-indigo .svc-check     { color: #4338ca; }
+                            .svc-card.c-indigo .svc-link      { color: #4338ca; }
+                            .svc-card.c-indigo:hover .svc-icon-wrap{ background: #c7d2fe; }
+
+                            .svc-icon-wrap {
+                                width: 3.5rem; height: 3.5rem;
+                                border-radius: 0.875rem;
+                                display: flex; align-items: center; justify-content: center;
+                                margin-bottom: 1.25rem;
+                                flex-shrink: 0;
+                                transition: background 0.28s ease;
+                            }
+                            .svc-icon { font-size: 1.375rem; }
+                            .svc-title {
+                                font-size: 1.125rem;
+                                font-weight: 700;
+                                color: #111827;
+                                margin-bottom: 0.5rem;
+                            }
+                            .svc-desc {
+                                font-size: 0.875rem;
+                                color: #6b7280;
+                                line-height: 1.65;
+                                margin-bottom: 1.25rem;
+                                flex: 1;
+                            }
+                            .svc-list {
+                                list-style: none;
+                                padding: 0; margin: 0 0 1.5rem 0;
+                                display: flex; flex-direction: column; gap: 0.5rem;
+                            }
+                            .svc-list li {
+                                display: flex; align-items: center; gap: 0.5rem;
+                                font-size: 0.8125rem; color: #374151;
+                            }
+                            .svc-check { font-size: 0.7rem; }
+                            .svc-link {
+                                display: inline-flex; align-items: center; gap: 0.375rem;
+                                font-size: 0.8125rem; font-weight: 600;
+                                text-decoration: none;
+                                margin-top: auto;
+                                transition: gap 0.2s ease;
+                            }
+                            .svc-link:hover { gap: 0.625rem; }
+                        </style>
+
                         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <!-- Section Header -->
                             <div class="text-center mb-16">
+                                <span style="display:inline-flex;align-items:center;gap:0.5rem;background:#f0fdf4;color:#16a34a;font-size:0.8125rem;font-weight:600;padding:0.375rem 1rem;border-radius:9999px;border:1px solid #bbf7d0;margin-bottom:1rem;">
+                                    <i class="fas fa-leaf"></i> What We Offer
+                                </span>
                                 <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Comprehensive Services</h2>
-                                <p class="text-md text-gray-600 max-w-3xl mx-auto">
-                                    From livestock management to veterinary care, we provide end-to-end solutions
-                                    for modern animal husbandry in India
+                                <p class="text-base text-gray-500 max-w-2xl mx-auto leading-relaxed">
+                                    From livestock management to veterinary care, we provide end-to-end solutions for modern animal husbandry in India.
                                 </p>
                             </div>
 
-                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                <!-- Service Card 1 -->
-                                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
-                                    <div
-                                        class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
-                                        <i class="fas fa-cow text-brand-green text-2xl"></i>
-                                    </div>
-                                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Dairy Management</h3>
-                                    <p class="text-gray-600 mb-6">
-                                        Complete dairy farm solutions including milking systems, cow comfort, and milk
-                                        quality
-                                        optimization.
-                                    </p>
-                                    <ul class="space-y-2 text-sm text-gray-600">
-                                        <li class="flex items-center"><i
-                                                class="fas fa-check text-brand-green mr-2"></i>Automated Milking
-                                            Systems</li>
-                                        <li class="flex items-center"><i
-                                                class="fas fa-check text-brand-green mr-2"></i>Milk
-                                            Quality Testing
-                                        </li>
-                                        <li class="flex items-center"><i
-                                                class="fas fa-check text-brand-green mr-2"></i>Cow
-                                            Health
-                                            Monitoring</li>
+                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                                <!-- Card 1 — Dairy Management -->
+                                <div class="svc-card c-green">
+                                    <div class="svc-icon-wrap"><i class="fas fa-cow svc-icon"></i></div>
+                                    <h3 class="svc-title">Dairy Management</h3>
+                                    <p class="svc-desc">Complete dairy farm solutions including milking systems, cow comfort, and milk quality optimization.</p>
+                                    <ul class="svc-list">
+                                        <li><i class="fas fa-check svc-check"></i>Automated Milking Systems</li>
+                                        <li><i class="fas fa-check svc-check"></i>Milk Quality Testing</li>
+                                        <li><i class="fas fa-check svc-check"></i>Cow Health Monitoring</li>
                                     </ul>
+                                    <a href="#" class="svc-link">Learn more <i class="fas fa-arrow-right text-xs"></i></a>
                                 </div>
 
-                                <!-- Service Card 2 -->
-                                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
-                                    <div
-                                        class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                                        <i class="fas fa-seedling text-blue-600 text-2xl"></i>
-                                    </div>
-                                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Feed & Nutrition</h3>
-                                    <p class="text-gray-600 mb-6">
-                                        Scientific feed formulation and nutrition planning for optimal animal health and
-                                        productivity.
-                                    </p>
-                                    <ul class="space-y-2 text-sm text-gray-600">
-                                        <li class="flex items-center"><i
-                                                class="fas fa-check text-brand-green mr-2"></i>Custom
-                                            Feed
-                                            Formulation</li>
-                                        <li class="flex items-center"><i
-                                                class="fas fa-check text-brand-green mr-2"></i>Nutritional Analysis
-                                        </li>
-                                        <li class="flex items-center"><i
-                                                class="fas fa-check text-brand-green mr-2"></i>Feed
-                                            Quality Control
-                                        </li>
+                                <!-- Card 2 — Feed & Nutrition -->
+                                <div class="svc-card c-blue">
+                                    <div class="svc-icon-wrap"><i class="fas fa-seedling svc-icon"></i></div>
+                                    <h3 class="svc-title">Feed &amp; Nutrition</h3>
+                                    <p class="svc-desc">Scientific feed formulation and nutrition planning for optimal animal health and productivity.</p>
+                                    <ul class="svc-list">
+                                        <li><i class="fas fa-check svc-check"></i>Custom Feed Formulation</li>
+                                        <li><i class="fas fa-check svc-check"></i>Nutritional Analysis</li>
+                                        <li><i class="fas fa-check svc-check"></i>Feed Quality Control</li>
                                     </ul>
+                                    <a href="#" class="svc-link">Learn more <i class="fas fa-arrow-right text-xs"></i></a>
                                 </div>
 
-                                <!-- Service Card 3 -->
-                                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
-                                    <div
-                                        class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6">
-                                        <i class="fas fa-heartbeat text-red-600 text-2xl"></i>
-                                    </div>
-                                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Veterinary Care</h3>
-                                    <p class="text-gray-600 mb-6">
-                                        Professional veterinary services with preventive care and emergency treatment
-                                        solutions.
-                                    </p>
-                                    <ul class="space-y-2 text-sm text-gray-600">
-                                        <li class="flex items-center"><i
-                                                class="fas fa-check text-brand-green mr-2"></i>Regular
-                                            Health
-                                            Checkups</li>
-                                        <li class="flex items-center"><i
-                                                class="fas fa-check text-brand-green mr-2"></i>Vaccination Programs
-                                        </li>
-                                        <li class="flex items-center"><i
-                                                class="fas fa-check text-brand-green mr-2"></i>Emergency Treatment
-                                        </li>
+                                <!-- Card 3 — Veterinary Care -->
+                                <div class="svc-card c-red">
+                                    <div class="svc-icon-wrap"><i class="fas fa-heartbeat svc-icon"></i></div>
+                                    <h3 class="svc-title">Veterinary Care</h3>
+                                    <p class="svc-desc">Professional veterinary services with preventive care and emergency treatment solutions.</p>
+                                    <ul class="svc-list">
+                                        <li><i class="fas fa-check svc-check"></i>Regular Health Checkups</li>
+                                        <li><i class="fas fa-check svc-check"></i>Vaccination Programs</li>
+                                        <li><i class="fas fa-check svc-check"></i>Emergency Treatment</li>
                                     </ul>
+                                    <a href="#" class="svc-link">Learn more <i class="fas fa-arrow-right text-xs"></i></a>
                                 </div>
 
-                                <!-- Service Card 4 -->
-                                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
-                                    <div
-                                        class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
-                                        <i class="fas fa-mobile-alt text-purple-600 text-2xl"></i>
-                                    </div>
-                                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Smart Monitoring</h3>
-                                    <p class="text-gray-600 mb-6">
-                                        IoT-based monitoring systems for real-time tracking of animal health and farm
-                                        conditions.
-                                    </p>
-                                    <ul class="space-y-2 text-sm text-gray-600">
-                                        <li class="flex items-center"><i
-                                                class="fas fa-check text-brand-green mr-2"></i>Real-time Monitoring
-                                        </li>
-                                        <li class="flex items-center"><i
-                                                class="fas fa-check text-brand-green mr-2"></i>Data
-                                            Analytics</li>
-                                        <li class="flex items-center"><i
-                                                class="fas fa-check text-brand-green mr-2"></i>Mobile
-                                            App Control
-                                        </li>
+                                <!-- Card 4 — Smart Monitoring -->
+                                <div class="svc-card c-purple">
+                                    <div class="svc-icon-wrap"><i class="fas fa-mobile-alt svc-icon"></i></div>
+                                    <h3 class="svc-title">Smart Monitoring</h3>
+                                    <p class="svc-desc">IoT-based monitoring systems for real-time tracking of animal health and farm conditions.</p>
+                                    <ul class="svc-list">
+                                        <li><i class="fas fa-check svc-check"></i>Real-time Monitoring</li>
+                                        <li><i class="fas fa-check svc-check"></i>Data Analytics</li>
+                                        <li><i class="fas fa-check svc-check"></i>Mobile App Control</li>
                                     </ul>
+                                    <a href="#" class="svc-link">Learn more <i class="fas fa-arrow-right text-xs"></i></a>
                                 </div>
 
-                                <!-- Service Card 5 -->
-                                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
-                                    <div
-                                        class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6">
-                                        <i class="fas fa-graduation-cap text-brand-yellow text-2xl"></i>
-                                    </div>
-                                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Training & Support</h3>
-                                    <p class="text-gray-600 mb-6">
-                                        Comprehensive training programs for farmers to adopt modern livestock management
-                                        practices.
-                                    </p>
-                                    <ul class="space-y-2 text-sm text-gray-600">
-                                        <li class="flex items-center"><i
-                                                class="fas fa-check text-brand-green mr-2"></i>On-site
-                                            Training
-                                        </li>
-                                        <li class="flex items-center"><i
-                                                class="fas fa-check text-brand-green mr-2"></i>Digital
-                                            Resources
-                                        </li>
-                                        <li class="flex items-center"><i
-                                                class="fas fa-check text-brand-green mr-2"></i>24/7
-                                            Support</li>
+                                <!-- Card 5 — Training & Support -->
+                                <div class="svc-card c-amber">
+                                    <div class="svc-icon-wrap"><i class="fas fa-graduation-cap svc-icon"></i></div>
+                                    <h3 class="svc-title">Training &amp; Support</h3>
+                                    <p class="svc-desc">Comprehensive training programs for farmers to adopt modern livestock management practices.</p>
+                                    <ul class="svc-list">
+                                        <li><i class="fas fa-check svc-check"></i>On-site Training</li>
+                                        <li><i class="fas fa-check svc-check"></i>Digital Resources</li>
+                                        <li><i class="fas fa-check svc-check"></i>24/7 Support</li>
                                     </ul>
+                                    <a href="#" class="svc-link">Learn more <i class="fas fa-arrow-right text-xs"></i></a>
                                 </div>
 
-                                <!-- Service Card 6 -->
-                                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
-                                    <div
-                                        class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
-                                        <i class="fas fa-chart-bar text-indigo-600 text-2xl"></i>
-                                    </div>
-                                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Farm Analytics</h3>
-                                    <p class="text-gray-600 mb-6">
-                                        Advanced analytics and reporting tools to optimize farm operations and maximize
-                                        profitability.
-                                    </p>
-                                    <ul class="space-y-2 text-sm text-gray-600">
-                                        <li class="flex items-center"><i
-                                                class="fas fa-check text-brand-green mr-2"></i>Performance Reports
-                                        </li>
-                                        <li class="flex items-center"><i
-                                                class="fas fa-check text-brand-green mr-2"></i>Cost
-                                            Analysis</li>
-                                        <li class="flex items-center"><i
-                                                class="fas fa-check text-brand-green mr-2"></i>ROI
-                                            Tracking</li>
+                                <!-- Card 6 — Farm Analytics -->
+                                <div class="svc-card c-indigo">
+                                    <div class="svc-icon-wrap"><i class="fas fa-chart-bar svc-icon"></i></div>
+                                    <h3 class="svc-title">Farm Analytics</h3>
+                                    <p class="svc-desc">Advanced analytics and reporting tools to optimize farm operations and maximize profitability.</p>
+                                    <ul class="svc-list">
+                                        <li><i class="fas fa-check svc-check"></i>Performance Reports</li>
+                                        <li><i class="fas fa-check svc-check"></i>Cost Analysis</li>
+                                        <li><i class="fas fa-check svc-check"></i>ROI Tracking</li>
                                     </ul>
+                                    <a href="#" class="svc-link">Learn more <i class="fas fa-arrow-right text-xs"></i></a>
                                 </div>
+
                             </div>
                         </div>
                     </section>
@@ -420,152 +463,164 @@
                     </section>
 
                     <!-- Testimonials Section -->
-                    <section class="py-20 bg-gray-50">
-                        <div class="container mx-auto max-w-screen-xl px-6">
-                            <div class="text-center mb-16">
-                                <span
-                                    class="bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-sm font-medium">
-                                    Testimonials
+                    <section class="py-24" style="background:linear-gradient(160deg,#f0fdf4 0%,#f8fafc 55%,#f0fdf4 100%);">
+                        <style>
+                            .tst-quote { position:absolute;top:1rem;right:1.25rem;font-size:4.5rem;line-height:1;font-family:Georgia,serif;pointer-events:none;user-select:none; }
+                            .tst-card  { position:relative;background:#fff;border-radius:1.25rem;border:1px solid #e5e7eb;padding:1.75rem;display:flex;flex-direction:column;gap:0.875rem;overflow:hidden;transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease; }
+                            .tst-card:hover { transform:translateY(-5px);box-shadow:0 16px 40px rgba(16,185,129,.12);border-color:#a7f3d0; }
+                            .tst-card.tst-dark { background:linear-gradient(135deg,#064e3b,#065f46);border-color:transparent; }
+                            .tst-card.tst-dark:hover { box-shadow:0 20px 48px rgba(6,78,59,.3);border-color:transparent; }
+                            .tst-card.tst-dark .tst-quote  { color:rgba(255,255,255,.07); }
+                            .tst-card.tst-dark .tst-body   { color:#d1fae5; }
+                            .tst-card.tst-dark .tst-name   { color:#fff; }
+                            .tst-card.tst-dark .tst-role   { color:#6ee7b7; }
+                            .tst-card.tst-dark .tst-tag    { background:rgba(255,255,255,.12);color:#a7f3d0;border-color:rgba(255,255,255,.2); }
+                            .tst-card.tst-dark .tst-stars  { color:#fbbf24; }
+
+                            .tst-avatar { width:2.75rem;height:2.75rem;border-radius:9999px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem;color:#fff;flex-shrink:0; }
+                            .av-teal    { background:linear-gradient(135deg,#2dd4bf,#0d9488); }
+                            .av-blue    { background:linear-gradient(135deg,#60a5fa,#2563eb); }
+                            .av-rose    { background:linear-gradient(135deg,#fb7185,#e11d48); }
+                            .av-emerald { background:linear-gradient(135deg,#34d399,#059669); }
+                            .av-purple  { background:linear-gradient(135deg,#c084fc,#9333ea); }
+                            .av-amber   { background:linear-gradient(135deg,#fbbf24,#d97706); }
+
+                            .tst-stars { color:#f59e0b;font-size:.875rem;letter-spacing:1px; }
+                            .tst-body  { font-size:.875rem;color:#4b5563;line-height:1.75;flex:1; }
+                            .tst-name  { font-weight:700;font-size:.9375rem;color:#111827; }
+                            .tst-role  { font-size:.775rem;color:#6b7280;margin-top:1px; }
+                            .tst-tag   { display:inline-flex;align-items:center;gap:4px;font-size:.7rem;font-weight:600;padding:.2rem .6rem;border-radius:9999px;background:#f0fdf4;color:#059669;border:1px solid #a7f3d0;width:fit-content;margin-top:auto; }
+
+                            .tst-grid  { display:grid;grid-template-columns:1fr;gap:1.25rem; }
+                            @media(min-width:768px)  { .tst-grid { grid-template-columns:repeat(2,1fr); } }
+                            @media(min-width:1024px) { .tst-grid { grid-template-columns:repeat(3,1fr); } }
+                        </style>
+
+                        <div class="container mx-auto max-w-screen-xl px-4 sm:px-6">
+
+                            <!-- Header -->
+                            <div class="text-center mb-12">
+                                <span style="display:inline-flex;align-items:center;gap:.4rem;background:#f0fdf4;color:#16a34a;font-size:.8rem;font-weight:600;padding:.35rem 1rem;border-radius:9999px;border:1px solid #bbf7d0;margin-bottom:.875rem;">
+                                    <i class="fas fa-star" style="font-size:.65rem;"></i>&nbsp;Farmer Stories
                                 </span>
-                                <h2 class="text-4xl lg:text-4xl font-bold text-gray-900 mt-4 mb-4">
-                                    What Our <span class="gradient-text">Customers</span> Say
-                                </h2>
-                                <p class="text-md text-gray-600 max-w-3xl mx-auto">
-                                    Hear from farmers and livestock owners who trust Krushiyuga for their needs
-                                </p>
+                                <h2 class="text-3xl font-bold text-gray-900 mb-3">What Our <span class="gradient-text">Customers</span> Say</h2>
+                                <p style="font-size:.9rem;color:#6b7280;max-width:36rem;margin:0 auto;line-height:1.7;">Real stories from farmers and livestock owners who trust Krushiyuga every day.</p>
                             </div>
 
-                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                <div class="bg-white rounded-3xl p-8 card-hover">
-                                    <div class="flex items-center mb-6">
-                                        <div
-                                            class="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                                            S
-                                        </div>
-                                        <div class="ml-4">
-                                            <div class="font-semibold text-gray-900">Suresh Gowda</div>
-                                            <div class="text-sm text-gray-600">Dairy Farmer, Mysuru</div>
+                            <!-- Rating strip -->
+                            <div style="display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap;margin-bottom:3rem;padding:1.25rem 2rem;background:#fff;border-radius:1rem;border:1px solid #e5e7eb;max-width:36rem;margin-left:auto;margin-right:auto;margin-bottom:3rem;">
+                                <div style="display:flex;align-items:center;gap:.75rem;">
+                                    <div style="font-size:2.25rem;font-weight:800;color:#111827;line-height:1;">4.9</div>
+                                    <div>
+                                        <div style="color:#f59e0b;font-size:1rem;letter-spacing:2px;">★★★★★</div>
+                                        <div style="font-size:.7rem;color:#9ca3af;margin-top:2px;">Overall Rating</div>
+                                    </div>
+                                </div>
+                                <div style="width:1px;height:2.25rem;background:#f3f4f6;"></div>
+                                <div style="text-align:center;">
+                                    <div style="font-size:1.2rem;font-weight:700;color:#111827;">800+</div>
+                                    <div style="font-size:.7rem;color:#9ca3af;">Happy Farmers</div>
+                                </div>
+                                <div style="width:1px;height:2.25rem;background:#f3f4f6;"></div>
+                                <div style="text-align:center;">
+                                    <div style="font-size:1.2rem;font-weight:700;color:#111827;">15+</div>
+                                    <div style="font-size:.7rem;color:#9ca3af;">Years Serving</div>
+                                </div>
+                            </div>
+
+                            <!-- Cards grid — clean equal 3-col, no span tricks -->
+                            <div class="tst-grid">
+
+                                <!-- Card 1 — dark featured -->
+                                <div class="tst-card tst-dark">
+                                    <div class="tst-quote">"</div>
+                                    <div style="display:flex;align-items:center;gap:.875rem;">
+                                        <div class="tst-avatar av-teal">S</div>
+                                        <div>
+                                            <div class="tst-name">Suresh Gowda</div>
+                                            <div class="tst-role">Dairy Farmer, Mysuru</div>
                                         </div>
                                     </div>
-                                    <div class="flex mb-4">
-                                        <span class="text-yellow-400">★★★★★</span>
-                                    </div>
-                                    <p class="text-gray-600">
-                                        "Krushiyuga alli namma Osmanabadi goats tagondaga, thumba chennagide. Their
-                                        multi-layer farming system really works! Very professional team and excellent
-                                        after-sales support."
-                                    </p>
+                                    <div class="tst-stars">★★★★★</div>
+                                    <p class="tst-body">"Krushiyuga alli namma Osmanabadi goats tagondaga, thumba chennagide. Their multi-layer farming system really works! Very professional team and excellent after-sales support. I have seen a 40% increase in my farm income within just one year."</p>
+                                    <div class="tst-tag"><i class="fas fa-leaf" style="font-size:.6rem;"></i>Dairy &amp; Multi-layer</div>
                                 </div>
 
-                                <div class="bg-white rounded-3xl p-8 card-hover">
-                                    <div class="flex items-center mb-6">
-                                        <div
-                                            class="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                                            M
-                                        </div>
-                                        <div class="ml-4">
-                                            <div class="font-semibold text-gray-900">Manjunath Reddy</div>
-                                            <div class="text-sm text-gray-600">Integrated Farmer, Mandya</div>
+                                <!-- Card 2 -->
+                                <div class="tst-card">
+                                    <div class="tst-quote" style="color:#d1fae5;">"</div>
+                                    <div style="display:flex;align-items:center;gap:.875rem;">
+                                        <div class="tst-avatar av-blue">M</div>
+                                        <div>
+                                            <div class="tst-name">Manjunath Reddy</div>
+                                            <div class="tst-role">Integrated Farmer, Mandya</div>
                                         </div>
                                     </div>
-                                    <div class="flex mb-4">
-                                        <span class="text-yellow-400">★★★★★</span>
-                                    </div>
-                                    <p class="text-gray-600">
-                                        "Multi-layer farming concept superb! Fish pond, goat shed, hen house -
-                                        everything
-                                        integrated. Water recycling, organic manure production - complete sustainable
-                                        system. Very satisfied with results!"
-                                    </p>
+                                    <div class="tst-stars">★★★★★</div>
+                                    <p class="tst-body">"Multi-layer farming concept superb! Fish pond, goat shed, hen house — everything integrated. Water recycling, organic manure production — complete sustainable system. Very satisfied with results!"</p>
+                                    <div class="tst-tag"><i class="fas fa-layer-group" style="font-size:.6rem;"></i>Integrated Farming</div>
                                 </div>
 
-                                <div class="bg-white rounded-3xl p-8 card-hover">
-                                    <div class="flex items-center mb-6">
-                                        <div
-                                            class="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                                            R
-                                        </div>
-                                        <div class="ml-4">
-                                            <div class="font-semibold text-gray-900">Radhika Shetty</div>
-                                            <div class="text-sm text-gray-600">Poultry & Goat Owner, Udupi</div>
+                                <!-- Card 3 -->
+                                <div class="tst-card">
+                                    <div class="tst-quote" style="color:#d1fae5;">"</div>
+                                    <div style="display:flex;align-items:center;gap:.875rem;">
+                                        <div class="tst-avatar av-rose">R</div>
+                                        <div>
+                                            <div class="tst-name">Radhika Shetty</div>
+                                            <div class="tst-role">Poultry &amp; Goat Owner, Udupi</div>
                                         </div>
                                     </div>
-                                    <div class="flex mb-4">
-                                        <span class="text-yellow-400">★★★★★</span>
-                                    </div>
-                                    <p class="text-gray-600">
-                                        "Started with 50 goats from Krushiyuga. Quality thumba chennagide - healthy
-                                        animals,
-                                        good breeding rate. Their training program helped me understand modern farming
-                                        techniques. Highly recommend!"
-                                    </p>
+                                    <div class="tst-stars">★★★★★</div>
+                                    <p class="tst-body">"Started with 50 goats from Krushiyuga. Quality thumba chennagide — healthy animals, good breeding rate. Their training program helped me understand modern farming techniques. Highly recommend!"</p>
+                                    <div class="tst-tag"><i class="fas fa-paw" style="font-size:.6rem;"></i>Goat Farming</div>
                                 </div>
 
-                                <div class="bg-white rounded-3xl p-8 card-hover">
-                                    <div class="flex items-center mb-6">
-                                        <div
-                                            class="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                                            V
-                                        </div>
-                                        <div class="ml-4">
-                                            <div class="font-semibold text-gray-900">Venkatesh Naik</div>
-                                            <div class="text-sm text-gray-600">Fish & Goat Farmer, Shimoga</div>
+                                <!-- Card 4 -->
+                                <div class="tst-card">
+                                    <div class="tst-quote" style="color:#d1fae5;">"</div>
+                                    <div style="display:flex;align-items:center;gap:.875rem;">
+                                        <div class="tst-avatar av-emerald">V</div>
+                                        <div>
+                                            <div class="tst-name">Venkatesh Naik</div>
+                                            <div class="tst-role">Fish &amp; Goat Farmer, Shimoga</div>
                                         </div>
                                     </div>
-                                    <div class="flex mb-4">
-                                        <span class="text-yellow-400">★★★★★</span>
-                                    </div>
-                                    <p class="text-gray-600">
-                                        "Multi-layer farming concept superb! Fish pond, goat shed, hen house -
-                                        everything
-                                        integrated. Water recycling, organic manure production - complete sustainable
-                                        system. Farm management became much easier!"
-                                    </p>
+                                    <div class="tst-stars">★★★★★</div>
+                                    <p class="tst-body">"Fish pond, goat shed, hen house — everything integrated. Water recycling, organic manure production — a complete sustainable system. Farm management became much easier with Krushiyuga!"</p>
+                                    <div class="tst-tag"><i class="fas fa-fish" style="font-size:.6rem;"></i>Aqua &amp; Livestock</div>
                                 </div>
 
-                                <div class="bg-white rounded-3xl p-8 card-hover">
-                                    <div class="flex items-center mb-6">
-                                        <div
-                                            class="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                                            L
-                                        </div>
-                                        <div class="ml-4">
-                                            <div class="font-semibold text-gray-900">Lakshmi Devi</div>
-                                            <div class="text-sm text-gray-600">Women Farmer, Chikmagalur</div>
+                                <!-- Card 5 -->
+                                <div class="tst-card">
+                                    <div class="tst-quote" style="color:#d1fae5;">"</div>
+                                    <div style="display:flex;align-items:center;gap:.875rem;">
+                                        <div class="tst-avatar av-purple">L</div>
+                                        <div>
+                                            <div class="tst-name">Lakshmi Devi</div>
+                                            <div class="tst-role">Women Farmer, Chikmagalur</div>
                                         </div>
                                     </div>
-                                    <div class="flex mb-4">
-                                        <span class="text-yellow-400">★★★★★</span>
-                                    </div>
-                                    <p class="text-gray-600">
-                                        "As a woman entrepreneur, Krushiyuga gave me confidence to start goat farming.
-                                        Their
-                                        support team visits regularly, provides technical guidance. My farm is now
-                                        well-established and running smoothly!"
-                                    </p>
+                                    <div class="tst-stars">★★★★★</div>
+                                    <p class="tst-body">"As a woman entrepreneur, Krushiyuga gave me the confidence to start goat farming. Their support team visits regularly and provides great technical guidance. My farm is now well-established!"</p>
+                                    <div class="tst-tag"><i class="fas fa-heart" style="font-size:.6rem;"></i>Women Entrepreneur</div>
                                 </div>
 
-                                <div class="bg-white rounded-3xl p-8 card-hover">
-                                    <div class="flex items-center mb-6">
-                                        <div
-                                            class="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                                            A
-                                        </div>
-                                        <div class="ml-4">
-                                            <div class="font-semibold text-gray-900">Ashok Kumar</div>
-                                            <div class="text-sm text-gray-600">Progressive Farmer, Hubli</div>
+                                <!-- Card 6 -->
+                                <div class="tst-card">
+                                    <div class="tst-quote" style="color:#d1fae5;">"</div>
+                                    <div style="display:flex;align-items:center;gap:.875rem;">
+                                        <div class="tst-avatar av-amber">A</div>
+                                        <div>
+                                            <div class="tst-name">Ashok Kumar</div>
+                                            <div class="tst-role">Progressive Farmer, Hubli</div>
                                         </div>
                                     </div>
-                                    <div class="flex mb-4">
-                                        <span class="text-yellow-400">★★★★★</span>
-                                    </div>
-                                    <p class="text-gray-600">
-                                        "Technology integration with traditional farming - that's Krushiyuga's strength.
-                                        IoT
-                                        monitoring, health tracking, feed optimization - everything scientific. My farm
-                                        operations have become much more efficient!"
-                                    </p>
+                                    <div class="tst-stars">★★★★★</div>
+                                    <p class="tst-body">"Technology integration with traditional farming — that's Krushiyuga's strength. IoT monitoring, health tracking, feed optimization — everything scientific. My farm operations are now far more efficient!"</p>
+                                    <div class="tst-tag"><i class="fas fa-microchip" style="font-size:.6rem;"></i>Smart Farming</div>
                                 </div>
+
                             </div>
                         </div>
                     </section>
@@ -917,9 +972,9 @@
                                         <div>
                                             <h3 class="text-xl font-semibold text-gray-900 mb-2">Visit Our Office</h3>
                                             <p class="text-gray-600">
-                                                DRLS Plaza Union Bank Building, No. 39 & 1479, Tumkur Rd, Vidya
-                                                Nagar,<br>
-                                                T. Dasarahalli, Bengaluru 560057
+                                                Sy No 111, Kangovi Road, Madhure Main Road,<br>
+                                                near BGS PU College, Totagere, Bengaluru,<br>
+                                                Kukkanahalli, Karnataka 562123
                                             </p>
                                         </div>
                                     </div>

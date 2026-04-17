@@ -1,198 +1,397 @@
+<style>
+  /* Remove default browser body margin */
+  html, body { margin: 0; padding: 0; }
+
+  /* Navbar scroll shrink */
+  #mainNav.scrolled {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  }
+
+  /* Desktop dropdown animation */
+  .nav-dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    pointer-events: none;
+  }
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown.open .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  /* Nav link underline animation */
+  .nav-link::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #10b981;
+    border-radius: 2px;
+    transition: width 0.25s ease;
+    margin-top: 2px;
+  }
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+  .nav-link.active {
+    color: #059669;
+    font-weight: 600;
+  }
+
+  /* Hamburger → X animation */
+  .ham-line {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #374151;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.2s ease, width 0.3s ease;
+    transform-origin: center;
+  }
+  #hamburgerBtn.open .ham-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  #hamburgerBtn.open .ham-line:nth-child(2) {
+    opacity: 0;
+    width: 0;
+  }
+  #hamburgerBtn.open .ham-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Mobile menu animation */
+  #mobileMenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
+  }
+  #mobileMenu.open {
+    max-height: 600px;
+  }
+
+  /* Mobile accordion */
+  .mobile-accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .mobile-accordion-body.open {
+    max-height: 400px;
+  }
+
+  /* Dropdown item hover icon color fix */
+  .dropdown-item:hover .drop-icon {
+    color: white !important;
+  }
+</style>
+
 <header>
+  <!-- Announcement Bar -->
+  <div class="bg-emerald-600 text-white text-center text-xs py-2 px-4 hidden sm:block">
+    <span>Empowering Indian Farmers since 2008 &mdash;</span>
+    <a href="/contact-us" class="underline font-semibold ml-1 hover:text-emerald-100 transition-colors">Talk to an expert</a>
+  </div>
 
-    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-lg z-50 transition-all duration-300 ">
-        <div class="container mx-auto px-4 py-3 max-w-screen-xl lg:text-sm">
-            <div class="flex items-center justify-between">
-                <!-- Logo Section -->
-                <div class="flex items-center space-x-2">
-                    <div>
-                        <a href="/" class="flex items-center cursor-pointer">
-                            <img src="https://res.cloudinary.com/dobvyt9yw/image/upload/v1753427328/krushiyuga_logo_nfixui.png"
-                                class="object cover h-12 w-auto" alt="">
-                        </a>
-                    </div>
-                </div>
+  <!-- Main Navbar -->
+  <nav id="mainNav" class="sticky top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 transition-all duration-300">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
+      <div class="flex items-center justify-between h-16 lg:h-18">
 
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex space-x-8 ">
-                    <a href="/" class="text-gray-700 hover:text-primary transition-colors xl:font-medium">Home</a>
-                    <!-- Breed Dropdown -->
-                    <div class="relative dropdown" id="breedDropdown">
-                        <button
-                            class="text-gray-700 hover:text-primary transition-colors xl:font-medium flex items-center space-x-1"
-                            onclick="toggleDropdown(event)">
-                            <span>Breed</span>
-                            <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
-                        </button>
+        <!-- Logo -->
+        <a href="/" class="flex-shrink-0 flex items-center">
+          <img
+            src="https://res.cloudinary.com/dobvyt9yw/image/upload/v1753427328/krushiyuga_logo_nfixui.png"
+            class="h-10 lg:h-11 w-auto"
+            alt="Krushiyuga"
+          />
+        </a>
 
-                        <!-- Dropdown Menu start-->
-                        <div
-                            class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden">
-                            <div class="py-2">
-                                <a href="/osmanabadi-goats"
-                                    class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-emerald-600 hover:text-white transition-all duration-300">
-                                    <i class="fas fa-paw text-emerald-600 mr-3"></i>
-                                    <span class="font-medium">Goat</span>
-                                </a>
-                                <a href="/"
-                                    class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-emerald-600 hover:text-white transition-all duration-300">
-                                    <i class="fas fa-paw text-emerald-600 mr-3"></i>
-                                    <span class="font-medium">Sheep</span>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- Dropdown Menu end-->
-                    </div>
+        <!-- Desktop Nav Links -->
+        <div class="hidden lg:flex items-center gap-1">
 
-                    <a href="/products"
-                        class="text-gray-700 hover:text-primary transition-colors font-medium">Products</a>
-                    <a href="/gallery"
-                        class="text-gray-700 hover:text-primary transition-colors font-medium">Gallery</a>
+          <a href="/" class="nav-link px-3 py-1.5 text-sm font-medium text-gray-700 hover:text-emerald-600 transition-colors">Home</a>
 
-                    <!-- Our Projects Dropdown -->
-                    <div class="relative dropdown " id="projectsDropdown">
-                        <button
-                            class="text-gray-700 hover:text-primary transition-colors xl:font-medium flex items-center space-x-1"
-                            onclick="toggleProjectsDropdown(event)">
-                            <span>Our Projects</span>
-                            <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
-                        </button>
-
-                        <!-- Dropdown Menu start-->
-                        <div
-                            class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden">
-                            <div class="py-2">
-                                <a href="/organic-farming"
-                                    class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-emerald-600 hover:text-white transition-all duration-300">
-                                    <i class="fas fa-leaf text-emerald-600 mr-3"></i>
-                                    <span class="font-medium">Organic Farming</span>
-                                </a>
-                                <a href="/multi-layer-husbandry"
-                                    class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-emerald-600 hover:text-white transition-all duration-300">
-                                    <i class="fas fa-layer-group text-emerald-600 mr-3"></i>
-                                    <span class="font-medium">Multilayer</span>
-                                </a>
-                                <a href="/animal-husbandry"
-                                    class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-emerald-600 hover:text-white transition-all duration-300">
-                                    <i class="fas fa-paw text-emerald-600 mr-3"></i>
-                                    <span class="font-medium">Animal Husbandry</span>
-                                </a>
-                                <a href="/irrigation"
-                                    class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-emerald-600 hover:text-white transition-all duration-300">
-                                    <i class="fas fa-tint text-emerald-600 mr-3"></i>
-                                    <span class="font-medium">Irrigation</span>
-                                </a>
-                                <div class="border-t border-gray-100 my-1"></div>
-                                <a href="/ongoing-projects"
-                                    class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-blue-600 hover:text-white transition-all duration-300">
-                                    <i class="fas fa-clock text-blue-600 mr-3"></i>
-                                    <span class="font-medium">Ongoing Projects</span>
-                                </a>
-                                <a href="/delivered-projects"
-                                    class="dropdown-item flex items-center px-4 py-3 text-gray-700 hover:bg-green-600 hover:text-white transition-all duration-300">
-                                    <i class="fas fa-check-circle text-green-600 mr-3"></i>
-                                    <span class="font-medium">Delivered Projects</span>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- Dropdown Menu end-->
-                    </div>
-
-                    <a href="/subsidy"
-                        class="text-gray-700 hover:text-primary transition-colors font-medium">Subsidy</a>
-
-                    <a href="/about-us" class="text-gray-700 hover:text-primary transition-colors font-medium">About
-                        Us</a>
-                    <a href="/contact-us" class="text-gray-700 hover:text-primary transition-colors font-medium">Contact
-                        Us</a>
-                </div>
-
-                <!-- Location and Mobile Menu Button -->
-                <div class="flex items-center space-x-4">
-                    <button class="md:hidden text-primary focus:outline-none" onclick="toggleMobileMenu()">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
+          <!-- Breed Dropdown -->
+          <div class="relative nav-dropdown" id="breedDropdown">
+            <button
+              class="nav-link flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-gray-700 hover:text-emerald-600 transition-colors"
+              onclick="toggleDesktopDropdown(event, 'breedDropdown')"
+            >
+              <span>Breed</span>
+              <i class="fas fa-chevron-down text-[10px] transition-transform duration-300 drop-chevron"></i>
+            </button>
+            <div class="nav-dropdown-menu absolute top-full left-0 mt-3 w-52 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden">
+              <div class="py-1.5">
+                <a href="/osmanabadi-goats" class="dropdown-item flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-emerald-600 hover:text-white transition-all duration-200 group">
+                  <i class="fas fa-paw text-emerald-500 drop-icon w-4"></i>
+                  <span class="font-medium">Goat</span>
+                </a>
+                <a href="/" class="dropdown-item flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-emerald-600 hover:text-white transition-all duration-200 group">
+                  <i class="fas fa-paw text-emerald-500 drop-icon w-4"></i>
+                  <span class="font-medium">Sheep</span>
+                </a>
+              </div>
             </div>
+          </div>
 
-            <!-- Mobile Menu -->
-            <div id="mobileMenu" class="mobile-menu md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200">
-                <div class="px-4 py-4 space-y-3">
-                    <a href="/"
-                        class="block py-3 text-gray-700 hover:text-primary transition-colors font-medium border-b border-gray-100">Home</a>
+          <a href="/products" class="nav-link px-3 py-1.5 text-sm font-medium text-gray-700 hover:text-emerald-600 transition-colors">Products</a>
 
-                    <!-- Mobile Breed Section -->
-                    <div class="py-2 border-b border-gray-100">
-                        <button onclick="toggleMobileDropdown()"
-                            class="flex items-center justify-between w-full text-gray-700 hover:text-primary transition-colors font-medium py-2">
-                            <span>Breed</span>
-                            <i class="fas fa-chevron-down text-xs transition-transform duration-300"
-                                id="mobileDropdownIcon"></i>
-                        </button>
-                        <div id="mobileDropdown"
-                            class="pl-4 mt-2 space-y-2 max-h-0 overflow-hidden transition-all duration-300">
-                            <a href="/osmanabadi-goats"
-                                class="block py-2 text-gray-600 hover:text-primary transition-colors">
-                                <i class="fas fa-paw text-emerald-600 mr-2"></i>Goat
-                            </a>
-                            <a href="#sheep" class="block py-2 text-gray-600 hover:text-primary transition-colors">
-                                <i class="fas fa-sheep text-emerald-600 mr-2"></i>Sheep
-                            </a>
-                        </div>
-                    </div>
+          <a href="/gallery" class="nav-link px-3 py-1.5 text-sm font-medium text-gray-700 hover:text-emerald-600 transition-colors">Gallery</a>
 
-                    <a href="/products"
-                        class="block py-3 text-gray-700 hover:text-primary transition-colors font-medium border-b border-gray-100">Products</a>
-                    <a href="/gallery"
-                        class="block py-3 text-gray-700 hover:text-primary transition-colors font-medium border-b border-gray-100">Gallery</a>
-
-                    <!-- Mobile Our Projects Section -->
-                    <div class="py-2 border-b border-gray-100">
-                        <button onclick="toggleMobileProjectsDropdown()"
-                            class="flex items-center justify-between w-full text-gray-700 hover:text-primary transition-colors font-medium py-2">
-                            <span>Our Projects</span>
-                            <i class="fas fa-chevron-down text-xs transition-transform duration-300"
-                                id="mobileProjectsDropdownIcon"></i>
-                        </button>
-                        <div id="mobileProjectsDropdown"
-                            class="pl-4 mt-2 space-y-2 max-h-0 overflow-hidden transition-all duration-300">
-                            <a href="/organic-farming"
-                                class="block py-2 text-gray-600 hover:text-primary transition-colors">
-                                <i class="fas fa-leaf text-emerald-600 mr-2"></i>Organic Farming
-                            </a>
-                            <a href="/multi-layer-husbandry"
-                                class="block py-2 text-gray-600 hover:text-primary transition-colors">
-                                <i class="fas fa-layer-group text-emerald-600 mr-2"></i>Multilayer
-                            </a>
-                            <a href="/animal-husbandry"
-                                class="block py-2 text-gray-600 hover:text-primary transition-colors">
-                                <i class="fas fa-paw text-emerald-600 mr-2"></i>Animal Husbandry
-                            </a>
-                            <a href="/irrigation" class="block py-2 text-gray-600 hover:text-primary transition-colors">
-                                <i class="fas fa-tint text-emerald-600 mr-2"></i>Irrigation
-                            </a>
-                            <div class="border-t border-gray-200 my-2"></div>
-                            <a href="/ongoing-projects"
-                                class="block py-2 text-gray-600 hover:text-blue-600 transition-colors">
-                                <i class="fas fa-clock text-blue-600 mr-2"></i>Ongoing Projects
-                            </a>
-                            <a href="/delivered-projects"
-                                class="block py-2 text-gray-600 hover:text-green-600 transition-colors">
-                                <i class="fas fa-check-circle text-green-600 mr-2"></i>Delivered Projects
-                            </a>
-                        </div>
-                    </div>
-
-                    <a href="/subsidy"
-                        class="block py-3 text-gray-700 hover:text-primary transition-colors font-medium border-b border-gray-100">Subsidy</a>
-                    <a href="/about-us"
-                        class="block py-3 text-gray-700 hover:text-primary transition-colors font-medium border-b border-gray-100">About
-                        Us</a>
-                    <a href="/contact-us"
-                        class="block py-3 text-gray-700 hover:text-primary transition-colors font-medium">Contact Us</a>
-                </div>
+          <!-- Our Projects Dropdown -->
+          <div class="relative nav-dropdown" id="projectsDropdown">
+            <button
+              class="nav-link flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-gray-700 hover:text-emerald-600 transition-colors"
+              onclick="toggleDesktopDropdown(event, 'projectsDropdown')"
+            >
+              <span>Our Projects</span>
+              <i class="fas fa-chevron-down text-[10px] transition-transform duration-300 drop-chevron"></i>
+            </button>
+            <div class="nav-dropdown-menu absolute top-full left-0 mt-3 w-56 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden">
+              <div class="py-1.5">
+                <a href="/organic-farming" class="dropdown-item flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-emerald-600 hover:text-white transition-all duration-200">
+                  <i class="fas fa-leaf text-emerald-500 drop-icon w-4"></i>
+                  <span class="font-medium">Organic Farming</span>
+                </a>
+                <a href="/multi-layer-husbandry" class="dropdown-item flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-emerald-600 hover:text-white transition-all duration-200">
+                  <i class="fas fa-layer-group text-emerald-500 drop-icon w-4"></i>
+                  <span class="font-medium">Multilayer</span>
+                </a>
+                <a href="/animal-husbandry" class="dropdown-item flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-emerald-600 hover:text-white transition-all duration-200">
+                  <i class="fas fa-paw text-emerald-500 drop-icon w-4"></i>
+                  <span class="font-medium">Animal Husbandry</span>
+                </a>
+                <a href="/irrigation" class="dropdown-item flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-emerald-600 hover:text-white transition-all duration-200">
+                  <i class="fas fa-tint text-emerald-500 drop-icon w-4"></i>
+                  <span class="font-medium">Irrigation</span>
+                </a>
+                <div class="border-t border-gray-100 my-1 mx-3"></div>
+                <a href="/ongoing-projects" class="dropdown-item flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-600 hover:text-white transition-all duration-200">
+                  <i class="fas fa-clock text-blue-500 drop-icon w-4"></i>
+                  <span class="font-medium">Ongoing Projects</span>
+                </a>
+                <a href="/delivered-projects" class="dropdown-item flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-green-600 hover:text-white transition-all duration-200">
+                  <i class="fas fa-check-circle text-green-500 drop-icon w-4"></i>
+                  <span class="font-medium">Delivered Projects</span>
+                </a>
+              </div>
             </div>
+          </div>
+
+          <a href="/subsidy" class="nav-link px-3 py-1.5 text-sm font-medium text-gray-700 hover:text-emerald-600 transition-colors">Subsidy</a>
+
+          <a href="/about-us" class="nav-link px-3 py-1.5 text-sm font-medium text-gray-700 hover:text-emerald-600 transition-colors">About Us</a>
         </div>
-    </nav>
 
+        <!-- Right Side -->
+        <div class="flex items-center gap-3">
+          <!-- CTA Button (desktop) -->
+          <a
+            href="/contact-us"
+            class="hidden lg:inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-emerald-600 rounded-lg hover:bg-emerald-500 transition-colors duration-200"
+          >
+            <i class="fas fa-phone-alt text-xs"></i>
+            Contact Us
+          </a>
+
+          <!-- Mobile Hamburger -->
+          <button
+            id="hamburgerBtn"
+            class="lg:hidden flex flex-col items-center justify-center gap-1.5 w-9 h-9 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none"
+            onclick="toggleMobileNav()"
+            aria-label="Toggle menu"
+          >
+            <span class="ham-line"></span>
+            <span class="ham-line"></span>
+            <span class="ham-line"></span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="lg:hidden bg-white border-t border-gray-100">
+      <div class="px-4 py-4 space-y-1 max-w-screen-xl mx-auto">
+
+        <a href="/" class="flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">
+          <i class="fas fa-home text-emerald-500 w-4 text-center"></i>Home
+        </a>
+
+        <!-- Mobile Breed Accordion -->
+        <div>
+          <button
+            onclick="toggleMobileAccordion('mobileBreedBody', 'mobileBreedChevron')"
+            class="flex items-center justify-between w-full px-3 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors"
+          >
+            <span class="flex items-center gap-3">
+              <i class="fas fa-paw text-emerald-500 w-4 text-center"></i>Breed
+            </span>
+            <i class="fas fa-chevron-down text-[10px] text-gray-400 transition-transform duration-300" id="mobileBreedChevron"></i>
+          </button>
+          <div class="mobile-accordion-body pl-10 space-y-0.5 mt-1" id="mobileBreedBody">
+            <a href="/osmanabadi-goats" class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm text-gray-600 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">
+              <i class="fas fa-paw text-emerald-400 text-xs"></i>Goat
+            </a>
+            <a href="/" class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm text-gray-600 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">
+              <i class="fas fa-paw text-emerald-400 text-xs"></i>Sheep
+            </a>
+          </div>
+        </div>
+
+        <a href="/products" class="flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">
+          <i class="fas fa-box text-emerald-500 w-4 text-center"></i>Products
+        </a>
+
+        <a href="/gallery" class="flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">
+          <i class="fas fa-images text-emerald-500 w-4 text-center"></i>Gallery
+        </a>
+
+        <!-- Mobile Projects Accordion -->
+        <div>
+          <button
+            onclick="toggleMobileAccordion('mobileProjectsBody', 'mobileProjectsChevron')"
+            class="flex items-center justify-between w-full px-3 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors"
+          >
+            <span class="flex items-center gap-3">
+              <i class="fas fa-layer-group text-emerald-500 w-4 text-center"></i>Our Projects
+            </span>
+            <i class="fas fa-chevron-down text-[10px] text-gray-400 transition-transform duration-300" id="mobileProjectsChevron"></i>
+          </button>
+          <div class="mobile-accordion-body pl-10 space-y-0.5 mt-1" id="mobileProjectsBody">
+            <a href="/organic-farming" class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm text-gray-600 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">
+              <i class="fas fa-leaf text-emerald-400 text-xs"></i>Organic Farming
+            </a>
+            <a href="/multi-layer-husbandry" class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm text-gray-600 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">
+              <i class="fas fa-layer-group text-emerald-400 text-xs"></i>Multilayer
+            </a>
+            <a href="/animal-husbandry" class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm text-gray-600 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">
+              <i class="fas fa-paw text-emerald-400 text-xs"></i>Animal Husbandry
+            </a>
+            <a href="/irrigation" class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm text-gray-600 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">
+              <i class="fas fa-tint text-emerald-400 text-xs"></i>Irrigation
+            </a>
+            <div class="border-t border-gray-100 my-1 mr-3"></div>
+            <a href="/ongoing-projects" class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-700 transition-colors">
+              <i class="fas fa-clock text-blue-400 text-xs"></i>Ongoing Projects
+            </a>
+            <a href="/delivered-projects" class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm text-gray-600 hover:bg-green-50 hover:text-green-700 transition-colors">
+              <i class="fas fa-check-circle text-green-400 text-xs"></i>Delivered Projects
+            </a>
+          </div>
+        </div>
+
+        <a href="/subsidy" class="flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">
+          <i class="fas fa-tags text-emerald-500 w-4 text-center"></i>Subsidy
+        </a>
+
+        <a href="/about-us" class="flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">
+          <i class="fas fa-info-circle text-emerald-500 w-4 text-center"></i>About Us
+        </a>
+
+        <!-- Mobile CTA -->
+        <div class="pt-3 pb-1">
+          <a
+            href="/contact-us"
+            class="flex items-center justify-center gap-2 w-full py-3 text-sm font-semibold text-white bg-emerald-600 rounded-xl hover:bg-emerald-500 transition-colors"
+          >
+            <i class="fas fa-phone-alt text-xs"></i>Contact Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
 </header>
+
+<script>
+  /* ── Mobile nav toggle ── */
+  function toggleMobileNav() {
+    const menu = document.getElementById('mobileMenu');
+    const btn  = document.getElementById('hamburgerBtn');
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  /* ── Mobile accordion ── */
+  function toggleMobileAccordion(bodyId, chevronId) {
+    const body    = document.getElementById(bodyId);
+    const chevron = document.getElementById(chevronId);
+    body.classList.toggle('open');
+    chevron.style.transform = body.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
+  }
+
+  /* ── Desktop dropdown click toggle (fallback for touch) ── */
+  function toggleDesktopDropdown(event, dropdownId) {
+    event.stopPropagation();
+    const el = document.getElementById(dropdownId);
+    const isOpen = el.classList.contains('open');
+    // close all
+    document.querySelectorAll('.nav-dropdown.open').forEach(d => {
+      d.classList.remove('open');
+      const ch = d.querySelector('.drop-chevron');
+      if (ch) ch.style.transform = 'rotate(0deg)';
+    });
+    if (!isOpen) {
+      el.classList.add('open');
+      const ch = el.querySelector('.drop-chevron');
+      if (ch) ch.style.transform = 'rotate(180deg)';
+    }
+  }
+
+  /* ── Rotate chevron on desktop hover ── */
+  document.querySelectorAll('.nav-dropdown').forEach(function(dd) {
+    dd.addEventListener('mouseenter', function() {
+      const ch = this.querySelector('.drop-chevron');
+      if (ch) ch.style.transform = 'rotate(180deg)';
+    });
+    dd.addEventListener('mouseleave', function() {
+      if (!this.classList.contains('open')) {
+        const ch = this.querySelector('.drop-chevron');
+        if (ch) ch.style.transform = 'rotate(0deg)';
+      }
+    });
+  });
+
+  /* ── Close dropdowns clicking outside ── */
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown.open').forEach(d => {
+        d.classList.remove('open');
+        const ch = d.querySelector('.drop-chevron');
+        if (ch) ch.style.transform = 'rotate(0deg)';
+      });
+    }
+    if (!e.target.closest('#mainNav')) {
+      const menu = document.getElementById('mobileMenu');
+      const btn  = document.getElementById('hamburgerBtn');
+      if (menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        btn.classList.remove('open');
+      }
+    }
+  });
+
+  /* ── Navbar shrink on scroll ── */
+  window.addEventListener('scroll', function() {
+    const nav = document.getElementById('mainNav');
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  /* ── Active link highlight ── */
+  (function() {
+    const path = window.location.pathname;
+    document.querySelectorAll('.nav-link').forEach(function(link) {
+      const href = link.getAttribute('href');
+      if (href && (href === path || (href !== '/' && path.startsWith(href)))) {
+        link.classList.add('active');
+      }
+    });
+  })();
+</script>
